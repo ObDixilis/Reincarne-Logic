@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Mosaic | Reincarne Logic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="logo" href="../index.html">
+          Reincarne<span class="logo-accent">Logic</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#showcase">Showcase</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li>
+            <a
+              class="btn btn-small btn-outline"
+              href="https://example.com/reincarne-logic-resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >View Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero project-hero">
+        <div class="hero-content">
+          <p class="eyebrow">Design Language System</p>
+          <h1>Project Mosaic</h1>
+          <p class="lead">
+            Mosaic is a modular design language that empowers marketing and
+            product teams to ship cohesive experiences across 15+ channels.
+          </p>
+          <div class="hero-cta">
+            <a
+              class="btn btn-primary"
+              href="https://example.com/mosaic-library"
+              target="_blank"
+              rel="noopener"
+              >Browse the library</a
+            >
+            <a class="btn btn-outline" href="../index.html#contact"
+              >Request a walkthrough</a
+            >
+          </div>
+        </div>
+        <div
+          class="slider"
+          data-slider
+          data-auto-advance="7500"
+          aria-label="Project Mosaic components"
+          tabindex="0"
+        >
+          <div class="slider-track" data-slider-track>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                alt="Team collaborating on style tiles"
+              />
+              <figcaption>
+                Cross-functional workshops defined the voice of the brand
+                system.
+              </figcaption>
+            </figure>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1484981137413-5adbf82956c4?auto=format&fit=crop&w=1200&q=80"
+                alt="Component library showcased on laptop"
+              />
+              <figcaption>
+                Component kit scales across marketing and product destinations.
+              </figcaption>
+            </figure>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+                alt="Brand guidelines printed in booklets"
+              />
+              <figcaption>
+                Documentation and tooling keep teams aligned as the brand
+                evolves.
+              </figcaption>
+            </figure>
+          </div>
+          <button
+            class="slider-button slider-button--prev"
+            type="button"
+            data-slider-prev
+            aria-label="Previous Mosaic screen"
+          >
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <button
+            class="slider-button slider-button--next"
+            type="button"
+            data-slider-next
+            aria-label="Next Mosaic screen"
+          >
+            <span aria-hidden="true">&#10095;</span>
+          </button>
+          <div class="slider-dots" data-slider-dots></div>
+        </div>
+      </section>
+
+      <section class="section project-details">
+        <div class="section-heading">
+          <h2>Design system pillars</h2>
+          <p>
+            Mosaic standardizes storytelling across campaigns while giving teams
+            freedom to remix components responsibly.
+          </p>
+        </div>
+        <div class="project-detail-grid">
+          <article class="detail-card">
+            <h3>Foundation</h3>
+            <ul>
+              <li>Token architecture built in Figma &amp; code</li>
+              <li>Accessibility-first color scales</li>
+              <li>Multi-brand typography pairings</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Governance</h3>
+            <ul>
+              <li>Quarterly audits with cross-team council</li>
+              <li>Contribution model with review gates</li>
+              <li>Open metrics dashboard for adoption</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Enablement</h3>
+            <ul>
+              <li>Storybook documentation &amp; code sandbox</li>
+              <li>Live training and office hours</li>
+              <li>Workflow templates for agencies</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section project-process">
+        <div class="section-heading">
+          <h2>Launch roadmap</h2>
+          <p>
+            Sequenced rollouts ensured adoption and feedback loops from day one.
+          </p>
+        </div>
+        <div class="process-steps">
+          <article class="process-step">
+            <h3>01. Align</h3>
+            <p>
+              Partnered with marketing, product, and leadership to co-author a
+              north star vision.
+            </p>
+          </article>
+          <article class="process-step">
+            <h3>02. Build</h3>
+            <p>
+              Delivered the design kit, code repo, and documentation in parallel
+              to accelerate handoff.
+            </p>
+          </article>
+          <article class="process-step">
+            <h3>03. Amplify</h3>
+            <p>
+              Launched enablement series and metrics board to track health,
+              reuse, and contributions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section project-cta">
+        <div class="project-cta-card">
+          <h2>Ready for a unified design language?</h2>
+          <p>
+            Whether you&rsquo;re scaling a startup or modernizing an enterprise
+            platform, I can help you craft a system that evolves with your team.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="../index.html#contact"
+              >Start a discovery call</a
+            >
+            <a
+              class="btn btn-outline"
+              href="https://example.com/mosaic-case-study"
+              target="_blank"
+              rel="noopener"
+              >Download playbook</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>© 2024 Reincarne Logic. Crafted with curiosity and care.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+        <a href="https://www.behance.net" target="_blank" rel="noopener"
+          >Behance</a
+        >
+        <a href="mailto:hello@reincarne-logic.com">Email</a>
+      </div>
+    </footer>
+    <script src="../scripts.js" defer></script>
+  </body>
+</html>
