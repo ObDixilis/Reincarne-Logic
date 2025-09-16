@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="insightTitle">
+  <title id="insightTitle">Radar insight icon</title>
+  <defs>
+    <linearGradient id="radar" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="20" fill="#eff6ff" stroke="url(#radar)" stroke-width="3" />
+  <path d="M24 8v32M8 24h32" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+  <polygon points="24,14 32,20 30,32 18,34 14,22" fill="url(#radar)" opacity="0.65" />
+  <circle cx="24" cy="24" r="3.2" fill="#0ea5e9" />
+</svg>

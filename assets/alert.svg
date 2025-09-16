@@ -1,0 +1,18 @@
+<svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="alertTitle">
+  <title id="alertTitle">Bell alert icon</title>
+  <defs>
+    <linearGradient id="bellGradient" x1="12" y1="6" x2="32" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M22 6a10 10 0 0 1 10 10v5.2c0 1.8 0.6 3.6 1.8 5l1.5 1.7c1.3 1.5 0.2 3.8-1.9 3.8H10.6c-2.1 0-3.2-2.3-1.9-3.8l1.5-1.7c1.2-1.4 1.8-3.2 1.8-5V16A10 10 0 0 1 22 6z"
+    fill="#fff7ed"
+    stroke="url(#bellGradient)"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+  <path d="M18 35c0 2.2 1.8 4 4 4s4-1.8 4-4" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" />
+  <circle cx="22" cy="12" r="3" fill="#ef4444" />
+</svg>

@@ -1,0 +1,27 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mapTitle">
+  <title id="mapTitle">Strategy map icon</title>
+  <defs>
+    <linearGradient id="mapGradient" x1="8" y1="10" x2="40" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M12 10h24a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6H12a6 6 0 0 1-6-6V16a6 6 0 0 1 6-6z"
+    fill="#eef2ff"
+    stroke="url(#mapGradient)"
+    stroke-width="3"
+  />
+  <path
+    d="M16 32l6-12 5 6 7-12"
+    fill="none"
+    stroke="#2563eb"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="16" cy="32" r="3.2" fill="#22c55e" />
+  <circle cx="22" cy="20" r="3" fill="#0ea5e9" />
+  <circle cx="27" cy="26" r="3" fill="#0ea5e9" />
+  <circle cx="34" cy="14" r="4" fill="#6366f1" />
+</svg>

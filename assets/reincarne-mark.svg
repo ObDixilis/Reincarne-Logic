@@ -1,0 +1,20 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Reincarne Logic icon</title>
+  <desc id="desc">Infinity loop formed by two gradients representing adaptive cycles</desc>
+  <defs>
+    <linearGradient id="loop" x1="6" y1="8" x2="42" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <path
+    fill="none"
+    stroke="url(#loop)"
+    stroke-width="6"
+    stroke-linecap="round"
+    d="M13.5 14c4.5-7 16-7 20.5 0 4 6.3-0.5 15-7.5 15s-11.7 9-6.5 15c4.5 5.2 15 3.2 18.5-3.8"
+  />
+  <circle cx="12" cy="15" r="4" fill="#38bdf8" opacity="0.85" />
+  <circle cx="34.5" cy="30" r="4.2" fill="#22c55e" opacity="0.75" />
+</svg>
