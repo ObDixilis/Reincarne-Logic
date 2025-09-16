@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legacy FAQ · Reincarne Logic</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="logo" href="../index.html">Reincarne Logic</a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav-list"
+          >
+            Menu
+          </button>
+          <ul class="nav-list" id="primary-nav-list" data-open="false">
+            <li class="nav-item"><a href="../index.html#intro">Home</a></li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Pages
+              </button>
+              <ul class="dropdown-menu" aria-label="Pages">
+                <li><a href="overview.html">Project Overview</a></li>
+                <li><a href="research.html">Research Notes</a></li>
+                <li><a href="faq.html" aria-current="page">Legacy FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Knowledge Base
+              </button>
+              <ul class="dropdown-menu" aria-label="Knowledge Base">
+                <li><a href="../index.html#mission">Mission &amp; Methods</a></li>
+                <li><a href="../index.html#case-studies">Case Studies</a></li>
+                <li><a href="../index.html#tools">Tools &amp; Archives</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero">
+        <h1>Legacy FAQ</h1>
+        <p>
+          Answers to the questions we hear most often about our lineage,
+          offerings, and how to collaborate with the Reincarne Logic team.
+        </p>
+      </section>
+
+      <nav class="anchor-nav" aria-label="On this page">
+        <h2>Jump to a section</h2>
+        <ul>
+          <li><a href="#origins">Origins &amp; Philosophy</a></li>
+          <li><a href="#offerings">Services &amp; Collaboration</a></li>
+          <li><a href="#logistics">Logistics</a></li>
+        </ul>
+      </nav>
+
+      <section id="origins">
+        <h2 class="section-heading">Origins &amp; Philosophy</h2>
+        <div class="section-content">
+          <h3>Where did Reincarne Logic begin?</h3>
+          <p>
+            We emerged from a cooperative of designers, facilitators, and story
+            workers who sought to bridge ritual arts with organizational
+            strategy. Our practice continues to evolve through partnerships that
+            honor cultural context and collective wisdom.
+          </p>
+          <h3>What guides your approach?</h3>
+          <p>
+            We treat every engagement as a cycle. That means making space for
+            emergence, reflection, and celebration while ensuring participants
+            feel supported before, during, and after the work.
+          </p>
+        </div>
+      </section>
+
+      <section id="offerings">
+        <h2 class="section-heading">Services &amp; Collaboration</h2>
+        <div class="section-content">
+          <h3>Do you offer custom engagements?</h3>
+          <p>
+            Yes. We co-design each residency, workshop series, or strategic
+            retreat to address your unique rhythms and goals.
+          </p>
+          <h3>Can you work alongside internal teams?</h3>
+          <p>
+            Absolutely. We often embed with staff to strengthen existing rituals
+            and coach teams as they test new practices.
+          </p>
+          <h3>How do you measure success?</h3>
+          <p>
+            Together we define a blend of qualitative and quantitative
+            indicators that reflect your desired shifts in culture, belonging,
+            and operational flow.
+          </p>
+        </div>
+      </section>
+
+      <section id="logistics">
+        <h2 class="section-heading">Logistics</h2>
+        <div class="section-content">
+          <h3>Where do you operate?</h3>
+          <p>
+            We collaborate with partners around the globe. Virtual residencies,
+            hybrid gatherings, and in-person retreats are all available.
+          </p>
+          <h3>How far in advance should we reach out?</h3>
+          <p>
+            We typically book engagements two to three months ahead. Reach out as
+            soon as you sense a new cycle emerging so we can co-design the right
+            path forward.
+          </p>
+          <h3>What accessibility considerations do you honor?</h3>
+          <p>
+            Every offering includes collaborative access planning. We budget for
+            interpretation, captioning, and care resources as part of our core
+            delivery.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Reincarne Logic. All rights reserved.
+    </footer>
+
+    <script src="../assets/js/navigation.js" defer></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

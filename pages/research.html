@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Notes · Reincarne Logic</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="logo" href="../index.html">Reincarne Logic</a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav-list"
+          >
+            Menu
+          </button>
+          <ul class="nav-list" id="primary-nav-list" data-open="false">
+            <li class="nav-item"><a href="../index.html#intro">Home</a></li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Pages
+              </button>
+              <ul class="dropdown-menu" aria-label="Pages">
+                <li><a href="overview.html">Project Overview</a></li>
+                <li><a href="research.html" aria-current="page">Research Notes</a></li>
+                <li><a href="faq.html">Legacy FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Knowledge Base
+              </button>
+              <ul class="dropdown-menu" aria-label="Knowledge Base">
+                <li><a href="../index.html#mission">Mission &amp; Methods</a></li>
+                <li><a href="../index.html#case-studies">Case Studies</a></li>
+                <li><a href="../index.html#tools">Tools &amp; Archives</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero">
+        <h1>Research Notes</h1>
+        <p>
+          Field observations, experiments, and readings that inform how we build
+          rituals for resilient, regenerative organizations.
+        </p>
+      </section>
+
+      <nav class="anchor-nav" aria-label="On this page">
+        <h2>Jump to a section</h2>
+        <ul>
+          <li><a href="#fieldnotes">Field Notes</a></li>
+          <li><a href="#experiments">Active Experiments</a></li>
+          <li><a href="#bibliography">Further Reading</a></li>
+        </ul>
+      </nav>
+
+      <section id="fieldnotes">
+        <h2 class="section-heading">Field Notes</h2>
+        <p class="section-content">
+          Snapshots from residencies, immersive labs, and community gatherings
+          that capture the nuance of practicing continuity in real time.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Ritual Clinics</h3>
+            <p>
+              Weekly open studios where teams bring current tensions and co-design
+              micro-rituals to restore alignment and trust.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Signal Mapping</h3>
+            <p>
+              Participants traced the signals of joy and depletion across their
+              projects to identify leverage points for sustainable pacing.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Memory Stewardship</h3>
+            <p>
+              We prototyped a living archive that combines oral histories with
+              tactile artifacts to honor past contributions while inviting future
+              collaboration.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experiments">
+        <h2 class="section-heading">Active Experiments</h2>
+        <p class="section-content">
+          Iterative studies that explore how ritual design and narrative
+          prototyping shape belonging and adaptive governance.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Temporal Budgeting</h3>
+            <p>
+              Measuring how teams allocate energy across seasons to identify when
+              to introduce pauses, celebrations, or reorientation rituals.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Storykeeper Residency</h3>
+            <p>
+              Embedding a resident storyteller inside organizations to document
+              shifts, map narrative gaps, and surface emergent themes.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Consentful Governance</h3>
+            <p>
+              Prototyping decision rituals that balance autonomy with collective
+              accountability across distributed teams.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="bibliography">
+        <h2 class="section-heading">Further Reading</h2>
+        <p class="section-content">
+          A curated list of books, podcasts, and essays that influence our
+          approach to designing for renewal.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Embodied Governance</h3>
+            <p>
+              A primer on shared leadership that centers somatic awareness and
+              interdependence.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>The Long Now Toolkit</h3>
+            <p>
+              Practices for tending to long-term thinking without losing sight of
+              the immediate needs of your community.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Mythic Operations</h3>
+            <p>
+              Essays on how myth and ritual shape organizational culture and
+              memory.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Reincarne Logic. All rights reserved.
+    </footer>
+
+    <script src="../assets/js/navigation.js" defer></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
