@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Overview · Reincarne Logic</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <a class="logo" href="../index.html">Reincarne Logic</a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav-list"
+          >
+            Menu
+          </button>
+          <ul class="nav-list" id="primary-nav-list" data-open="false">
+            <li class="nav-item"><a href="../index.html#intro">Home</a></li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Pages
+              </button>
+              <ul class="dropdown-menu" aria-label="Pages">
+                <li><a href="overview.html" aria-current="page">Project Overview</a></li>
+                <li><a href="research.html">Research Notes</a></li>
+                <li><a href="faq.html">Legacy FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item has-dropdown" data-open="false">
+              <button class="dropdown-toggle" type="button" aria-expanded="false">
+                Knowledge Base
+              </button>
+              <ul class="dropdown-menu" aria-label="Knowledge Base">
+                <li><a href="../index.html#mission">Mission &amp; Methods</a></li>
+                <li><a href="../index.html#case-studies">Case Studies</a></li>
+                <li><a href="../index.html#tools">Tools &amp; Archives</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="../index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero">
+        <h1>Project Overview</h1>
+        <p>
+          Understand the pillars of Reincarne Logic and how each engagement is
+          shaped to help teams navigate cycles of change with clarity and care.
+        </p>
+      </section>
+
+      <nav class="anchor-nav" aria-label="On this page">
+        <h2>Jump to a section</h2>
+        <ul>
+          <li><a href="#principles">Core Principles</a></li>
+          <li><a href="#framework">Engagement Framework</a></li>
+          <li><a href="#outcomes">Outcomes &amp; Measures</a></li>
+        </ul>
+      </nav>
+
+      <section id="principles">
+        <h2 class="section-heading">Core Principles</h2>
+        <p class="section-content">
+          Our practice is rooted in ritual literacy, narrative coherence, and
+          collective stewardship. These principles shape every decision, from
+          initial discovery conversations through integration of new habits.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Reciprocity</h3>
+            <p>
+              Designing with the people most impacted by the work ensures shared
+              ownership, ongoing consent, and a cadence that can last beyond the
+              initial engagement.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Attunement</h3>
+            <p>
+              We read the room, respect the story so far, and calibrate tools
+              based on the rhythms and capacity of each team.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Emergence</h3>
+            <p>
+              Structured experiments invite surprise, making space for new roles
+              and relationships to take root as conditions evolve.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="framework">
+        <h2 class="section-heading">Engagement Framework</h2>
+        <p class="section-content">
+          Each partnership unfolds across four modular phases. We adapt the
+          timing and depth of each to reflect your current capacity and desired
+          outcomes.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Field Scan</h3>
+            <p>
+              Conduct interviews, ritual audits, and ecosystem mapping to
+              understand existing narratives and the relationships that sustain
+              them.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Design Lab</h3>
+            <p>
+              Prototype new rituals, story beats, and governance agreements with
+              key stakeholders in playful, low-risk environments.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Integration Sprint</h3>
+            <p>
+              Embed successful practices into your operations with facilitation,
+              documentation, and accountability scaffolds.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="outcomes">
+        <h2 class="section-heading">Outcomes &amp; Measures</h2>
+        <p class="section-content">
+          We co-create metrics that honor both qualitative shifts and tangible
+          benchmarks. These indicators serve as anchors for reflection and
+          celebration across the life of the project.
+        </p>
+        <div class="card-grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Experience Index</h3>
+            <p>
+              Track participant sentiment and story resonance at every major
+              milestone to ensure momentum stays aligned with purpose.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Practice Adoption</h3>
+            <p>
+              Measure the frequency and depth of new rituals to confirm they are
+              embedded sustainably within your workflows.
+            </p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Continuity Signals</h3>
+            <p>
+              Review archival documentation to confirm knowledge transfer and
+              shared ownership persist beyond the initial cycle.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Reincarne Logic. All rights reserved.
+    </footer>
+
+    <script src="../assets/js/navigation.js" defer></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
