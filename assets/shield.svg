@@ -1,0 +1,17 @@
+<svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="shieldTitle">
+  <title id="shieldTitle">Shield icon</title>
+  <defs>
+    <linearGradient id="shieldGradient" x1="8" y1="6" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M22 4l14 4v12c0 9.6-6.4 16.8-14 20-7.6-3.2-14-10.4-14-20V8l14-4z"
+    fill="#eff6ff"
+    stroke="url(#shieldGradient)"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+  <path d="M16 22l5 6 7-10" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,19 @@
+<svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="lockTitle">
+  <title id="lockTitle">Security lock icon</title>
+  <defs>
+    <linearGradient id="lockGradient" x1="10" y1="8" x2="34" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="18" width="28" height="20" rx="6" fill="#f0fdfa" stroke="url(#lockGradient)" stroke-width="3" />
+  <path
+    d="M14 18v-4a8 8 0 0 1 16 0v4"
+    fill="none"
+    stroke="#0ea5e9"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <circle cx="22" cy="26" r="4" fill="#22c55e" />
+  <path d="M22 26v6" stroke="#065f46" stroke-width="3" stroke-linecap="round" />
+</svg>
