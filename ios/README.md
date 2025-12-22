@@ -4,12 +4,11 @@ This SwiftUI prototype turns the pattern-recognition prompt into a fast-paced iO
 
 ## Running in Xcode
 
-1. Open Xcode and create a new **App** project named `ReincarneLogicGame`.
-2. Replace the generated Swift files with the contents of:
-   - `ReincarneLogicGameApp.swift`
-   - `ContentView.swift`
-   - `GameEngine.swift`
-3. Run on an iOS simulator (iOS 16+ recommended).
+1. Open `ios/ReincarneLogicGame/ReincarneLogicGame.xcodeproj` in Xcode.
+2. Select an iOS simulator (iOS 16+ recommended).
+3. Build and run.
+
+If you want to adjust the bundle identifier or team, edit the target settings in Xcode.
 
 ## Gameplay
 
