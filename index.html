@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reincarne Logic | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="logo" href="index.html">
+          Reincarne<span class="logo-accent">Logic</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              class="btn btn-small btn-outline"
+              href="https://example.com/reincarne-logic-resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >View Resume</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <section class="hero" id="top">
+        <div class="hero-content">
+          <p class="eyebrow">Product Designer &amp; Creative Technologist</p>
+          <h1>Designing intelligent digital experiences that feel human.</h1>
+          <p class="lead">
+            I bridge research, design, and engineering to craft adaptive
+            interfaces, responsive visuals, and compelling product narratives.
+            Explore a selection of live prototypes and production work below.
+          </p>
+          <div class="hero-cta">
+            <a
+              class="btn btn-primary"
+              href="https://example.com/reincarne-logic-resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >View Resume</a
+            >
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div
+          class="slider hero-slider"
+          data-slider
+          data-auto-advance="7000"
+          aria-label="Featured visual concepts"
+          tabindex="0"
+        >
+          <div class="slider-track" data-slider-track>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+                alt="Data dashboard with bright gradients"
+              />
+              <figcaption>
+                Immersive analytics dashboard built for rapid insights.
+              </figcaption>
+            </figure>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1527430253228-e93688616381?auto=format&fit=crop&w=900&q=80"
+                alt="Designer collaborating with developers"
+              />
+              <figcaption>
+                Collaborative design systems for cross-functional teams.
+              </figcaption>
+            </figure>
+            <figure class="slide" data-slide>
+              <img
+                src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80"
+                alt="Mobile phone showing futuristic interface"
+              />
+              <figcaption>
+                Adaptive mobile experiences with real-time personalization.
+              </figcaption>
+            </figure>
+          </div>
+          <button
+            class="slider-button slider-button--prev"
+            type="button"
+            data-slider-prev
+            aria-label="Previous visual"
+          >
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <button
+            class="slider-button slider-button--next"
+            type="button"
+            data-slider-next
+            aria-label="Next visual"
+          >
+            <span aria-hidden="true">&#10095;</span>
+          </button>
+          <div class="slider-dots" data-slider-dots></div>
+        </div>
+      </section>
+    </header>
+    <main id="main">
+      <section class="section projects" id="projects">
+        <div class="section-heading">
+          <h2>Featured Projects</h2>
+          <p>
+            From experimental prototypes to enterprise-ready platforms, these
+            highlights demonstrate how strategy, storytelling, and technology
+            converge inside my studio.
+          </p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <a href="projects/project-aurora.html">
+              <img
+                src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=900&q=80"
+                alt="Vibrant interface for Project Aurora"
+              />
+              <div class="project-card-body">
+                <h3>Project Aurora</h3>
+                <p>
+                  Scalable data visualization suite unifying research insights
+                  and live telemetry.
+                </p>
+                <span class="project-card-cta">Read the case study &rarr;</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card">
+            <a href="projects/project-echo.html">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+                alt="Immersive mixed reality interface for Project Echo"
+              />
+              <div class="project-card-body">
+                <h3>Project Echo</h3>
+                <p>
+                  Immersive digital twin bringing operational clarity to
+                  distributed retail teams.
+                </p>
+                <span class="project-card-cta">Explore the story &rarr;</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card">
+            <a
+              href="https://webflow.com/made-in-webflow"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+                alt="Team sprinting around a workspace"
+              />
+              <div class="project-card-body">
+                <h3>Momentum Sprint Kit</h3>
+                <p>
+                  Rapid ideation toolkit used to compress discovery cycles for
+                  product teams.
+                </p>
+                <span class="project-card-cta">Launch live demo &rarr;</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card">
+            <a href="projects/project-mosaic.html">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80"
+                alt="Notebook with UX sketches for Project Mosaic"
+              />
+              <div class="project-card-body">
+                <h3>Project Mosaic</h3>
+                <p>
+                  Modular design language that powers responsive marketing
+                  ecosystems.
+                </p>
+                <span class="project-card-cta">See deliverables &rarr;</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section project-slideshow" id="showcase">
+        <div class="section-heading">
+          <h2>Project Stories Slideshow</h2>
+          <p>
+            Cycle through the highlights to understand the challenge, my
+            approach, and the measurable outcomes that followed each engagement.
+          </p>
+        </div>
+        <div
+          class="slider project-slider"
+          data-slider
+          data-auto-advance="9000"
+          aria-label="Project stories slideshow"
+          tabindex="0"
+        >
+          <div class="slider-track" data-slider-track>
+            <article class="project-slide" data-slide>
+              <h3>Immersive Retail Twin</h3>
+              <p>
+                Built an augmented reality twin that cut onboarding time by 35%
+                and synchronized training across 120+ stores in real time.
+              </p>
+              <ul>
+                <li>Role: Creative Director &amp; Lead Prototyper</li>
+                <li>Stack: Unity, WebRTC, custom analytics service</li>
+              </ul>
+              <a class="btn btn-primary" href="projects/project-echo.html"
+                >View details</a
+              >
+            </article>
+            <article class="project-slide" data-slide>
+              <h3>Predictive Health Compass</h3>
+              <p>
+                Designed a patient-facing app that visualizes preventative care
+                paths and integrates with wearable data streams.
+              </p>
+              <ul>
+                <li>Role: Product Designer</li>
+                <li>Impact: Increased enrollment in care plans by 22%</li>
+              </ul>
+              <a
+                class="btn btn-outline"
+                href="https://dribbble.com"
+                target="_blank"
+                rel="noopener"
+                >See prototype</a
+              >
+            </article>
+            <article class="project-slide" data-slide>
+              <h3>Insight Ops Cockpit</h3>
+              <p>
+                Delivered a mission control surface that merges predictive
+                analytics with intuitive workflows for ops leaders.
+              </p>
+              <ul>
+                <li>Role: UX Engineer</li>
+                <li>Stack: React, D3.js, scalable design tokens</li>
+              </ul>
+              <a class="btn btn-primary" href="projects/project-aurora.html"
+                >Dive into Aurora</a
+              >
+            </article>
+          </div>
+          <button
+            class="slider-button slider-button--prev"
+            type="button"
+            data-slider-prev
+            aria-label="Previous project story"
+          >
+            <span aria-hidden="true">&#10094;</span>
+          </button>
+          <button
+            class="slider-button slider-button--next"
+            type="button"
+            data-slider-next
+            aria-label="Next project story"
+          >
+            <span aria-hidden="true">&#10095;</span>
+          </button>
+          <div class="slider-dots" data-slider-dots></div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="contact-content">
+          <div class="contact-intro">
+            <h2>Let&rsquo;s collaborate</h2>
+            <p>
+              Ready to accelerate your next product sprint or refresh an
+              existing experience? Share a few details and I&rsquo;ll follow up
+              within one business day.
+            </p>
+            <ul class="contact-highlights">
+              <li>Interactive prototypes delivered within the first week</li>
+              <li>Flexible engagements for startups and enterprise teams</li>
+              <li>Workshops that align stakeholders and clarify decisions</li>
+            </ul>
+          </div>
+          <form class="contact-form" aria-describedby="contact-note">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                placeholder="Alex Smith"
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="you@example.com"
+              />
+            </div>
+            <div class="form-row">
+              <label for="company">Company</label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                autocomplete="organization"
+                placeholder="Studio or organization"
+              />
+            </div>
+            <div class="form-row">
+              <label for="timeline">Ideal timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="" disabled selected>Select a timeline</option>
+                <option value="2-weeks">2 weeks</option>
+                <option value="1-month">1 month</option>
+                <option value="quarter">1 quarter</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Share the goals, audience, and success metrics."
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-hint" id="contact-note">
+              Prefer email? Reach out at
+              <a href="mailto:hello@reincarne-logic.com"
+                >hello@reincarne-logic.com</a
+              >.
+            </p>
+            <p class="form-feedback" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>© 2024 Reincarne Logic. Crafted with curiosity and care.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+        <a href="https://www.behance.net" target="_blank" rel="noopener"
+          >Behance</a
+        >
+        <a href="mailto:hello@reincarne-logic.com">Email</a>
+      </div>
+    </footer>
+    <script src="scripts.js" defer></script>
+  </body>
+</html>
