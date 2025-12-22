@@ -1,0 +1,238 @@
+// !$*UTF8*$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
+
+/* Begin PBXBuildFile section */
+        111111111111111111111111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222222 /* ContentView.swift */; };
+        111111111111111111111112 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222223 /* GameEngine.swift */; };
+        111111111111111111111113 /* ReincarneLogicGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222224 /* ReincarneLogicGameApp.swift */; };
+        111111111111111111111114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222225 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+        222222222222222222222220 /* ReincarneLogicGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ReincarneLogicGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        222222222222222222222221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        222222222222222222222222 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        222222222222222222222223 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+        222222222222222222222224 /* ReincarneLogicGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReincarneLogicGameApp.swift; sourceTree = "<group>"; };
+        222222222222222222222225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+        333333333333333333333333 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+        444444444444444444444444 /* ReincarneLogicGame */ = {
+            isa = PBXGroup;
+            children = (
+                222222222222222222222224 /* ReincarneLogicGameApp.swift */,
+                222222222222222222222222 /* ContentView.swift */,
+                222222222222222222222223 /* GameEngine.swift */,
+                222222222222222222222225 /* Assets.xcassets */,
+                222222222222222222222221 /* Info.plist */,
+            );
+            path = ReincarneLogicGame;
+            sourceTree = "<group>";
+        };
+        444444444444444444444445 /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                222222222222222222222220 /* ReincarneLogicGame.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        444444444444444444444446 /* Root */ = {
+            isa = PBXGroup;
+            children = (
+                444444444444444444444444 /* ReincarneLogicGame */,
+                444444444444444444444445 /* Products */,
+            );
+            sourceTree = "<group>";
+        };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+        555555555555555555555555 /* ReincarneLogicGame */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 666666666666666666666666 /* Build configuration list for PBXNativeTarget "ReincarneLogicGame" */;
+            buildPhases = (
+                333333333333333333333334 /* Sources */,
+                333333333333333333333333 /* Frameworks */,
+                333333333333333333333335 /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = ReincarneLogicGame;
+            productName = ReincarneLogicGame;
+            productReference = 222222222222222222222220 /* ReincarneLogicGame.app */;
+            productType = "com.apple.product-type.application";
+        };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+        777777777777777777777777 /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                BuildIndependentTargetsInParallel = 1;
+                LastSwiftUpdateCheck = 1500;
+                LastUpgradeCheck = 1500;
+                TargetAttributes = {
+                    555555555555555555555555 = {
+                        CreatedOnToolsVersion = 15.0;
+                    };
+                };
+            };
+            buildConfigurationList = 666666666666666666666667 /* Build configuration list for PBXProject "ReincarneLogicGame" */;
+            compatibilityVersion = "Xcode 15.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 444444444444444444444446 /* Root */;
+            productRefGroup = 444444444444444444444445 /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                555555555555555555555555 /* ReincarneLogicGame */,
+            );
+        };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+        333333333333333333333335 /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                111111111111111111111114 /* Assets.xcassets in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+        333333333333333333333334 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                111111111111111111111113 /* ReincarneLogicGameApp.swift in Sources */,
+                111111111111111111111111 /* ContentView.swift in Sources */,
+                111111111111111111111112 /* GameEngine.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+        888888888888888888888881 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_TEAM = "";
+                INFOPLIST_FILE = ReincarneLogicGame/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "com.reincarnelogic.game";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = 1;
+            };
+            name = Debug;
+        };
+        888888888888888888888882 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_TEAM = "";
+                INFOPLIST_FILE = ReincarneLogicGame/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                PRODUCT_BUNDLE_IDENTIFIER = "com.reincarnelogic.game";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = 1;
+            };
+            name = Release;
+        };
+        888888888888888888888883 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = "";
+                ENABLE_PREVIEWS = YES;
+                INFOPLIST_FILE = ReincarneLogicGame/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                PRODUCT_BUNDLE_IDENTIFIER = "com.reincarnelogic.game";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 5.0;
+            };
+            name = Debug;
+        };
+        888888888888888888888884 /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                CLANG_ENABLE_MODULES = YES;
+                CODE_SIGN_STYLE = Automatic;
+                DEVELOPMENT_TEAM = "";
+                ENABLE_PREVIEWS = YES;
+                INFOPLIST_FILE = ReincarneLogicGame/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+                PRODUCT_BUNDLE_IDENTIFIER = "com.reincarnelogic.game";
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_VERSION = 5.0;
+            };
+            name = Release;
+        };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+        666666666666666666666666 /* Build configuration list for PBXNativeTarget "ReincarneLogicGame" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                888888888888888888888881 /* Debug */,
+                888888888888888888888882 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        666666666666666666666667 /* Build configuration list for PBXProject "ReincarneLogicGame" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                888888888888888888888883 /* Debug */,
+                888888888888888888888884 /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+/* End XCConfigurationList section */
+    };
+    rootObject = 777777777777777777777777 /* Project object */;
+}
