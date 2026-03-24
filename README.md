@@ -16,3 +16,20 @@ Visit `http://localhost:5000` in your browser to interact with the Think Tank in
 ## iOS game prototype
 
 A SwiftUI prototype that turns the pattern-recognition prompt into a game lives in `ios/ReincarneLogicGame`. See `ios/README.md` for the gameplay loop and Xcode setup steps.
+
+
+## Song engine prototype
+
+A modular Python prototype for the engine-based songwriting pipeline lives in `song_engine.py`.
+
+Run:
+
+```bash
+python song_engine.py
+```
+
+This prints:
+- engine selection trace (primary/support/structural fitness)
+- motif bank
+- section map + generated draft lines
+- solved thesis statement
