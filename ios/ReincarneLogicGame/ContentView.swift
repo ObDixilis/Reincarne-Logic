@@ -1,6 +1,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    var body: some View {
+        TabView {
+            PatternVelocityView()
+                .tabItem {
+                    Label("Pattern", systemImage: "square.grid.3x3.fill")
+                }
+
+            SerpentineSenseView()
+                .tabItem {
+                    Label("Serpentine", systemImage: "eye.circle.fill")
+                }
+        }
+        .tint(Color(red: 0.96, green: 0.73, blue: 0.25))
+    }
+}
+
+private struct PatternVelocityView: View {
     @StateObject private var engine = GameEngine()
 
     private let columns = [
@@ -11,8 +28,12 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.black, Color.blue.opacity(0.4)], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+            LinearGradient(
+                colors: [Color.black, Color.blue.opacity(0.4)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             VStack(spacing: 20) {
                 VStack(spacing: 8) {
                     Text("Pattern Velocity")
@@ -26,7 +47,10 @@ struct ContentView: View {
                 HStack(spacing: 24) {
                     statCard(title: "Score", value: "\(engine.score)")
                     statCard(title: "Level", value: "\(engine.level)")
-                    statCard(title: "Time", value: String(format: "%.1f", engine.timeRemaining))
+                    statCard(
+                        title: "Time",
+                        value: String(format: "%.1f", engine.timeRemaining)
+                    )
                 }
 
                 Text(engine.statusMessage)
@@ -150,3 +174,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
