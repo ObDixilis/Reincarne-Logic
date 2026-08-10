@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
         111111111111111111111111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222222 /* ContentView.swift */; };
         111111111111111111111112 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222223 /* GameEngine.swift */; };
+        111111111111111111111115 /* SerpentineSenseEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222226 /* SerpentineSenseEngine.swift */; };
+        111111111111111111111116 /* SerpentineSenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222227 /* SerpentineSenseView.swift */; };
         111111111111111111111113 /* ReincarneLogicGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222224 /* ReincarneLogicGameApp.swift */; };
         111111111111111111111114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222222222222222222222225 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,6 +20,8 @@
         222222222222222222222221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
         222222222222222222222222 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
         222222222222222222222223 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+        222222222222222222222226 /* SerpentineSenseEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerpentineSenseEngine.swift; sourceTree = "<group>"; };
+        222222222222222222222227 /* SerpentineSenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerpentineSenseView.swift; sourceTree = "<group>"; };
         222222222222222222222224 /* ReincarneLogicGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReincarneLogicGameApp.swift; sourceTree = "<group>"; };
         222222222222222222222225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +43,8 @@
                 222222222222222222222224 /* ReincarneLogicGameApp.swift */,
                 222222222222222222222222 /* ContentView.swift */,
                 222222222222222222222223 /* GameEngine.swift */,
+                222222222222222222222226 /* SerpentineSenseEngine.swift */,
+                222222222222222222222227 /* SerpentineSenseView.swift */,
                 222222222222222222222225 /* Assets.xcassets */,
                 222222222222222222222221 /* Info.plist */,
             );
@@ -133,6 +139,8 @@
                 111111111111111111111113 /* ReincarneLogicGameApp.swift in Sources */,
                 111111111111111111111111 /* ContentView.swift in Sources */,
                 111111111111111111111112 /* GameEngine.swift in Sources */,
+                111111111111111111111115 /* SerpentineSenseEngine.swift in Sources */,
+                111111111111111111111116 /* SerpentineSenseView.swift in Sources */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };
@@ -236,3 +244,4 @@
     };
     rootObject = 777777777777777777777777 /* Project object */;
 }
+
