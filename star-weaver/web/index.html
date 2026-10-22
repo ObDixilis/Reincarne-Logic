@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030106">
+  <meta name="description" content="Star Weaver — an independent-axis skill graph and experimental lineage workbench.">
+  <title>Star Weaver · Reincarne</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to workbench</a>
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="Star Weaver home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 45 15v18L24 45 3 33V15Z"/><path d="m3 15 21 12 21-12M24 27v18M24 3v12L3 33m21-18 21 18M3 15l21 30 21-30"/><circle cx="24" cy="27" r="4"/></svg>
+        <span><span class="brand-eyebrow">REINCARNE / MATRIX WORKBENCH</span><span class="brand-title">Star Weaver<span class="brand-dot">.</span></span></span>
+      </a>
+      <div class="masthead-meta"><span class="local-badge"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">Connecting locally</span></span><span class="version-label" id="version-label">Skill study 001</span></div>
+    </header>
+
+    <div class="intro-row"><p>Compose a capability.<br class="mobile-break"> Trace what carries forward.</p><span class="boundary-note">Two independent axes. Explicit connections.</span></div>
+
+    <nav class="tabs" role="tablist" aria-label="Workbench views">
+      <button id="tab-skills" class="tab active" role="tab" aria-selected="true" aria-controls="panel-skills" tabindex="0"><span class="tab-number">01</span> Skill graph</button>
+      <button id="tab-lineage" class="tab" role="tab" aria-selected="false" aria-controls="panel-lineage" tabindex="-1"><span class="tab-number">02</span> Lineage lab</button>
+      <button id="tab-sources" class="tab" role="tab" aria-selected="false" aria-controls="panel-sources" tabindex="-1"><span class="tab-number">03</span> Sources &amp; decisions</button>
+    </nav>
+
+    <div class="status-strip"><p id="status-message" role="status" aria-live="polite">Loading the saved incarnation and skill contracts…</p><button id="refresh-session" class="text-button" type="button">Refresh</button></div>
+
+    <main id="workspace" tabindex="-1">
+      <section id="panel-skills" class="tab-panel" role="tabpanel" aria-labelledby="tab-skills">
+        <div class="resource-bar" aria-label="Current incarnation">
+          <div class="incarnation-label"><span class="eyebrow">INCARNATION</span><strong id="incarnation-name">Practice scenario</strong><small id="revision-label">Waiting for session</small></div>
+          <div class="resource-stat growth"><span>Growth</span><strong id="growth-points">—</strong><small>learning points</small></div>
+          <div class="resource-stat focus-stat"><span>Focus</span><strong id="focus-value">—</strong><div class="resource-track"><span id="focus-meter"></span></div></div>
+          <div class="resource-stat charge-stat"><span>Charge</span><strong id="charge-value">—</strong><div class="resource-track"><span id="charge-meter"></span></div></div>
+          <div class="clock-stat"><span class="eyebrow">MODEL TICK</span><strong id="tick-value">00</strong><small>Discrete steps</small></div>
+        </div>
+
+        <div class="skill-layout">
+          <div class="map-column">
+            <section class="panel graph-panel" aria-labelledby="graph-title">
+              <div class="panel-heading"><div><span class="eyebrow">LEARN / CONNECT / PERFORM</span><h1 id="graph-title">A constellation of skills</h1></div><span class="tiny-badge">5 NODES</span></div>
+              <p class="panel-intro">Select a skill to inspect its contract. Lines are prerequisites; the beacon binds both expressions.</p>
+              <div class="graph-scroller" tabindex="0" aria-label="Skill graph. Five selectable skill nodes.">
+                <div class="skill-graph" id="skill-graph">
+                  <svg class="graph-lines" viewBox="0 0 820 370" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="magic-edge"><stop stop-color="#9d397f"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient><linearGradient id="tech-edge"><stop stop-color="#23727b"/><stop offset="1" stop-color="#00e5ff"/></linearGradient></defs><path class="edge magic" data-edge="M0-A1" d="M213 110 H302"/><path class="edge technology" data-edge="T0-T1" d="M213 284 H302"/><path class="edge hybrid-magic" data-edge="A1-H1" d="M511 110 H554 Q575 110 575 143 V172 H609"/><path class="edge hybrid-technology" data-edge="T1-H1" d="M511 284 H554 Q575 284 575 251 V223 H609"/><circle cx="575" cy="198" r="3" class="junction"/></svg>
+                  <span class="lane-label lane-magic">MAGIC / LEARNED PRACTICE</span><span class="lane-label lane-tech">TECHNOLOGY / LEARNED PRACTICE</span><span class="lane-label lane-weave">COMPOSITION</span>
+                  <button type="button" id="node-M0" class="skill-node magic selected" aria-pressed="true" data-node="M0"><span class="node-top"><span class="node-id">M0</span><span class="node-rank">0 / 1</span></span><span class="node-symbol" aria-hidden="true">✧</span><strong>Learned Light</strong><span class="node-subtitle">Ordinary magic</span><span class="node-bottom"><span class="node-availability">Loading</span><span class="node-price">1 GP</span></span></button>
+                  <button type="button" id="node-T0" class="skill-node technology" aria-pressed="false" data-node="T0"><span class="node-top"><span class="node-id">T0</span><span class="node-rank">0 / 1</span></span><span class="node-symbol" aria-hidden="true">⌘</span><strong>Lamp Handling</strong><span class="node-subtitle">Ordinary technology</span><span class="node-bottom"><span class="node-availability">Loading</span><span class="node-price">1 GP</span></span></button>
+                  <button type="button" id="node-A1" class="skill-node magic expression" aria-pressed="false" data-node="A1"><span class="node-top"><span class="node-id">A1</span><span class="node-rank">0 / 1</span></span><span class="node-symbol" aria-hidden="true">⟡</span><strong>Guided Light</strong><span class="node-subtitle">Affinity expression</span><span class="node-bottom"><span class="node-availability">Loading</span><span class="node-price">1 GP</span></span></button>
+                  <button type="button" id="node-T1" class="skill-node technology expression" aria-pressed="false" data-node="T1"><span class="node-top"><span class="node-id">T1</span><span class="node-rank">0 / 1</span></span><span class="node-symbol" aria-hidden="true">⌁</span><strong>Signal Control</strong><span class="node-subtitle">Techfinity expression</span><span class="node-bottom"><span class="node-availability">Loading</span><span class="node-price">1 GP</span></span></button>
+                  <button type="button" id="node-H1" class="skill-node hybrid" aria-pressed="false" data-node="H1"><span class="node-top"><span class="node-id">H1</span><span class="node-rank">0 / 1</span></span><span class="node-symbol" aria-hidden="true">⧖</span><strong>Woven Beacon</strong><span class="node-subtitle">Two explicit inputs</span><span class="node-bottom"><span class="node-availability">Loading</span><span class="node-price">2 GP</span></span></button>
+                </div>
+              </div>
+              <div class="graph-legend"><span><i class="legend-dot magic-dot"></i>Magical method</span><span><i class="legend-dot tech-dot"></i>Technological method</span><span><i class="legend-line"></i>Learned prerequisite</span></div>
+            </section>
+
+            <section class="panel output-panel" aria-labelledby="output-title">
+              <div class="panel-heading"><div><span class="eyebrow">LIVE CAPABILITY OUTPUT</span><h2 id="output-title">The observation chamber</h2></div><span class="tiny-badge" id="chamber-state">IDLE</span></div>
+              <div class="chamber" id="effect-chamber" data-effect="idle" data-phase="idle">
+                <div class="chamber-grid" aria-hidden="true"></div>
+                <svg class="effect-art" viewBox="0 0 700 200" role="img" aria-labelledby="effect-svg-title effect-svg-description"><title id="effect-svg-title">Waiting for an activated capability</title><desc id="effect-svg-description">The chamber will display outputs confirmed by the local skill engine.</desc><defs><radialGradient id="spell-glow"><stop stop-color="#ffc5f4" stop-opacity=".8"/><stop offset=".2" stop-color="#ff2bd6" stop-opacity=".5"/><stop offset="1" stop-color="#ff2bd6" stop-opacity="0"/></radialGradient><radialGradient id="lamp-glow"><stop stop-color="#c6fcff" stop-opacity=".9"/><stop offset=".25" stop-color="#00e5ff" stop-opacity=".4"/><stop offset="1" stop-color="#00e5ff" stop-opacity="0"/></radialGradient><radialGradient id="beacon-glow"><stop stop-color="#fff4ca" stop-opacity=".8"/><stop offset=".3" stop-color="#ffb000" stop-opacity=".4"/><stop offset="1" stop-color="#ffb000" stop-opacity="0"/></radialGradient></defs>
+                  <g class="effect-idle"><circle cx="350" cy="100" r="28"/><path d="M350 60v80M310 100h80"/><circle cx="350" cy="100" r="3"/></g>
+                  <g class="effect-magic"><ellipse class="glow" cx="350" cy="96" rx="95" ry="88" fill="url(#spell-glow)"/><path class="spell-orbit" d="M294 105c0-45 112-45 112 0s-112 45-112 0Z"/><path class="spell-orbit tilted" d="M320 45c45 0 65 107 20 107S275 45 320 45Z"/><path class="spell-core" d="m350 63 7 24 21 9-21 8-7 25-7-25-21-8 21-9Z"/><path class="guided-path" d="M125 140 Q265 20 350 96 T575 55"/><circle class="guided-target" cx="575" cy="55" r="9"/></g>
+                  <g class="effect-tech"><ellipse class="glow" cx="350" cy="96" rx="100" ry="84" fill="url(#lamp-glow)"/><path class="lamp-body" d="M334 124h32v18h-32Zm0-3V87a16 16 0 0 1 32 0v34M326 123h48"/><path class="lamp-rays" d="M350 48V33m-34 30-11-11m79 11 11-11M301 88h-16m114 0h16"/><path class="signal-line" d="M130 99h54V72h25v54h25V99h38m156 0h36V72h25v54h25V99h56"/><circle class="signal-target" cx="584" cy="99" r="9"/></g>
+                  <g class="effect-beacon"><ellipse class="glow" cx="350" cy="100" rx="130" ry="98" fill="url(#beacon-glow)"/><circle class="beacon-ring outer" cx="350" cy="100" r="72"/><circle class="beacon-ring inner" cx="350" cy="100" r="49"/><path class="beacon-orbit magic" d="M243 100c0-57 214-57 214 0s-214 57-214 0Z"/><path class="beacon-orbit tech" d="M350 17c49 0 49 166 0 166s-49-166 0-166Z"/><path class="beacon-core" d="m350 70 9 20 21 10-21 9-9 21-9-21-21-9 21-10Z"/><path class="beacon-code" d="M498 77h10m9 0h24m9 0h10m-62 23h24m9 0h10m9 0h24m-76 23h10m9 0h10m9 0h24"/></g>
+                  <g class="effect-aborted"><path d="m337 87 26 26m0-26-26 26"/><circle cx="350" cy="100" r="33" stroke-dasharray="4 7"/></g>
+                </svg>
+                <span class="chamber-coordinate" aria-hidden="true">SW / LOCAL OUTPUT</span><span class="chamber-coordinate chamber-coordinate-right" id="effect-tick">T —</span>
+              </div>
+              <div class="effect-caption"><div><strong id="effect-name">No capability emitted</strong><p id="effect-description">Learn a skill, activate it, then advance the model to observe its output.</p></div><span id="output-count">0 outputs</span></div>
+              <div class="time-controls"><div class="tick-input"><label for="tick-amount">Advance by</label><select id="tick-amount" disabled><option value="1">1 tick</option><option value="2">2 ticks</option><option value="4">4 ticks</option></select></div><button type="button" id="tick-forward" class="button button-secondary" disabled>Advance time <span aria-hidden="true">→</span></button><p id="active-action-label">The model waits for your next step.</p></div>
+            </section>
+
+            <details class="panel event-panel"><summary><span>Execution trace</span><span class="summary-meta" id="event-count">0 events</span></summary><ol id="event-log" class="event-log"><li>No actions yet.</li></ol></details>
+          </div>
+
+          <aside class="detail-column" aria-label="Skill details and scenario controls">
+            <section class="panel node-detail" aria-labelledby="detail-title">
+              <div class="detail-heading"><span class="eyebrow" id="detail-kind">PRACTICE / M0</span><span class="availability-badge" id="detail-availability">LOADING</span></div><h2 id="detail-title">Learned Light</h2><p id="detail-description" class="detail-description">A steady light produced through a learned spell procedure.</p>
+              <div class="detail-tags" id="detail-tags"></div><div id="detail-contract" class="detail-contract"></div><div id="recipe-inputs" class="recipe-inputs" hidden></div>
+              <div class="skill-actions"><button type="button" id="learn-node" class="button button-primary" disabled>Learn skill · 1 GP</button><button type="button" id="activate-node" class="button button-secondary" disabled>Activate capability</button></div><p id="learn-reason" class="action-reason">Waiting for the saved session.</p>
+              <details class="refund-details"><summary>Refund learned ranks</summary><label class="checkbox-label"><input type="checkbox" id="cascade-refund">Include learned dependents</label><p>Refunds recorded growth points. Activation resources and recovery timers stay spent.</p><button type="button" id="respec-node" class="button button-danger" disabled>Refund selected skill</button></details>
+            </section>
+
+            <section class="panel sandbox-panel" aria-labelledby="sandbox-title"><div class="panel-heading"><div><span class="eyebrow">SCENARIO CONTROLS</span><h2 id="sandbox-title">Access &amp; equipment</h2></div><span class="tiny-badge">SANDBOX</span></div><p class="help-copy">These facts are explicit test inputs. Access can interrupt an active expression; learned ranks persist.</p><label for="axis-affinity">Affinity access</label><select id="axis-affinity" disabled><option value="available">Available</option><option value="unavailable">Unavailable</option><option value="unknown">Unknown</option></select><label for="axis-techfinity">Techfinity access</label><select id="axis-techfinity" disabled><option value="available">Available</option><option value="unavailable">Unavailable</option><option value="unknown">Unknown</option></select><label class="checkbox-label lamp-toggle"><input type="checkbox" id="lamp-equipped" disabled><span>Lamp equipped<small>Required by technological actions</small></span></label><button type="button" id="restore-resources" class="button button-subtle" disabled>Restore focus &amp; charge</button></section>
+            <section class="panel session-panel" aria-labelledby="session-title"><h2 id="session-title">Keep your place</h2><p class="help-copy">The local server saves each accepted change. Export a portable copy to resume or inspect later.</p><div class="save-buttons"><button id="export-save" type="button" class="button button-secondary" disabled>Export save <span aria-hidden="true">↗</span></button><label class="button button-secondary file-button" for="import-save">Import save <span aria-hidden="true">↙</span><input id="import-save" type="file" accept="application/json,.json" disabled></label></div><button id="reset-session" type="button" class="text-button danger-text" disabled>Reset practice scenario</button></section>
+          </aside>
+        </div>
+      </section>
+
+      <section id="panel-lineage" class="tab-panel" role="tabpanel" aria-labelledby="tab-lineage" hidden>
+        <div class="lineage-intro"><div><span class="eyebrow">EXPERIMENTAL SUCCESSION / SYNTHETIC PROFILES</span><h1>What carries forward?</h1><p>Explore biological, resonant, cultural, and fabricated routes. Each route preserves its source; a seed makes the same experiment repeatable.</p></div><div class="principle-card"><span aria-hidden="true">⟡</span><p><strong>Potential is a possibility.</strong> It does not teach a skill, install a device, or make an axis available.</p></div></div>
+        <div class="lineage-layout"><section class="panel lineage-controls" aria-labelledby="lineage-controls-title"><span class="eyebrow">01 / CHOOSE CONTRIBUTORS</span><h2 id="lineage-controls-title">Two sources. One trace.</h2><label for="parent-a">Contributor A</label><select id="parent-a" disabled><option>Loading profiles…</option></select><p id="parent-a-description" class="profile-description"></p><div id="parent-a-traits" class="profile-traits"></div><div class="contributor-divider" aria-hidden="true"><span>×</span></div><label for="parent-b">Contributor B</label><select id="parent-b" disabled><option>Loading profiles…</option></select><p id="parent-b-description" class="profile-description"></p><div id="parent-b-traits" class="profile-traits"></div><label for="lineage-seed">Experiment seed</label><input id="lineage-seed" type="text" value="first-weave" maxlength="80" autocomplete="off" spellcheck="false" disabled><p class="help-copy">Same contributors and seed → same result. No real people or canonical bloodlines are represented.</p><button id="generate-lineage" class="button button-primary" type="button" disabled>Trace a new incarnation <span aria-hidden="true">→</span></button><div class="route-key"><strong>Four provenance routes</strong><span>Biological inheritance</span><span>Resonant transmission</span><span>Cultural / mentorship</span><span>Fabricated / blueprint</span><p>Mentorship and blueprint succession are transmission routes, not biological crossbreeding.</p></div></section>
+          <div id="lineage-result" class="lineage-result" aria-live="polite"><section class="panel lineage-empty"><div class="empty-orbit" aria-hidden="true"><span>◇</span><span>✧</span><span>◇</span></div><span class="eyebrow">02 / INSPECT THE PATHWAY</span><h2>A new thread begins with its sources.</h2><p>Choose two contributors and trace their routes. The result will list selected traits, axis potential, and the exact provenance behind every branch.</p></section></div>
+        </div>
+      </section>
+
+      <section id="panel-sources" class="tab-panel" role="tabpanel" aria-labelledby="tab-sources" hidden><div class="sources-intro"><span class="eyebrow">DECISIONS / PROVENANCE / LIMITS</span><h1>A clear boundary around the model.</h1><p>This workbench executes the approved skill proposal and an explicitly experimental hereditary policy. A successful action is runtime evidence; canon authority belongs to the recorded decisions.</p></div><div id="decisions-content" class="decisions-grid"><section class="panel"><h2>Loading source records…</h2></section></div><section class="panel invariants-panel"><h2>Rules that remain visible</h2><div class="invariant-grid"><article><span>01</span><h3>Independent systems</h3><p>Affinity and Techfinity have separate access facts. Neither progression path grants the other.</p></article><article><span>02</span><h3>Explicit composition</h3><p>A recipe names its inputs and pays their total cost once. Losing a live input aborts the output.</p></article><article><span>03</span><h3>Context Doubt</h3><p>Finity remains unresolved. It supplies no root, rank, gate, resource, or hereditary effect.</p></article><article><span>04</span><h3>Traceable inheritance</h3><p>Experimental succession records potential and its sources. Learning and available access remain separate events.</p></article></div></section><details class="panel raw-panel"><summary>Inspect loaded contracts</summary><label for="raw-contract-select">Record</label><select id="raw-contract-select"><option value="graph">Skill graph</option><option value="lineage_rules">Lineage rules</option><option value="lineage_catalog">Synthetic contributors</option><option value="decisions">Decision records</option></select><pre id="raw-contract" tabindex="0">Waiting for source data.</pre></details></section>
+    </main>
+    <footer class="footer"><span>REINCARNE / STAR WEAVER</span><span>Local execution · Explicit provenance · Reversible study</span><span id="footer-version">SW-SKILL-001</span></footer>
+  </div>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description"><form method="dialog"><span class="eyebrow">CONFIRM SCENARIO CHANGE</span><h2 id="confirm-title">Start a new incarnation?</h2><p id="confirm-description"></p><div class="dialog-actions"><button type="submit" value="cancel" class="button button-secondary">Keep current session</button><button type="submit" value="confirm" class="button button-primary" id="confirm-action">Continue</button></div></form></dialog>
+  <noscript><p class="noscript">Star Weaver requires JavaScript to connect the skill graph to the local engine.</p></noscript>
+</body>
+</html>

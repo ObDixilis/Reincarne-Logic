@@ -1,0 +1,311 @@
+{
+  "version": "0.2.0",
+  "executed_at_utc": "2026-10-22T04:53:45.968875+00:00",
+  "scope": "Actual skill engine, lineage engine, persistence and HTTP boundary checks using isolated synthetic state",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "test_count": 75,
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "test_baseline.Acceptance.test_01_ordinary_magic_and_technology_need_neither_axis",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_02_independent_axis_progression_both_directions",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_03_hybrid_requires_both_inputs_no_automatic_unlock",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_04_learning_budget_and_retries_are_atomic",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_05_success_charges_once_emits_one_output_then_recovers",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_06_insufficient_one_resource_spends_neither",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_07_input_loss_aborts_no_output_or_resource_refund",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_08_hardware_loss_blocks_recipe_but_leaves_magic_usable",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_09_unknown_access_is_not_known_absence_or_permission",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_10_unresolved_mapping_remains_null_and_nonexecutable",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_11_ordinary_hybrid_has_no_system_requirements",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_12_single_axis_hybrids_require_only_the_explicit_axis",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_13_provisional_family_labels_change_no_runtime_behavior",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_14_rejects_finity_as_system_or_progression_root",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_15_rejects_cycles_and_missing_prerequisites",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_16_rejects_mismatched_capability_port",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_17_rejects_hidden_axis_inheritance_and_free_conversion",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_18_shared_input_recovery_cannot_be_bypassed",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_19_respec_requires_cascade_and_refunds_exact_spend",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_20_save_resume_mid_action_and_replay_charge_once",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_21_incompatible_save_is_rejected_without_mutation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_22_higher_rank_replaces_action_parameters_and_pins_recipe_inputs",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_23_proposal_permission_is_explicit_and_never_promotes",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_24_respec_cannot_reset_recovery_or_refund_activation_resources",
+      "status": "PASS"
+    },
+    {
+      "check": "test_baseline.Acceptance.test_25_unearned_rank_requirements_do_not_trigger_respec",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_absent_traits_cannot_spontaneously_appear",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_altered_registered_profile_cannot_bypass_snapshot_validation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_bad_encoding_and_json_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_both_parent_policy_is_distinct_and_trace_is_inspectable",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_catalog_contains_all_four_provenance_channels_and_eight_synthetic_profiles",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_catalog_references_duplicates_and_type_errors_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_catalog_rejects_too_many_profiles_before_generating",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_checked_in_pathway_examples_reproduce_and_replay",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_cycle_or_unknown_parent_snapshot_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_duplicate_json_fields_and_oversized_files_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_every_inherited_trait_names_real_parent_trait_and_founder",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_fixed_seed_is_repeatable_across_copies_and_disk_reads",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_forward_references_are_rejected_and_ordered_replay_succeeds",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_generation_and_extension_never_mutate_inputs",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_invalid_policy_fractions_and_boolean_numbers_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_multigeneration_preserves_immediate_and_founder_provenance",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_nontext_empty_control_and_oversized_seeds_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_one_axis_hybrid_retains_ordinary_technology_boundary",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_public_output_roundtrips_as_plain_json",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_reciprocal_cross_preserves_trait_outcome_but_records_parent_order",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_registration_is_idempotent_and_returns_a_copy",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_registration_rejects_modified_potential_ranks_access_or_provenance",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_rejected_registration_preserves_original_catalog",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_seed_changes_a_real_transmission_outcome",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_teaching_cannot_be_promoted_to_axis_potential",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_thirty_generation_registry_bound_and_snapshot_size_stay_bounded",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_two_axis_candidate_suggests_beacon_without_granting_it",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_two_generated_parents_merge_founder_origins_without_duplicates",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_unicode_seed_is_supported_and_repeatable",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_unknown_fields_and_axes_cannot_add_a_gameplay_hierarchy",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_unknown_parent_and_self_succession_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "test_heredity.HeredityTests.test_zero_axis_teaching_and_blueprint_cross_can_offer_ordinary_interaction",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.HttpTests.test_bootstrap_and_real_action_stale_revision_flow",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.HttpTests.test_invalid_body_returns_actionable_error_and_keeps_state",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.HttpTests.test_origin_host_and_path_boundaries",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_damaged_save_is_preserved_and_last_good_backup_recovers",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_disk_failure_does_not_install_candidate_state",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_duplicate_request_has_no_second_mutation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_full_history_export_remains_importable_after_reset",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_invalid_save_rejected_before_replacement",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_learning_persists_across_service_restart",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_lineage_application_starts_untrained_unequipped_without_active_access",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_lineage_preview_does_not_mutate_incarnation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_multigeneration_parent_registry_survives_export_and_restart",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_recovered_save_remains_the_backup_after_next_write",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_reset_clears_registered_parents_and_returns_base_catalog",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_reset_recovers_from_full_request_history",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_stale_action_and_invalid_action_preserve_state",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_tampered_lineage_is_not_trusted",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.StoreTests.test_valid_save_roundtrip_resumes_active_action_once",
+      "status": "PASS"
+    }
+  ]
+}

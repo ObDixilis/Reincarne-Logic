@@ -1,0 +1,19 @@
+flowchart TD
+    BIO["Biological route · experimental potential marker"] --> GATE["Per-trait deterministic policy gate"]
+    RES["Resonant route · experimental potential marker"] --> GATE
+    CULT["Cultural / mentorship route · teaching opportunity"] --> GATE
+    FAB["Fabricated / blueprint route · design provenance"] --> GATE
+    GATE --> TRACE["Child records · immediate parents + original founders"]
+    TRACE --> ORD["Zero axes · ordinary practice candidates"]
+    TRACE --> AFF["Affinity potential only · independent expression candidate"]
+    TRACE --> TEC["Techfinity potential only · independent expression candidate"]
+    TRACE --> DUAL["Both potentials · independent expression pairing candidate"]
+    ORD --> LEARN["Learning remains a separate action · growth + prerequisites"]
+    AFF --> ACCESS["Axis access supplied independently · source unresolved"]
+    TEC --> ACCESS
+    DUAL --> ACCESS
+    ACCESS --> LEARN
+    LEARN --> EQUIP["Activation checks · equipment + resources + recovery"]
+    EQUIP --> RECIPE["Execute explicitly learned component or composition"]
+    TRACE --> REGISTER["Verify by recomputation; register generated parent"]
+    REGISTER --> GATE

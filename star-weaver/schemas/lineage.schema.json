@@ -1,0 +1,773 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:star-weaver:lineage:1",
+  "title": "Star Weaver experimental lineage output and catalog",
+  "description": "Structural schema. Runtime also checks references, exact recomputation, topological ancestry, policy fractions, and trait provenance. No inheritance of executable skills, active access, or equipment.",
+  "implementation_status": "EXPERIMENTAL",
+  "$ref": "#/$defs/lineage",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,79}$"
+    },
+    "lineage_id": {
+      "type": "string",
+      "pattern": "^lineage-[a-f0-9]{20}$"
+    },
+    "fraction": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "single_parent": {
+          "$ref": "#/$defs/fraction"
+        },
+        "both_parents": {
+          "$ref": "#/$defs/fraction"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        }
+      },
+      "required": [
+        "id",
+        "single_parent",
+        "both_parents",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "trait": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "channel": {
+          "enum": [
+            "biological",
+            "resonant",
+            "cultural_mentorship",
+            "fabricated_blueprint"
+          ]
+        },
+        "axis": {
+          "enum": [
+            "Affinity",
+            "Techfinity",
+            null
+          ]
+        },
+        "meaning": {
+          "enum": [
+            "potential",
+            "teaching_pathway",
+            "blueprint_pathway"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "channel",
+        "axis",
+        "meaning",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "founder_origin": {
+      "type": "object",
+      "properties": {
+        "profile_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "trait_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "channel": {
+          "enum": [
+            "biological",
+            "resonant",
+            "cultural_mentorship",
+            "fabricated_blueprint"
+          ]
+        }
+      },
+      "required": [
+        "profile_id",
+        "trait_id",
+        "channel"
+      ],
+      "additionalProperties": false
+    },
+    "parent_reference": {
+      "type": "object",
+      "properties": {
+        "profile_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "trait_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "source_lineage_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/lineage_id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "profile_id",
+        "trait_id",
+        "generation",
+        "source_lineage_id"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "parent_references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parent_reference"
+          },
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "founder_origins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/founder_origin"
+          },
+          "minItems": 1,
+          "maxItems": 128,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "policy_id",
+        "parent_references",
+        "founder_origins"
+      ],
+      "additionalProperties": false
+    },
+    "inherited_trait": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "channel": {
+          "enum": [
+            "biological",
+            "resonant",
+            "cultural_mentorship",
+            "fabricated_blueprint"
+          ]
+        },
+        "axis": {
+          "enum": [
+            "Affinity",
+            "Techfinity",
+            null
+          ]
+        },
+        "meaning": {
+          "enum": [
+            "potential",
+            "teaching_pathway",
+            "blueprint_pathway"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "channel",
+        "axis",
+        "meaning",
+        "description",
+        "provenance"
+      ],
+      "additionalProperties": false
+    },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "requires_traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 0,
+          "maxItems": 24,
+          "uniqueItems": true
+        },
+        "requires_potential": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Affinity",
+              "Techfinity"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "skill_candidates": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "recipe_pattern": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "requires_traits",
+        "requires_potential",
+        "skill_candidates",
+        "recipe_pattern",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "branch": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "requires_traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 0,
+          "maxItems": 24,
+          "uniqueItems": true
+        },
+        "requires_potential": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "Affinity",
+              "Techfinity"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "skill_candidates": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "recipe_pattern": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "kind": {
+          "enum": [
+            "progression_route",
+            "cross_channel_interaction"
+          ]
+        },
+        "status": {
+          "enum": [
+            "CANDIDATE",
+            "BLOCKED"
+          ]
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+          },
+          "minItems": 0,
+          "maxItems": 26,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "requires_traits",
+        "requires_potential",
+        "skill_candidates",
+        "recipe_pattern",
+        "description",
+        "kind",
+        "status",
+        "missing"
+      ],
+      "additionalProperties": false
+    },
+    "trace": {
+      "type": "object",
+      "properties": {
+        "trait_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "channel": {
+          "enum": [
+            "biological",
+            "resonant",
+            "cultural_mentorship",
+            "fabricated_blueprint"
+          ]
+        },
+        "parent_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 0,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "policy_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "numerator": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "draw": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inherited": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        }
+      },
+      "required": [
+        "trait_id",
+        "channel",
+        "parent_ids",
+        "policy_id",
+        "numerator",
+        "denominator",
+        "draw",
+        "inherited",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "status": {
+          "const": "EXPERIMENTAL"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "channels": {
+          "type": "object",
+          "properties": {
+            "biological": {
+              "$ref": "#/$defs/policy"
+            },
+            "resonant": {
+              "$ref": "#/$defs/policy"
+            },
+            "cultural_mentorship": {
+              "$ref": "#/$defs/policy"
+            },
+            "fabricated_blueprint": {
+              "$ref": "#/$defs/policy"
+            }
+          },
+          "required": [
+            "biological",
+            "resonant",
+            "cultural_mentorship",
+            "fabricated_blueprint"
+          ],
+          "additionalProperties": false
+        },
+        "interactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/interaction"
+          },
+          "minItems": 0,
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "description",
+        "channels",
+        "interactions"
+      ],
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 0,
+          "maxItems": 24,
+          "uniqueItems": true
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "source_lineage": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/lineage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "description",
+        "traits",
+        "generation",
+        "source_lineage"
+      ],
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/lineage_id"
+        },
+        "parent_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "seed": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "ruleset_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[^\\x00-\\x1f\\x7f-\\x9f]+$"
+        },
+        "ruleset_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "const": "EXPERIMENTAL"
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "ancestry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 2,
+          "maxItems": 128,
+          "uniqueItems": true
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/inherited_trait"
+          },
+          "minItems": 0,
+          "maxItems": 24
+        },
+        "axis_potential": {
+          "type": "object",
+          "properties": {
+            "Affinity": {
+              "type": "boolean"
+            },
+            "Techfinity": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Affinity",
+            "Techfinity"
+          ],
+          "additionalProperties": false
+        },
+        "learned_skills": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "active_axis_access": {
+          "type": "object",
+          "properties": {
+            "Affinity": {
+              "const": "unavailable"
+            },
+            "Techfinity": {
+              "const": "unavailable"
+            }
+          },
+          "required": [
+            "Affinity",
+            "Techfinity"
+          ],
+          "additionalProperties": false
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/branch"
+          },
+          "minItems": 1,
+          "maxItems": 17
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trace"
+          },
+          "minItems": 1,
+          "maxItems": 24
+        }
+      },
+      "required": [
+        "id",
+        "parent_ids",
+        "seed",
+        "ruleset_id",
+        "ruleset_digest",
+        "status",
+        "generation",
+        "ancestry",
+        "traits",
+        "axis_potential",
+        "learned_skills",
+        "active_axis_access",
+        "branches",
+        "trace"
+      ],
+      "additionalProperties": false
+    },
+    "catalog": {
+      "type": "object",
+      "properties": {
+        "profiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/profile"
+          },
+          "minItems": 1,
+          "maxItems": 128
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trait"
+          },
+          "minItems": 1,
+          "maxItems": 24
+        },
+        "rules": {
+          "$ref": "#/$defs/rules"
+        }
+      },
+      "required": [
+        "profiles",
+        "traits",
+        "rules"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

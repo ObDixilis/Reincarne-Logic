@@ -1,0 +1,649 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Star Weaver skill graph proposal 0.1.0",
+  "description": "Gameplay authoring contract. Node relationships are operational dependencies, never canon ancestry.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "proposal_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "adoption": {
+      "const": "PROPOSED"
+    },
+    "canonical_systems": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Affinity": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "url": {
+              "type": "string",
+              "pattern": "^https://app[.]notion[.]com/p/[a-f0-9]{32}$"
+            },
+            "status": {
+              "const": "CANON"
+            }
+          },
+          "required": [
+            "url",
+            "status"
+          ]
+        },
+        "Techfinity": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "url": {
+              "type": "string",
+              "pattern": "^https://app[.]notion[.]com/p/[a-f0-9]{32}$"
+            },
+            "status": {
+              "const": "CANON"
+            }
+          },
+          "required": [
+            "url",
+            "status"
+          ]
+        }
+      },
+      "required": [
+        "Affinity",
+        "Techfinity"
+      ]
+    },
+    "context_doubt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Finity": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "const": "UNRESOLVED"
+            },
+            "runtime_role": {
+              "const": "none"
+            },
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://app[.]notion[.]com/p/[a-f0-9]{32}$"
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "status",
+            "runtime_role",
+            "source_url",
+            "questions"
+          ]
+        }
+      },
+      "required": [
+        "Finity"
+      ]
+    },
+    "family_labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "PROVISIONAL"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "status",
+          "members"
+        ]
+      },
+      "minItems": 0
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "minItems": 1
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "const": "proposal_playtest"
+        },
+        "allowed_proposal": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "growth_points": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "focus": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "charge": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "focus",
+            "charge"
+          ]
+        },
+        "axis_access": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Affinity": {
+              "enum": [
+                "available",
+                "unavailable",
+                "unknown"
+              ]
+            },
+            "Techfinity": {
+              "enum": [
+                "available",
+                "unavailable",
+                "unknown"
+              ]
+            }
+          },
+          "required": [
+            "Affinity",
+            "Techfinity"
+          ]
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "mode",
+        "allowed_proposal",
+        "growth_points",
+        "resources",
+        "axis_access",
+        "equipment"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "adoption",
+    "canonical_systems",
+    "context_doubt",
+    "family_labels",
+    "nodes",
+    "scenario"
+  ],
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "practice",
+            "expression",
+            "composition"
+          ]
+        },
+        "adoption": {
+          "const": "PROPOSED"
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "magic",
+              "technology"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "mapping": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "PROPOSED",
+                "UNRESOLVED"
+              ]
+            },
+            "axis_requires": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "Affinity",
+                      "Techfinity"
+                    ]
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "question": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "axis_requires",
+            "question"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "UNRESOLVED"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "axis_requires": {
+                    "type": "null"
+                  },
+                  "question": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "axis_requires": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "Affinity",
+                        "Techfinity"
+                      ]
+                    },
+                    "minItems": 0,
+                    "uniqueItems": true
+                  },
+                  "question": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "ranks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "rank": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "growth_cost": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "requires": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "node": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                    },
+                    "rank": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "node",
+                    "rank"
+                  ]
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              },
+              "activation": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "cost": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "focus": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "charge": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    },
+                    "required": [
+                      "focus",
+                      "charge"
+                    ]
+                  },
+                  "equipment": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                    },
+                    "minItems": 0,
+                    "uniqueItems": true
+                  },
+                  "duration_ticks": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "recovery_ticks": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "output": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                  }
+                },
+                "required": [
+                  "cost",
+                  "equipment",
+                  "duration_ticks",
+                  "recovery_ticks",
+                  "output"
+                ]
+              }
+            },
+            "required": [
+              "rank",
+              "growth_cost",
+              "requires",
+              "activation"
+            ]
+          },
+          "minItems": 1
+        },
+        "recipe": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "const": "coupled"
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "role": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                      },
+                      "node": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                      },
+                      "rank": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "capability": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                      }
+                    },
+                    "required": [
+                      "role",
+                      "node",
+                      "rank",
+                      "capability"
+                    ]
+                  },
+                  "minItems": 2
+                },
+                "on_input_loss": {
+                  "const": "abort_no_refund"
+                },
+                "fallback": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "mode",
+                "inputs",
+                "on_input_loss",
+                "fallback"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "kind",
+        "adoption",
+        "methods",
+        "mapping",
+        "ranks",
+        "recipe"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "composition"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "recipe": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "mode": {
+                    "const": "coupled"
+                  },
+                  "inputs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                        },
+                        "node": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                        },
+                        "rank": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "capability": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "node",
+                        "rank",
+                        "capability"
+                      ]
+                    },
+                    "minItems": 2
+                  },
+                  "on_input_loss": {
+                    "const": "abort_no_refund"
+                  },
+                  "fallback": {
+                    "type": "null"
+                  }
+                },
+                "required": [
+                  "mode",
+                  "inputs",
+                  "on_input_loss",
+                  "fallback"
+                ]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "recipe": {
+                "type": "null"
+              },
+              "methods": {
+                "maxItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "practice"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "mapping": {
+                "properties": {
+                  "status": {
+                    "const": "PROPOSED"
+                  },
+                  "axis_requires": {
+                    "type": "array",
+                    "maxItems": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "expression"
+              },
+              "mapping": {
+                "properties": {
+                  "status": {
+                    "const": "PROPOSED"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "mapping": {
+                "properties": {
+                  "axis_requires": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

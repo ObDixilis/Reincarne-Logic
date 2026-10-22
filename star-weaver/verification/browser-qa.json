@@ -1,0 +1,126 @@
+{
+  "version": "0.2.0",
+  "executed_at_utc": "2026-10-22T04:59:34.088Z",
+  "environment": "Windows; ChatGPT in-app Chromium browser; actual loopback service using isolated synthetic QA state",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Learn T0",
+      "status": "PASS",
+      "observed": "Lamp Handling learned. Knowledge and present availability are tracked separately."
+    },
+    {
+      "check": "Learn A1",
+      "status": "PASS",
+      "observed": "Guided Light learned. Knowledge and present availability are tracked separately."
+    },
+    {
+      "check": "Learn T1",
+      "status": "PASS",
+      "observed": "Signal Control learned. Knowledge and present availability are tracked separately."
+    },
+    {
+      "check": "Learn H1",
+      "status": "PASS",
+      "observed": "Woven Beacon learned. Knowledge and present availability are tracked separately."
+    },
+    {
+      "check": "Beacon charges both pools once, survives reload, completes once",
+      "status": "PASS",
+      "observed": "LIVE CAPABILITY OUTPUT\nThe observation chamber\nOUTPUT RECORDED\nSW / LOCAL OUTPUT\nT 002\nEncoded light beacon\n\nOne beacon: guided magical light carries the technological signal pattern. Emitted at tick 2; displayed as the last recorded output.\n\n1 output\nAdvance by\n1 tick\n2 ticks\n4 ticks\nAdvance time\n→\n\nThe model waits for your next step."
+    },
+    {
+      "check": "Live axis loss aborts without a new output or rank loss",
+      "status": "PASS",
+      "observed": "LIVE CAPABILITY OUTPUT\nThe observation chamber\nABORTED\nSW / LOCAL OUTPUT\nT 004\nWoven Beacon · interrupted\n\nA required input was lost. No output was emitted; committed activation costs remain spent.\n\n1 output\nAdvance by\n1 tick\n2 ticks\n4 ticks\nAdvance time\n→\n\nThe model waits for your next step."
+    },
+    {
+      "check": "Portable save import restores active action without charging again",
+      "status": "PASS",
+      "observed": "LIVE CAPABILITY OUTPUT\nThe observation chamber\nACTIVE\nSW / LOCAL OUTPUT\nT 000\nEncoded light beacon · forming\n\nWoven Beacon is executing. 2 tick(s) remain; no output has completed yet.\n\n0 outputs\nAdvance by\n1 tick\n2 ticks\n4 ticks\nAdvance time\n→\n\nWoven Beacon completes at tick 2."
+    },
+    {
+      "check": "Keep offspring as parent and generate second generation with founder provenance",
+      "status": "PASS",
+      "observed": "02 / GENERATED PREVIEW\nIncarnation thread · generation 2\nEXPERIMENTAL\n\nlineage-2d666f674325211e742e · seed: generation-two\n\nInherited potential, teaching routes, and blueprint routes are records to explore. Starting this incarnation keeps all ranks at zero, both axes unavailable, and no equipment installed.\n\nAFFINITY\nPotential recorded\nActive access remains unavailable\nTECHFINITY\nPotential recorded\nActive access remains unavailable\nStart this incarnation →\nKeep as parent\nExport full lineage ↗\nCONTRIBUTORS → SELECTED TRAITS → CANDIDATE BRANCHES\nPathways & interactions\nCONTRIBUTOR A\nGeneration 1 · 750d7c0d\nCONTRIBUTOR B\nArchive keeper · teaching and blueprint\n3 selected trait records · no automatic grants\nTwo-axis potential route Candidate · no grant\n\nIndependent practice and expression progression\n\nSuggestions only. Growth, training, equipment, and independently supplied axis access are still required.\n\nSkills to investigate: M0 → T0 → A1 → T1 → H1. Each requires normal learning and access checks.\n\nTaught spell and ordinary drawing BLOCKED\n\nM0 + T0: zero-axis composition variant\n\nA candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.\n\nMissing: trait:trait-lamp-blueprint\n\nSkills to investigate: M0 → T0. Each requires normal learning and access checks.\n\nAffinity potential and ordinary drawing BLOCKED\n\nA1 + T0: Affinity-only composition variant\n\nSuggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.\n\nMissing: trait:trait-lamp-blueprint\n\nSkills to investigate: M0 → T0 → A1. Each requires normal learning and access checks.\n\nTaught spell and interface potential Candidate · no grant\n\nM0 + T1: Techfinity-only composition variant\n\nSuggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.\n\nSkills to investigate: M0 → T0 → T1. Each requires normal learning and access checks.\n\nIndependent expression pairing Candidate · no grant\n\nA1 + T1: Woven Beacon\n\nA candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.\n\nSkills to investigate: M0 → T0 → A1 → T1 → H1. Each requires normal learning and access checks.\n\nPROVENANCE IS PRESERVED\nSelected traits & transmission routes\nAffinity compatibility candidate\nBiological\n\nExperimental biological potential marker. It asserts neither a real gene nor a canonical source of Affinity access.\n\nAffinity potential\nPolicy: policy-biological-potential\nGeneration 1 · 750d7c0d → trait-affinity-biological · generation 1 · via lineage-a2be071d5c4f750d7c0d\nFounder provenance: profile id: affinity-potential / trait id: trait-affinity-biological / channel: biological\nInterface compatibility specification\nFabricated / blueprint\n\nA transferable experimental design specifying a possible compatibility route. Fabrication, installation, and access remain separate decisions.\n\nTechfinity potential\nPolicy: policy-fabricated-blueprint\nGeneration 1 · 750d7c0d → trait-interface-blueprint · generation 1 · via lineage-a2be071d5c4f750d7c0d\nFounder provenance: profile id: techfinity-potential / trait id: trait-interface-blueprint / channel: fabricated_blueprint\nSpell-practice mentorship invitation\nCultural / mentorship\n\nA cultural route to seek instruction in an ordinary spell procedure. The learner must still purchase and practice M0.\n\nteaching pathway\nPolicy: policy-cultural-mentorship\nArchive keeper · teaching and blueprint → trait-spell-mentorship · generation 0\nFounder provenance: profile id: archive-keeper / trait id: trait-spell-mentorship / channel: cultural_mentorship\nDeterministic trace · 8 decisions"
+    },
+    {
+      "check": "Apply lineage preserves potential without inheriting ranks, active access, or equipment",
+      "status": "PASS",
+      "observed": "New incarnation started. Potential is recorded; all learned ranks are zero, both axes unavailable, and equipment empty."
+    },
+    {
+      "check": "Stale second-view action refreshes without retry or double learning",
+      "status": "PASS",
+      "observed": "The session changed elsewhere. Its current state is loaded; choose your intended action again. Nothing was automatically retried."
+    },
+    {
+      "check": "UI refund returns recorded growth while preserving other learned nodes",
+      "status": "PASS",
+      "observed": "Lamp Handling refunded. Recorded growth points returned."
+    },
+    {
+      "check": "Invalid save displays rejection and preserves current incarnation",
+      "status": "PASS",
+      "observed": "Invalid input: Save has incompatible session fields"
+    },
+    {
+      "check": "390px responsive layout and keyboard generation without page overflow",
+      "status": "PASS",
+      "observed": {
+        "clientWidth": 375,
+        "documentWidth": 375,
+        "height": 844,
+        "selectedTab": "02 Lineage lab",
+        "width": 390
+      }
+    },
+    {
+      "check": "Confirmed reset restores initial practice state and clears generated parent registry",
+      "status": "PASS",
+      "observed": "Eight base synthetic profiles remain; generated parent is absent. Scenario starts with 6 growth, 3 focus, 3 charge, both axes available and a lamp."
+    },
+    {
+      "check": "Desktop 1440px layout",
+      "status": "PASS",
+      "observed": {
+        "width": 1440,
+        "clientWidth": 1425,
+        "documentWidth": 1425,
+        "screenshot": "star-weaver-desktop.jpg"
+      }
+    },
+    {
+      "check": "Keyboard view tabs and source decision boundaries",
+      "status": "PASS",
+      "observed": "ArrowRight selected Lineage from Skills; Sources shows implementation approval, separate experimental hereditary policy, and Finity Context Doubt."
+    },
+    {
+      "check": "Reduced-motion setting",
+      "status": "PASS",
+      "observed": "With prefers-reduced-motion: reduce, the idle observation chamber had no nonzero animation durations. Full accessibility certification was not performed."
+    }
+  ],
+  "exception_window": {
+    "events": 0,
+    "truncated": true,
+    "note": "No exception events in the retained window; early events were evicted. This is not a complete session-wide console audit."
+  },
+  "known_expected_http_errors": "Invalid-save 400 and stale-revision 409 were intentional rejection checks. An initial missing favicon request was cosmetic.",
+  "limitations": [
+    {
+      "check": "Representative human feel and balance",
+      "status": "HUMAN_CHECK"
+    },
+    {
+      "check": "Full MAGECH kernel conformance",
+      "status": "NOT_RUN",
+      "reason": "Complete frozen kernel text was not recovered in the bounded source review."
+    },
+    {
+      "check": "GitHub Actions / remote CI",
+      "status": "NOT_RUN",
+      "reason": "Verification was executed locally."
+    }
+  ]
+}
