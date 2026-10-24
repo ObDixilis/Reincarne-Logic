@@ -270,7 +270,8 @@ def main(argv=None) -> int:
 
     if args.mode == "v3":
         from starweaver.tri.simulate_tri import full_v3_report
-        report = full_v3_report(runs_symmetry=args.runs, eco_generations=args.generations)
+        sym_runs = 500 if args.runs == 200 else args.runs
+        report = full_v3_report(runs_symmetry=sym_runs, eco_generations=args.generations)
         print("\n=== Star Weaver v0.3 Balance & Ecosystem Report [EXPERIMENTAL] ===")
         print(f"Evaluated builds: {report['skills']['distinct_builds_evaluated']} (Budget: {report['skills']['scenario_budget']} GP / 42 GP)")
         print(f"Top power output: {report['skills']['top_power_score']}")

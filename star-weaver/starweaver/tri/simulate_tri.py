@@ -27,11 +27,34 @@ from starweaver.tri.ecosystem import audit_founder_symmetry, run_ecosystem
 
 
 def sample_legal_builds(tree: dict, potential: dict | None = None, sample_size: int = 200, seed: str = "b-1") -> list[list[str]]:
-    """Sample diverse legal learn sequences that maximize spending of the 15 GP budget."""
+    """Sample diverse legal learn sequences, guaranteeing inclusion of core archetypes within the 15 GP budget."""
     rng = random.Random(seed)
     seen_sets: set[frozenset[str]] = set()
     ordered_builds: list[list[str]] = []
     node_ids = [n["id"] for n in tree["nodes"]]
+
+    canonical_archetypes = [
+        # Triune Weave (H4) capstone weaver:
+        ["M0", "T0", "F0", "A1", "T1", "F1", "H1", "H2", "H3", "H4"],
+        # Affinity offensive burst specialist:
+        ["M0", "A1", "A2", "A3a", "A4", "F0", "F1", "F2"],
+        # Affinity passive economy specialist:
+        ["M0", "A1", "A2", "A3b", "A4", "T0", "T1", "T2"],
+        # Techfinity offensive burst specialist:
+        ["T0", "T1", "T2", "T3a", "T4", "M0", "A1", "A2"],
+        # Techfinity passive economy specialist:
+        ["T0", "T1", "T2", "T3b", "T4", "F0", "F1", "F2"],
+        # Finity offensive convergence specialist:
+        ["F0", "F1", "F2", "F3b", "F4", "M0", "A1", "A2"],
+        # Finity passive ward economy specialist:
+        ["F0", "F1", "F2", "F3a", "F4", "T0", "T1", "T2"],
+    ]
+
+    for arch in canonical_archetypes:
+        key = frozenset(arch)
+        if key not in seen_sets:
+            seen_sets.add(key)
+            ordered_builds.append(arch)
 
     for i in range(sample_size):
         model = TriModel(tree, potential)
