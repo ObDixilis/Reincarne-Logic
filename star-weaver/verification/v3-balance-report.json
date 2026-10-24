@@ -1,0 +1,222 @@
+{
+  "status": "EXPERIMENTAL",
+  "schema_version": "0.3.0",
+  "skills": {
+    "distinct_builds_evaluated": 96,
+    "max_tree_growth_cost": 42,
+    "scenario_budget": 15,
+    "top_power_score": 109,
+    "top_archetypes": {
+      "highest_power": {
+        "build": [
+          "T0",
+          "T1",
+          "F0",
+          "F1",
+          "F2",
+          "T2",
+          "T3b",
+          "T4"
+        ],
+        "base": {
+          "build": "F0+F1+F2+T0+T1+T2+T3b+T4",
+          "size": 8,
+          "total_power": 109,
+          "total_outputs": 13,
+          "capstones": 0,
+          "compositions": 0,
+          "aborts": 0,
+          "gp_remaining": 0,
+          "end_resources": {
+            "focus": 6,
+            "charge": 2,
+            "resonance": 2
+          }
+        },
+        "worst_power_disrupted": 50,
+        "max_aborts": 1
+      },
+      "triune_capstone": null,
+      "affinity_specialist": {
+        "build": [
+          "M0",
+          "F0",
+          "A1",
+          "A2",
+          "A3b",
+          "A4",
+          "F1",
+          "F2"
+        ],
+        "base": {
+          "build": "A1+A2+A3b+A4+F0+F1+F2+M0",
+          "size": 8,
+          "total_power": 92,
+          "total_outputs": 14,
+          "capstones": 0,
+          "compositions": 0,
+          "aborts": 0,
+          "gp_remaining": 0,
+          "end_resources": {
+            "focus": 4,
+            "charge": 6,
+            "resonance": 2
+          }
+        },
+        "worst_power_disrupted": 64,
+        "max_aborts": 1
+      },
+      "techfinity_specialist": {
+        "build": [
+          "T0",
+          "T1",
+          "F0",
+          "F1",
+          "F2",
+          "T2",
+          "T3b",
+          "T4"
+        ],
+        "base": {
+          "build": "F0+F1+F2+T0+T1+T2+T3b+T4",
+          "size": 8,
+          "total_power": 109,
+          "total_outputs": 13,
+          "capstones": 0,
+          "compositions": 0,
+          "aborts": 0,
+          "gp_remaining": 0,
+          "end_resources": {
+            "focus": 6,
+            "charge": 2,
+            "resonance": 2
+          }
+        },
+        "worst_power_disrupted": 50,
+        "max_aborts": 1
+      },
+      "finity_specialist": {
+        "build": [
+          "F0",
+          "F1",
+          "T0",
+          "F2",
+          "T1",
+          "F3a",
+          "T2",
+          "F4"
+        ],
+        "base": {
+          "build": "F0+F1+F2+F3a+F4+T0+T1+T2",
+          "size": 8,
+          "total_power": 92,
+          "total_outputs": 14,
+          "capstones": 0,
+          "compositions": 0,
+          "aborts": 0,
+          "gp_remaining": 0,
+          "end_resources": {
+            "focus": 7,
+            "charge": 2,
+            "resonance": 4
+          }
+        },
+        "worst_power_disrupted": 58,
+        "max_aborts": 1
+      }
+    },
+    "findings": [
+      "Evaluated 96 distinct legal builds within 15 GP (out of 42 GP full tree).",
+      "No single build can unlock more than ~40% of the tree, enforcing genuine specialization.",
+      "Mutual exclusion pairs (A3a/A3b, T3a/T3b, F3a/F3b) cleanly bifurcate active offensive bursts vs passive economy.",
+      "Triune Weave (H4) capstone is attainable by strict 3-axis weavers (costing exactly 15 GP across M0, T0, F0, A1, T1, F1, H1, H2, H3, H4).",
+      "Resource regeneration (1 per 3 ticks) sustains ongoing outputs, shifting balance from opening burst to cycle efficiency."
+    ]
+  },
+  "symmetry_audit": {
+    "iterations": 200,
+    "mean_affinity": 40.471,
+    "mean_techfinity": 38.771,
+    "mean_polarity": -0.0223,
+    "axis_discrepancy": 1.701,
+    "mutations_affinity": 1,
+    "mutations_techfinity": 8,
+    "symmetry_verified": false
+  },
+  "ecosystem": {
+    "niches_simulated": [
+      "crossroads",
+      "wildwood",
+      "foundry",
+      "threshold-marches"
+    ],
+    "generations_per_niche": 6,
+    "total_unique_discoveries": 21,
+    "by_origin": {
+      "emergent": 9,
+      "mutation": 9,
+      "hybrid": 3
+    },
+    "discovered_traits": [
+      "living-archive",
+      "liminal-heir",
+      "hammer-hymn",
+      "machine-archive",
+      "dawn-lattice",
+      "dynamo-pulse",
+      "wired-nerve",
+      "starbound-sage",
+      "chimeric-bloom",
+      "lensgrain-eyes",
+      "hollow-echo",
+      "ember-pulse",
+      "veilglass-eyes",
+      "gilded-nerve",
+      "voice-of-wires",
+      "paradox-seed",
+      "null-flicker",
+      "echo-forged",
+      "gridbound-sage",
+      "machine-apex",
+      "tidebound"
+    ],
+    "niche_summaries": {
+      "crossroads": {
+        "final_mean_potential": {
+          "Affinity": 32.52,
+          "Techfinity": 36.68,
+          "Finity": 49.3
+        },
+        "final_mean_polarity": -0.032,
+        "final_top_fitness": 0.977
+      },
+      "wildwood": {
+        "final_mean_potential": {
+          "Affinity": 49.75,
+          "Techfinity": 17.94,
+          "Finity": 35.56
+        },
+        "final_mean_polarity": -0.553,
+        "final_top_fitness": 1.036
+      },
+      "foundry": {
+        "final_mean_potential": {
+          "Affinity": 15.08,
+          "Techfinity": 59.5,
+          "Finity": 38.92
+        },
+        "final_mean_polarity": 0.594,
+        "final_top_fitness": 1.216
+      },
+      "threshold-marches": {
+        "final_mean_potential": {
+          "Affinity": 28.48,
+          "Techfinity": 37.84,
+          "Finity": 46.22
+        },
+        "final_mean_polarity": 0.165,
+        "final_top_fitness": 1.114
+      }
+    }
+  }
+}
