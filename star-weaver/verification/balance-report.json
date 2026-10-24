@@ -1,0 +1,1717 @@
+{
+  "skills": {
+    "horizon": 20,
+    "legal_builds": 6,
+    "build_summary": [
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 3,
+        "leftover_growth": 0
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 3,
+        "leftover_growth": 0
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 3,
+        "leftover_growth": 0
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 4,
+        "leftover_growth": 0
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 4,
+        "leftover_growth": 0
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "best_outputs": 6,
+        "best_beacons": 2,
+        "worst_disrupted_outputs": 4,
+        "leftover_growth": 0
+      }
+    ],
+    "findings": [
+      "6 legal learn orders collapse to 1 distinct skill sets.",
+      "6 of 6 orders reach Woven Beacon.",
+      "Most total outputs: M0+A1+T0+T1+H1 (6) - starting resources (focus/charge) cap output, not cooldowns.",
+      "Max beacons per scenario: 2 (each costs 1 focus + 1 charge from a pool of 3/3)."
+    ],
+    "runs": [
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "M0": 1,
+          "T0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2
+        },
+        "total_outputs": 3,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+A1+T0+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "M0": 1,
+          "T0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2
+        },
+        "total_outputs": 3,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "M0": 1,
+          "T0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2,
+          "T0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "M0": 2
+        },
+        "total_outputs": 3,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "M0+T0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "T0": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 1,
+          "M0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 1
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+A1+T1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "T0": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 1,
+          "M0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 1
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+M0+T1+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "none",
+        "outputs": {
+          "A1": 3,
+          "T1": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1,
+          "T0": 2
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 3,
+          "M0": 1
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "expressions_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "A1": 2,
+          "T1": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "composed_first",
+        "disruption": "none",
+        "outputs": {
+          "H1": 2,
+          "T0": 1,
+          "M0": 1
+        },
+        "total_outputs": 4,
+        "beacons": 2,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 2,
+          "M0": 2
+        },
+        "total_outputs": 5,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "composed_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "H1": 1,
+          "T0": 1,
+          "M0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 1,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 1
+        },
+        "exhausted": false
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "none",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_techfinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_affinity@3",
+        "outputs": {
+          "M0": 3,
+          "T0": 3
+        },
+        "total_outputs": 6,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 0
+        },
+        "exhausted": true
+      },
+      {
+        "build": "T0+T1+M0+A1+H1",
+        "policy": "cheapest_first",
+        "disruption": "lose_lamp@3",
+        "outputs": {
+          "M0": 2,
+          "T0": 1,
+          "A1": 1
+        },
+        "total_outputs": 4,
+        "beacons": 0,
+        "aborts": 0,
+        "leftover_growth": 0,
+        "leftover_resources": {
+          "focus": 0,
+          "charge": 2
+        },
+        "exhausted": false
+      }
+    ]
+  },
+  "lineage": {
+    "runs": 200,
+    "generations": 6,
+    "population": 4,
+    "seed": "balance-1",
+    "per_generation": [
+      {
+        "generation": 1,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.226,
+          "Affinity+Techfinity": 0.385,
+          "Techfinity": 0.255,
+          "none": 0.134
+        },
+        "mean_traits": 2.91,
+        "channel_share": {
+          "biological": 0.282,
+          "cultural_mentorship": 0.213,
+          "fabricated_blueprint": 0.301,
+          "resonant": 0.205
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            413
+          ],
+          [
+            "trait-affinity-biological",
+            374
+          ],
+          [
+            "trait-spell-mentorship",
+            295
+          ],
+          [
+            "trait-interface-blueprint",
+            287
+          ],
+          [
+            "trait-techfinity-biological",
+            282
+          ],
+          [
+            "trait-affinity-resonant",
+            280
+          ]
+        ]
+      },
+      {
+        "generation": 2,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.179,
+          "Affinity+Techfinity": 0.505,
+          "Techfinity": 0.247,
+          "none": 0.069
+        },
+        "mean_traits": 3.27,
+        "channel_share": {
+          "biological": 0.308,
+          "cultural_mentorship": 0.186,
+          "fabricated_blueprint": 0.336,
+          "resonant": 0.169
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            497
+          ],
+          [
+            "trait-affinity-biological",
+            456
+          ],
+          [
+            "trait-interface-blueprint",
+            384
+          ],
+          [
+            "trait-techfinity-biological",
+            352
+          ],
+          [
+            "trait-spell-mentorship",
+            288
+          ],
+          [
+            "trait-affinity-resonant",
+            258
+          ]
+        ]
+      },
+      {
+        "generation": 3,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.133,
+          "Affinity+Techfinity": 0.571,
+          "Techfinity": 0.241,
+          "none": 0.055
+        },
+        "mean_traits": 3.44,
+        "channel_share": {
+          "biological": 0.312,
+          "cultural_mentorship": 0.17,
+          "fabricated_blueprint": 0.368,
+          "resonant": 0.151
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            551
+          ],
+          [
+            "trait-affinity-biological",
+            476
+          ],
+          [
+            "trait-interface-blueprint",
+            461
+          ],
+          [
+            "trait-techfinity-biological",
+            382
+          ],
+          [
+            "trait-spell-mentorship",
+            268
+          ],
+          [
+            "trait-affinity-resonant",
+            240
+          ]
+        ]
+      },
+      {
+        "generation": 4,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.121,
+          "Affinity+Techfinity": 0.581,
+          "Techfinity": 0.26,
+          "none": 0.037
+        },
+        "mean_traits": 3.55,
+        "channel_share": {
+          "biological": 0.315,
+          "cultural_mentorship": 0.157,
+          "fabricated_blueprint": 0.392,
+          "resonant": 0.137
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            598
+          ],
+          [
+            "trait-interface-blueprint",
+            513
+          ],
+          [
+            "trait-affinity-biological",
+            482
+          ],
+          [
+            "trait-techfinity-biological",
+            411
+          ],
+          [
+            "trait-spell-mentorship",
+            260
+          ],
+          [
+            "trait-affinity-resonant",
+            223
+          ]
+        ]
+      },
+      {
+        "generation": 5,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.113,
+          "Affinity+Techfinity": 0.585,
+          "Techfinity": 0.265,
+          "none": 0.037
+        },
+        "mean_traits": 3.54,
+        "channel_share": {
+          "biological": 0.32,
+          "cultural_mentorship": 0.158,
+          "fabricated_blueprint": 0.406,
+          "resonant": 0.117
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            620
+          ],
+          [
+            "trait-interface-blueprint",
+            527
+          ],
+          [
+            "trait-affinity-biological",
+            497
+          ],
+          [
+            "trait-techfinity-biological",
+            408
+          ],
+          [
+            "trait-spell-mentorship",
+            258
+          ],
+          [
+            "trait-device-mentorship",
+            188
+          ]
+        ]
+      },
+      {
+        "generation": 6,
+        "offspring": 800,
+        "potential_share": {
+          "Affinity": 0.102,
+          "Affinity+Techfinity": 0.576,
+          "Techfinity": 0.27,
+          "none": 0.051
+        },
+        "mean_traits": 3.51,
+        "channel_share": {
+          "biological": 0.318,
+          "cultural_mentorship": 0.16,
+          "fabricated_blueprint": 0.42,
+          "resonant": 0.102
+        },
+        "top_traits": [
+          [
+            "trait-lamp-blueprint",
+            644
+          ],
+          [
+            "trait-interface-blueprint",
+            535
+          ],
+          [
+            "trait-affinity-biological",
+            482
+          ],
+          [
+            "trait-techfinity-biological",
+            411
+          ],
+          [
+            "trait-spell-mentorship",
+            268
+          ],
+          [
+            "trait-device-mentorship",
+            182
+          ]
+        ]
+      }
+    ],
+    "branch_status": {
+      "CANDIDATE": 12034,
+      "BLOCKED": 11966
+    },
+    "branch_by_kind": {
+      "branch-affinity-potential": {
+        "CANDIDATE": 699
+      },
+      "interaction-ordinary-methods": {
+        "BLOCKED": 3518,
+        "CANDIDATE": 1282
+      },
+      "interaction-affinity-device": {
+        "BLOCKED": 2594,
+        "CANDIDATE": 2206
+      },
+      "interaction-spell-techfinity": {
+        "BLOCKED": 3617,
+        "CANDIDATE": 1183
+      },
+      "interaction-independent-expressions": {
+        "BLOCKED": 2237,
+        "CANDIDATE": 2563
+      },
+      "branch-dual-potential": {
+        "CANDIDATE": 2563
+      },
+      "branch-techfinity-potential": {
+        "CANDIDATE": 1231
+      },
+      "branch-ordinary": {
+        "CANDIDATE": 307
+      }
+    },
+    "errors": {},
+    "findings": [
+      "Dual-axis potential: 38.5% in gen 1 -> 57.6% in gen 6.",
+      "No-axis offspring: 13.4% -> 5.1%.",
+      "Mean inherited traits: 2.91 -> 3.51.",
+      "Axis potential went extinct within a generation in some runs: Affinity@g1x4, Techfinity@g1x2, Affinity@g2x16, Techfinity@g2x8, Affinity@g3x21, Techfinity@g3x11",
+      "Reminder: potential never grants ranks, equipment or active axis access."
+    ],
+    "status": "EXPERIMENTAL"
+  }
+}
