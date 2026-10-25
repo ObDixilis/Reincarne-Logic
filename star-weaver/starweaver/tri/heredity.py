@@ -112,16 +112,24 @@ def validate_rules(rules: dict) -> None:
         if (m is None or m["weights"] != _mirror_pot(n["weights"]) or abs(m["polarity_pref"] + n["polarity_pref"]) > 1e-9
                 or m["tag_bonus"] != {rules["tag_mirror"].get(k, k): v for k, v in n["tag_bonus"].items()}):
             raise ValueError(f"{nid}: niche mirror is not a reflection")
+    if "tradition_mirror" in rules and "traditions" in rules:
+        for fid, trad in rules["traditions"].items():
+            m_fid = founders[fid]["mirror"]
+            m_trad = rules["traditions"][m_fid]
+            if rules["tradition_mirror"].get(trad) != m_trad:
+                raise ValueError(f"{fid}: tradition mirror reflection mismatch")
 
 
 def founder_profiles(rules: dict) -> dict:
     out = {}
+    traditions = rules.get("traditions", {})
     for f in rules["founders"]:
         out[f["id"]] = {
             "id": f["id"], "label": f["label"], "generation": 0, "parents": [], "route": None, "seed": None,
             "potential": {a: float(f["potential"][a]) for a in AXES}, "polarity": float(f["polarity"]),
             "traits": [{"id": t, "origin": "founder", "dormant": False, "from": []} for t in sorted(f["traits"])],
             "founders": [f["id"]], "status": "EXPERIMENTAL", "learned_skills": [],
+            "mentorship_tradition": traditions.get(f["id"], "Crossroads Open Guild"),
             "active_axis_access": {a: "unavailable" for a in AXES},
         }
     return out
@@ -220,6 +228,18 @@ def make_child(rules: dict, a: dict, b: dict, seed: str, route: str = "biologica
         if all(pot[ax] >= v for ax, v in rule["min"].items()) and all(pot[ax] <= v for ax, v in rule["max"].items()):
             traits[rule["id"]] = {"id": rule["id"], "origin": "hybrid", "dormant": False, "from": []}
 
+    # Cultural & flow arts mentorship transmission (separate from biological potential)
+    trad_a = a.get("mentorship_tradition", "Crossroads Open Guild")
+    trad_b = b.get("mentorship_tradition", "Crossroads Open Guild")
+    if route == "mentorship":
+        child_tradition = trad_a  # Direct taught lineage from primary mentor
+    elif route == "blueprint":
+        child_tradition = "Foundry Artisan Guild"
+    elif route == "resonant":
+        child_tradition = "Starlit Weavers Circle" if pol < 0 else "Lattice Engineers Guild"
+    else:  # biological: family craft or balanced synthesis
+        child_tradition = trad_a if rng.random() < 0.5 else trad_b
+
     return {
         "id": cid, "label": cid, "generation": max(a["generation"], b["generation"]) + 1,
         "parents": [a["id"], b["id"]], "route": route, "seed": seed,
@@ -227,6 +247,7 @@ def make_child(rules: dict, a: dict, b: dict, seed: str, route: str = "biologica
         "traits": [traits[k] for k in sorted(traits)],
         "founders": sorted(set(a["founders"]) | set(b["founders"])),
         "status": "EXPERIMENTAL", "learned_skills": [],
+        "mentorship_tradition": child_tradition,
         "active_axis_access": {ax: "unavailable" for ax in AXES},
     }
 
@@ -239,6 +260,8 @@ def mirror_profile(rules: dict, p: dict) -> dict:
     for t in q["traits"]:
         t["id"] = cat[t["id"]]["mirror"]
     q["traits"].sort(key=lambda t: t["id"])
+    if "mentorship_tradition" in q and "tradition_mirror" in rules:
+        q["mentorship_tradition"] = rules["tradition_mirror"].get(q["mentorship_tradition"], q["mentorship_tradition"])
     return q
 
 

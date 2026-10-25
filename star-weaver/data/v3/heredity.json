@@ -20,6 +20,34 @@
     "mentorship": {"label": "Cultural / mentorship", "potential_weight": {"Affinity": 0.7, "Techfinity": 0.7, "Finity": 0.7}, "trait_rate": {"one": 0.6, "both": 0.9}}
   },
   "route_mirror": {"biological": "biological", "resonant": "blueprint", "blueprint": "resonant", "mentorship": "mentorship"},
+  "route_taxonomy": {
+    "biological": "physiological_inheritance",
+    "mentorship": "cultural_tradition_and_flow_arts",
+    "blueprint": "technological_schematic_fabrication",
+    "resonant": "harmonic_field_compatibility"
+  },
+  "traditions": {
+    "archive-keeper": "Archive Custodian Order",
+    "mentorship-conductor": "Gorgon Flow Arts Lineage",
+    "fabricated-successor": "Foundry Artisan Guild",
+    "forge-mentor": "Foundry Forge Guild",
+    "threshold-walker": "Threshold Marches Wayfarers",
+    "ordinary-learner": "Crossroads Open Guild",
+    "affinity-potential": "Starlit Weavers Circle",
+    "techfinity-potential": "Lattice Engineers Guild",
+    "dual-potential": "Dual Resonance Consortium"
+  },
+  "tradition_mirror": {
+    "Archive Custodian Order": "Foundry Artisan Guild",
+    "Foundry Artisan Guild": "Archive Custodian Order",
+    "Gorgon Flow Arts Lineage": "Foundry Forge Guild",
+    "Foundry Forge Guild": "Gorgon Flow Arts Lineage",
+    "Starlit Weavers Circle": "Lattice Engineers Guild",
+    "Lattice Engineers Guild": "Starlit Weavers Circle",
+    "Threshold Marches Wayfarers": "Threshold Marches Wayfarers",
+    "Crossroads Open Guild": "Crossroads Open Guild",
+    "Dual Resonance Consortium": "Dual Resonance Consortium"
+  },
   "tag_mirror": {"light": "circuit", "circuit": "light", "voice": "forge", "forge": "voice"},
   "traits": [
     {"id": "starlit-blood", "label": "Starlit Blood", "axis": "Affinity", "tags": ["bloodline", "light"], "carried_by": ["biological", "resonant"], "mirror": "circuit-blood"},

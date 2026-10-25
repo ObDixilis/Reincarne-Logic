@@ -1,0 +1,343 @@
+{
+  "schema_version": "0.3.1",
+  "proposal_id": "SW-MANIFEST-001",
+  "status": "EXPERIMENTAL",
+  "doctrine_reference": "Neoluminescent Visual Doctrine & Gorgon Flow Arts Manifestation Architecture",
+  "color_gamut": {
+    "magenta": {
+      "name": "Sorcery Magenta",
+      "hex": "#FF2BD6",
+      "semantic_role": "Sorcery, charisma, psychic signature, raw Affinity intentionality",
+      "skin_safe_max_luminance_nits": 450.0
+    },
+    "cyan": {
+      "name": "Precision Cyan",
+      "hex": "#00E5FF",
+      "semantic_role": "Scanning, precision, cybernetic thought, Techfinity addressing logic",
+      "skin_safe_max_luminance_nits": 400.0
+    },
+    "lemon_lime": {
+      "name": "Awakening Lemon-Lime",
+      "hex": "#A6FF00",
+      "semantic_role": "Life-code, reflex, somatic awakening, kinetic flow",
+      "skin_safe_max_luminance_nits": 380.0
+    },
+    "solar_amber": {
+      "name": "Ancestral Solar Amber",
+      "hex": "#FFB300",
+      "semantic_role": "Authority, lineage protection, ancestral charge, grounding",
+      "skin_safe_max_luminance_nits": 500.0
+    },
+    "red_orange": {
+      "name": "Rupture Red-Orange",
+      "hex": "#FF3D00",
+      "semantic_role": "Heat, consequence, rupture, emergency threshold overdrive",
+      "skin_safe_max_luminance_nits": 320.0
+    },
+    "threshold_uv": {
+      "name": "Liminal Threshold UV",
+      "hex": "#7B1FA2",
+      "semantic_role": "Boundary, liminality, Finity convergence, dimensional interface",
+      "skin_safe_max_luminance_nits": 280.0
+    },
+    "void_black": {
+      "name": "Grounding Void Black",
+      "hex": "#0A0A0F",
+      "semantic_role": "Absorbing background, perceptual grounding, high-contrast anchor",
+      "skin_safe_max_luminance_nits": 5.0
+    }
+  },
+  "line_grammar_rules": {
+    "wave": {
+      "mode": "continuous",
+      "physics_behavior": "Resonant harmonic oscillation with continuous spatial propagation",
+      "carrier_role": "Carrier medium: sustains flow and binds disparate energy streams"
+    },
+    "particle": {
+      "mode": "discrete",
+      "physics_behavior": "Discrete quantum emissions and localized packet transfers",
+      "carrier_role": "Impulse trigger: delivers discrete payload charges and kinetic impacts"
+    },
+    "zigzag": {
+      "mode": "routed",
+      "physics_behavior": "Sharp geometric angular routing with logic-gated directional shifts",
+      "carrier_role": "Control logic: modulates frequencies, encodes addresses, and routes signals"
+    }
+  },
+  "material_channels": {
+    "Aetherwear": {
+      "definition": "Wearable affinity mediation: garments, woven conductive braids, sleeves, and subdermal contact threads",
+      "conduit_type": "Skin-contact bio-conductive textile weave"
+    },
+    "Assorcery": {
+      "definition": "Magech fusion tools and devices: optical lanterns, signal modulators, resonator lattices",
+      "hardware_class": "Engineered hybrid apparatus"
+    },
+    "Ordinary": {
+      "definition": "Non-affinity standard physical hardware: basic glass/oil lanterns, copper wiring, inert lenses",
+      "hardware_class": "Conventional tooling"
+    },
+    "Inherent": {
+      "definition": "Direct somatic and ocular flow without external artificial hardware mediation",
+      "hardware_class": "Organic biological / nervous interface"
+    }
+  },
+  "manifestations": {
+    "M0": {
+      "skill_id": "M0",
+      "label": "Learned Light",
+      "material_channel": "Inherent",
+      "apparatus_required": [],
+      "line_grammar": ["wave"],
+      "color_signature": ["solar_amber"],
+      "choreography": {
+        "flow_style": "Open Palm Attunement",
+        "somatic_posture": "Relaxed grounded stance with palm facing forward at solar plexus level",
+        "rhythm": "Steady continuous breathing sync"
+      },
+      "world_effect": {
+        "kind": "steady_spell_light",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": null,
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Spherical warm amber glow hovering 5cm above the palm; soft diffuse boundary with no sharp edges",
+        "auditory_frequency": "Gentle low harmonic hum at ~120 Hz",
+        "tactile_feedback": "Subtle radiant warmth across the skin of the hand",
+        "skin_tone_protection_rule": "Diffuse soft falloff (gamma 2.2); luminance capped at 250 nits to preserve skin texture and epidermal micro-contrast"
+      },
+      "failure": {
+        "on_hardware_loss": "NO_OP",
+        "on_axis_loss": "NO_OP",
+        "breakdown_visual": "Gentle amber dissipation into warm air currents",
+        "somatic_recoil": "None"
+      }
+    },
+    "T0": {
+      "skill_id": "T0",
+      "label": "Lamp Handling",
+      "material_channel": "Ordinary",
+      "apparatus_required": ["lamp"],
+      "line_grammar": ["zigzag"],
+      "color_signature": ["cyan"],
+      "choreography": {
+        "flow_style": "Artisan Calibration",
+        "somatic_posture": "Firm two-handed grip on lamp collar; deliberate thumb actuation of shutter dial",
+        "rhythm": "Mechanical, metronomic clicking intervals"
+      },
+      "world_effect": {
+        "kind": "steady_lamp_light",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": null,
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Conical beam refracted through dual-lens collimator; sharp geometric edge with angular aperture cutoff",
+        "auditory_frequency": "Sharp metallic shutter click followed by quiet 1kHz ballast hiss",
+        "tactile_feedback": "Rhythmic mechanical detents through fingertips; brass chassis vibration",
+        "skin_tone_protection_rule": "Directional forward projection away from face; rear reflection shielded so operator complexion remains clearly readable"
+      },
+      "failure": {
+        "on_hardware_loss": "ABORT_IMMEDIATE",
+        "on_axis_loss": "NO_OP",
+        "breakdown_visual": "Instant shutter blackout",
+        "somatic_recoil": "Inertia shock against the wrist"
+      }
+    },
+    "F0": {
+      "skill_id": "F0",
+      "label": "Still Attunement",
+      "material_channel": "Inherent",
+      "apparatus_required": [],
+      "line_grammar": ["wave"],
+      "color_signature": ["threshold_uv"],
+      "choreography": {
+        "flow_style": "Liminal Respiration",
+        "somatic_posture": "Neutral upright alignment; hands cupped at lower abdomen; spine lengthened",
+        "rhythm": "Sub-audible undulating wave cycle"
+      },
+      "world_effect": {
+        "kind": "still_tone",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": null,
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Faint violet aura clinging to silhouetted contours of the torso; thin interference fringes",
+        "auditory_frequency": "Infrasonic sub-bass resonance at ~40 Hz",
+        "tactile_feedback": "Skin goosebumps (piloerection) and gentle tingling along spinal meridian",
+        "skin_tone_protection_rule": "Deep non-saturating violet fringe; negative shadow contrast highlights rich melanin undertones without washing out facial planes"
+      },
+      "failure": {
+        "on_hardware_loss": "NO_OP",
+        "on_axis_loss": "NO_OP",
+        "breakdown_visual": "Inaudible collapse of the violet aura toward the navel center",
+        "somatic_recoil": "Slight vertigo"
+      }
+    },
+    "A1": {
+      "skill_id": "A1",
+      "label": "Guided Light",
+      "material_channel": "Aetherwear",
+      "apparatus_required": [],
+      "line_grammar": ["wave"],
+      "color_signature": ["magenta"],
+      "choreography": {
+        "flow_style": "Gorgon Ribbon Sweep",
+        "somatic_posture": "Dynamic side stance; leading arm arcs fluidly overhead while trailing arm stabilizes",
+        "rhythm": "Sustained legato tempo with elastic velocity curves"
+      },
+      "world_effect": {
+        "kind": "guided_light",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": null,
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Braided magenta luminous filament curling dynamically in 3D curves around the arm's Aetherwear conduit sleeve",
+        "auditory_frequency": "Resonant vocalic soprano shimmer at ~880 Hz",
+        "tactile_feedback": "Warm inductive magnetic drag against the forearm textile fibers",
+        "skin_tone_protection_rule": "Filament radius constrained to 12mm; local bloom bounded to 350 nits so forearm and facial skin tones remain deep, rich, and detailed"
+      },
+      "failure": {
+        "on_hardware_loss": "NO_OP",
+        "on_axis_loss": "ABORT_IMMEDIATE",
+        "breakdown_visual": "Filament unravels into dispersed magenta sparkles that fade within 0.2s",
+        "somatic_recoil": "Sudden drop in magnetic tension causing forearm rebound"
+      }
+    },
+    "T1": {
+      "skill_id": "T1",
+      "label": "Signal Control",
+      "material_channel": "Assorcery",
+      "apparatus_required": ["lamp"],
+      "line_grammar": ["zigzag"],
+      "color_signature": ["cyan"],
+      "choreography": {
+        "flow_style": "Optical Staccato",
+        "somatic_posture": "High braced carry; thumbs operating binary selector keys on lamp body",
+        "rhythm": "Syncopated digital bursts with microsecond dwell times"
+      },
+      "world_effect": {
+        "kind": "addressed_signal",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": "optical_framing_v0",
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Sharp rectangular light pulses with 90-degree orthogonal raster traces in bright cyan",
+        "auditory_frequency": "High-pitched clock pulses at 2.4 kHz with rhythmic micro-clicks",
+        "tactile_feedback": "Haptic pulse click on the casing for every byte frame transmitted",
+        "skin_tone_protection_rule": "High-contrast rim lighting; cyan photons projected forward through polarized slit, leaving operator face warmly lit by ambient backscatter"
+      },
+      "failure": {
+        "on_hardware_loss": "ABORT_IMMEDIATE",
+        "on_axis_loss": "ABORT_IMMEDIATE",
+        "breakdown_visual": "Abrupt clock desynchronization; cyan trace flickers and drops to dark in 1 frame",
+        "somatic_recoil": "Sharp tactile disconnect on the selector switches"
+      }
+    },
+    "F1": {
+      "skill_id": "F1",
+      "label": "Threshold Sense",
+      "material_channel": "Inherent",
+      "apparatus_required": [],
+      "line_grammar": ["wave", "particle"],
+      "color_signature": ["threshold_uv", "lemon_lime"],
+      "choreography": {
+        "flow_style": "Ocular Gaze Lock",
+        "somatic_posture": "Still head alignment; pupils widen slightly; eyes track along environmental fault lines",
+        "rhythm": "Fixed continuous dilation and steady gaze"
+      },
+      "world_effect": {
+        "kind": "threshold_reading",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": null,
+        "persistence_ticks": 1
+      },
+      "sensory_expression": {
+        "visual_form": "Concentric luminous rings in the iris; lemon-lime particle flashes marking boundary gradients on surfaces",
+        "auditory_frequency": "Phase-shifted binaural shimmer (~220 Hz difference tone)",
+        "tactile_feedback": "Cool sensation around the eye sockets and bridge of nose",
+        "skin_tone_protection_rule": "Glow is internal to iris and pupil; exterior facial surfaces receive zero washing, highlighting sculptural bone structure"
+      },
+      "failure": {
+        "on_hardware_loss": "NO_OP",
+        "on_axis_loss": "ABORT_IMMEDIATE",
+        "breakdown_visual": "Concentric rings collapse inward to the pupil with a momentary afterimage",
+        "somatic_recoil": "Transient eye fatigue and brief tearing"
+      }
+    },
+    "H1": {
+      "skill_id": "H1",
+      "label": "Woven Beacon",
+      "material_channel": "Assorcery",
+      "apparatus_required": ["lamp"],
+      "line_grammar": ["wave", "zigzag"],
+      "color_signature": ["magenta", "cyan"],
+      "choreography": {
+        "flow_style": "Gorgon Dual-Axis Orbital Weave",
+        "somatic_posture": "Wide dynamic stance; right hand sweeps the lamp in an elliptical orbit while left arm routes the Aetherwear conduit into the intake aperture",
+        "rhythm": "Polyrhythmic: continuous 3/4 wave glide in the right arm coupled with syncopated 4/4 shutter pulses in the left fingers"
+      },
+      "world_effect": {
+        "kind": "encoded_light_beacon",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": "woven_carrier_protocol_v1",
+        "persistence_ticks": 2
+      },
+      "sensory_expression": {
+        "visual_form": "A double-helix light beacon: an undulating continuous magenta wave (sorcery carrier) braided tightly with an orthogonal, sharply stepped cyan zigzag lattice (addressed signal). The intersection nodes flash with brief white-violet coherence spikes.",
+        "auditory_frequency": "Harmonic acoustic signature: a sustained 440 Hz rich cello-like resonance layered with crisp rhythmic 2.4 kHz high-frequency clock pulses",
+        "tactile_feedback": "Balanced counter-torque across both hands: the lamp feels gyro-stabilized, resisting lateral motion as the beam locks into alignment",
+        "skin_tone_protection_rule": "Dual complementary rim light: magenta rims the right cheekbone, cyan rims the left cheekbone, leaving deep, unblown, natural melanin tone down the center of the face with maximum textural fidelity"
+      },
+      "failure": {
+        "on_hardware_loss": "ABORT_IMMEDIATE",
+        "on_axis_loss": "ABORT_IMMEDIATE",
+        "breakdown_visual": "Dissolve Lattice: The cyan zigzag lattice snaps instantly; unsupported magenta wave oscillates violently into turbulent ribbons and dissipates into harmless atmospheric heat",
+        "somatic_recoil": "Sudden loss of gyroscopic resistance causes the lamp to drop heavily in the hands; minor static prickle on fingertips"
+      }
+    },
+    "H4": {
+      "skill_id": "H4",
+      "label": "Triune Weave",
+      "material_channel": "Assorcery",
+      "apparatus_required": ["lamp"],
+      "line_grammar": ["wave", "particle", "zigzag"],
+      "color_signature": ["magenta", "cyan", "threshold_uv", "solar_amber"],
+      "choreography": {
+        "flow_style": "Triune Reality Synthesis",
+        "somatic_posture": "Full-body circular movement; torso rotating around stationary center axis; lamp held high in right hand, left fingers articulating Aetherwear resonant threads",
+        "rhythm": "Tripartite interlocking tempo: continuous wave base, syncopated digital clock, and slow undulating breath pulse"
+      },
+      "world_effect": {
+        "kind": "triune_weave",
+        "range_meters": null,
+        "collision_profile": null,
+        "signal_protocol": "triune_resonance_v1",
+        "persistence_ticks": 6
+      },
+      "sensory_expression": {
+        "visual_form": "An intricate three-dimensional reality lattice: magenta wave filaments, cyan zigzag routing bars, and threshold UV liminal membranes intertwine to form a temporary architectural light mechanism. Amber grounding pulses emanate from the base.",
+        "auditory_frequency": "Full-spectrum chordal choir hum with polyrhythmic digital clicks and deep spatial reverberation",
+        "tactile_feedback": "Weightless sensation throughout the limbs coupled with tingling electrical charge across the scalp and collarbone",
+        "skin_tone_protection_rule": "Atmospheric volumetric lighting with inverse-square falloff; high dynamic range (HDR) tonemapped to prevent facial clipping; deep rich skin tones remain the central visual anchor of the composition"
+      },
+      "failure": {
+        "on_hardware_loss": "ABORT_IMMEDIATE",
+        "on_axis_loss": "ABORT_IMMEDIATE",
+        "breakdown_visual": "Cascade Coherence Failure: The threshold membranes shatter into micro-particles; zigzag lattice disintegrates in sequence; amber grounding pulses arc safely to floor surfaces",
+        "somatic_recoil": "Instantaneous gravitational re-anchoring; performer must catch their footing; residual static hum along the conduit sleeve"
+      }
+    }
+  }
+}

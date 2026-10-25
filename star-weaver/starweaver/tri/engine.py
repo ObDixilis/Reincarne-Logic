@@ -311,6 +311,23 @@ class TriModel:
     def score(self) -> int:
         return sum(o["power"] for o in self.state["outputs"])
 
+    def get_manifestation(self, nid: str, performer_profile: dict | None = None,
+                          interrupted: bool = False, reason: str | None = None):
+        """Compile the physical and sensory manifestation frame for a given skill."""
+        from .manifestation import ManifestationCompiler
+        compiler = ManifestationCompiler()
+        status = ("INTERRUPTED" if interrupted else
+                  ("ACTIVE" if (self.state["active"] and self.state["active"]["node"] == nid) else "COMPLETED"))
+        return compiler.compile(
+            skill_id=nid,
+            tick=self.state["tick"],
+            status=status,
+            performer_profile=performer_profile,
+            equipment_present=self.state["equipment"],
+            interrupted=interrupted,
+            interruption_reason=reason,
+        )
+
     # ---------------------------------------------------------------- persistence
     def save(self) -> str:
         return json.dumps(self.state, sort_keys=True)
