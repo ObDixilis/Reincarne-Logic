@@ -222,6 +222,22 @@ class HttpTests(unittest.TestCase):
         self.assertIn('known skill', json.loads(raw)['error'])
         self.assertEqual(self.store.record['revision'], 0)
 
+    def test_manifestation_endpoints(self):
+        status, _, raw = self.request('GET', '/api/manifestation')
+        self.assertEqual(status, 200)
+        data = json.loads(raw)
+        self.assertEqual(data['schema_version'], '0.3.1')
+        self.assertIn('H1', data['manifestations'])
+
+        compile_payload = {'skill_id': 'H1', 'equipment': ['lamp'], 'mentorship_tradition': 'Gorgon Flow Arts Lineage'}
+        status, _, raw = self.request('POST', '/api/compile-manifestation', compile_payload)
+        self.assertEqual(status, 200)
+        frame = json.loads(raw)
+        self.assertEqual(frame['skill_id'], 'H1')
+        self.assertEqual(frame['status'], 'ACTIVE')
+        self.assertEqual(frame['material_channel'], 'Assorcery')
+        self.assertIn('Gorgon Flow Arts Lineage', frame['choreography']['flow_style'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,10 +1,10 @@
 {
   "version": "0.2.0",
-  "executed_at_utc": "2026-10-25T01:52:57.082033+00:00",
+  "executed_at_utc": "2026-10-25T03:38:46.503700+00:00",
   "scope": "Actual skill engine, lineage engine, persistence and HTTP boundary checks using isolated synthetic state",
   "python": "3.12.14",
   "platform": "Windows",
-  "test_count": 99,
+  "test_count": 100,
   "status": "PASS",
   "checks": [
     {
@@ -277,6 +277,10 @@
     },
     {
       "check": "test_server.HttpTests.test_invalid_body_returns_actionable_error_and_keeps_state",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.HttpTests.test_manifestation_endpoints",
       "status": "PASS"
     },
     {

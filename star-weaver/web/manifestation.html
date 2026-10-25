@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Weaver · Neoluminescent Reality Compiler</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg-void: #0a0a0f;
+      --magenta-sorcery: #ff2bd6;
+      --cyan-precision: #00e5ff;
+      --amber-ancestral: #ffb300;
+      --uv-liminal: #7b1fa2;
+      --lime-awakening: #a6ff00;
+      --red-rupture: #ff3d00;
+      --border-panel: rgba(255, 255, 255, 0.12);
+    }
+    body.manifestation-page {
+      background: var(--bg-void);
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .manifest-header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-panel);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .manifest-header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .badge-exp {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 43, 214, 0.2);
+      border: 1px solid var(--magenta-sorcery);
+      border-radius: 4px;
+      color: #ffc5f4;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-panel);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover {
+      color: #fff;
+      border-color: var(--cyan-precision);
+    }
+    .manifest-container {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    @media (max-width: 960px) {
+      .manifest-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .viewport-panel {
+      background: #0f1118;
+      border: 1px solid var(--border-panel);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .viewport-header {
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-panel);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #141722;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    #manifest-canvas {
+      width: 100%;
+      height: 420px;
+      background: radial-gradient(circle at center, #131726 0%, #08090d 100%);
+      display: block;
+    }
+    .viewport-footer {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border-panel);
+      background: #141722;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .status-active { color: var(--cyan-precision); font-weight: bold; }
+    .status-interrupted { color: var(--red-rupture); font-weight: bold; }
+    .controls-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .control-card {
+      background: #0f1118;
+      border: 1px solid var(--border-panel);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .control-card h2 {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 0.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+    }
+    select, button {
+      width: 100%;
+      background: #1a1e2d;
+      border: 1px solid var(--border-panel);
+      color: #f1f5f9;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+    select:focus, button:focus {
+      border-color: var(--cyan-precision);
+    }
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .toggle-group input[type="checkbox"] {
+      cursor: pointer;
+      width: auto;
+    }
+    .btn-audio {
+      background: rgba(0, 229, 255, 0.15);
+      border: 1px solid var(--cyan-precision);
+      color: var(--cyan-precision);
+      cursor: pointer;
+      font-weight: 600;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .btn-audio:hover {
+      background: rgba(0, 229, 255, 0.25);
+    }
+    .btn-audio.active {
+      background: var(--cyan-precision);
+      color: #000;
+    }
+    .inspector-panel {
+      grid-column: 1 / -1;
+      background: #0f1118;
+      border: 1px solid var(--border-panel);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .inspector-panel h2 {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .spec-box {
+      background: #141722;
+      padding: 0.85rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .spec-box h3 {
+      margin: 0 0 0.4rem 0;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #64748b;
+    }
+    .spec-box p {
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    pre.code-view {
+      background: #090a0f;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      max-height: 280px;
+      color: #cbd5e1;
+    }
+    .skin-safe-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      background: rgba(166, 255, 0, 0.1);
+      border: 1px solid var(--lime-awakening);
+      color: #d9ff7a;
+    }
+    .skin-safe-indicator.danger {
+      background: rgba(255, 61, 0, 0.15);
+      border-color: var(--red-rupture);
+      color: #ff8c66;
+    }
+  </style>
+</head>
+<body class="manifestation-page">
+
+  <header class="manifest-header">
+    <h1>
+      <span>STAR WEAVER</span>
+      <span style="color:#64748b;">/</span>
+      <span>REALITY COMPILER</span>
+      <span class="badge-exp">v0.3.1 Experimental</span>
+    </h1>
+    <div>
+      <a href="index.html" class="nav-link">← Return to Workbench</a>
+    </div>
+  </header>
+
+  <main class="manifest-container">
+    <!-- Viewport Panel -->
+    <section class="viewport-panel">
+      <div class="viewport-header">
+        <span id="vp-title">WOVEN BEACON (H1) · ASSORCERY COMPOSITION</span>
+        <span id="vp-grammar">LINE GRAMMAR: WAVE + ZIGZAG</span>
+      </div>
+      <canvas id="manifest-canvas" width="800" height="420"></canvas>
+      <div class="viewport-footer">
+        <div>
+          <span>Execution State: </span>
+          <span id="vp-status" class="status-active">ACTIVE (SUSTAINED)</span>
+        </div>
+        <div>
+          <span id="vp-skin-guard" class="skin-safe-indicator">Melanin Protection: Bounded 400 nits</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Panel -->
+    <aside class="controls-panel">
+      <div class="control-card">
+        <h2>Manifestation Parameters</h2>
+        <div class="form-group">
+          <label for="sel-skill">Skill Capability</label>
+          <select id="sel-skill">
+            <option value="H1" selected>H1: Woven Beacon (Dual-Axis Composition)</option>
+            <option value="M0">M0: Learned Light (Ordinary Magic Procedure)</option>
+            <option value="T0">T0: Lamp Handling (Ordinary Tech Device)</option>
+            <option value="F0">F0: Still Attunement (Ordinary Finity Attunement)</option>
+            <option value="A1">A1: Guided Light (Affinity Expression)</option>
+            <option value="T1">T1: Signal Control (Techfinity Expression)</option>
+            <option value="F1">F1: Threshold Sense (Finity Liminal Iris)</option>
+            <option value="H4">H4: Triune Weave (Three-Axis Reality Lattice)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sel-tradition">Cultural Mentorship Tradition</label>
+          <select id="sel-tradition">
+            <option value="Gorgon Flow Arts Lineage" selected>Gorgon Flow Arts Lineage (Polyrhythmic Orbital)</option>
+            <option value="Foundry Artisan Guild">Foundry Artisan Guild (Clock-Metronomic)</option>
+            <option value="Archive Custodian Order">Archive Custodian Order (Grounded Stately)</option>
+            <option value="Threshold Marches Wayfarers">Threshold Marches Wayfarers (Liminal Stance)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Apparatus & Hardware Presence</label>
+          <label class="toggle-group">
+            <input type="checkbox" id="chk-lamp" checked>
+            <span>Assorcery Signal Lamp (`lamp` apparatus)</span>
+          </label>
+          <label class="toggle-group">
+            <input type="checkbox" id="chk-aetherwear" checked>
+            <span>Aetherwear Forearm Conduit Sleeve</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>Lighting & Visual Doctrine</label>
+          <label class="toggle-group">
+            <input type="checkbox" id="chk-skinsafe" checked>
+            <span>Preserve Melanin Undertones (Skin-Safe Bounding)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="control-card">
+        <h2>Harmonic Audio Synthesizer</h2>
+        <p style="font-size:0.8rem; color:#94a3b8; margin:0 0 0.5rem 0;">
+          Generates real-time Web Audio API frequencies: 440 Hz soprano wave carrier + 2.4 kHz syncopated clock raster pulses.
+        </p>
+        <button type="button" id="btn-toggle-audio" class="btn-audio">Start Harmonic Audio</button>
+      </div>
+    </aside>
+
+    <!-- Reality Consequence Inspector -->
+    <section class="inspector-panel">
+      <h2>Physical Consequence vs Sensory Expression</h2>
+      <div class="spec-grid">
+        <div class="spec-box">
+          <h3>Material Interface</h3>
+          <p id="insp-material">Assorcery (Magech fusion apparatus + Aetherwear conduit)</p>
+        </div>
+        <div class="spec-box">
+          <h3>Physical World-State Effect</h3>
+          <p id="insp-world">Kind: <strong>encoded_light_beacon</strong><br>Protocol: <em>woven_carrier_protocol_v1</em><br>Collision: None (Non-solid)</p>
+        </div>
+        <div class="spec-box">
+          <h3>Somatic Flow Arts Choreography</h3>
+          <p id="insp-choreo">Gorgon Dual-Axis Orbital Weave: Continuous 3/4 wave glide coupled with 4/4 syncopated clock clicks.</p>
+        </div>
+        <div class="spec-box">
+          <h3>Interruption Response</h3>
+          <p id="insp-failure">Hardware Loss: <strong>Dissolve Lattice</strong> breakdown into ambient warm air currents.</p>
+        </div>
+      </div>
+
+      <h2>Compiled Manifestation Frame JSON</h2>
+      <pre class="code-view" id="insp-json">Loading manifestation frame...</pre>
+    </section>
+  </main>
+
+  <script>
+    // Manifestation Reality Compiler Script
+    const canvas = document.getElementById("manifest-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let audioCtx = null;
+    let waveOsc = null;
+    let clockOsc = null;
+    let clockGain = null;
+    let isAudioPlaying = false;
+
+    let time = 0;
+    let dissolveProgress = 0; // 0 = fully formed, 1 = completely dissolved
+
+    let catalog = null;
+    let currentFrame = null;
+
+    // Canvas resize handling
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    // Fetch catalog from server API
+    async function initCatalog() {
+      try {
+        const resp = await fetch("/api/manifestation");
+        catalog = await resp.json();
+      } catch (err) {
+        console.warn("Could not fetch remote catalog; using fallback definitions", err);
+      }
+      updateCompilation();
+    }
+
+    async function updateCompilation() {
+      const skillId = document.getElementById("sel-skill").value;
+      const tradition = document.getElementById("sel-tradition").value;
+      const hasLamp = document.getElementById("chk-lamp").checked;
+      const hasAetherwear = document.getElementById("chk-aetherwear").checked;
+      const skinSafe = document.getElementById("chk-skinsafe").checked;
+
+      const equip = [];
+      if (hasLamp) equip.push("lamp");
+      if (hasAetherwear) equip.push("aetherwear_sleeve");
+
+      // Check if skill requires lamp and lamp is missing
+      const requiresLamp = ["H1", "T0", "T1", "H4"].includes(skillId);
+      const isInterrupted = requiresLamp && !hasLamp;
+
+      try {
+        const payload = {
+          skill_id: skillId,
+          mentorship_tradition: tradition,
+          equipment: equip,
+          interrupted: isInterrupted,
+          interruption_reason: isInterrupted ? "HARDWARE_LOSS: Assorcery lamp missing during execution" : null,
+          tick: 12,
+          status: isInterrupted ? "INTERRUPTED" : "ACTIVE"
+        };
+
+        const resp = await fetch("/api/compile-manifestation", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (resp.ok) {
+          currentFrame = await resp.json();
+          renderInspector(currentFrame, isInterrupted, skinSafe);
+        }
+      } catch (err) {
+        console.error("Compilation error", err);
+      }
+    }
+
+    function renderInspector(frame, isInterrupted, skinSafe) {
+      document.getElementById("vp-title").textContent = `${frame.label.toUpperCase()} (${frame.skill_id}) · ${frame.material_channel.toUpperCase()}`;
+      document.getElementById("vp-grammar").textContent = `LINE GRAMMAR: ${frame.line_grammar.map(g => g.kind.toUpperCase()).join(" + ")}`;
+
+      const statusEl = document.getElementById("vp-status");
+      if (isInterrupted) {
+        statusEl.textContent = "INTERRUPTED: DISSOLVE LATTICE";
+        statusEl.className = "status-interrupted";
+      } else {
+        statusEl.textContent = "ACTIVE (SUSTAINED FLOW)";
+        statusEl.className = "status-active";
+      }
+
+      const skinGuardEl = document.getElementById("vp-skin-guard");
+      if (skinSafe) {
+        skinGuardEl.textContent = "Melanin Protection: Bounded Luminance (Preserved Contrast)";
+        skinGuardEl.className = "skin-safe-indicator";
+      } else {
+        skinGuardEl.textContent = "Overexposure Warning: Blown-Out Lighting";
+        skinGuardEl.className = "skin-safe-indicator danger";
+      }
+
+      document.getElementById("insp-material").textContent = `${frame.material_channel} — ${frame.channel_definition}`;
+      document.getElementById("insp-world").innerHTML = `Kind: <strong>${frame.world_effect.kind}</strong><br>Protocol: <em>${frame.world_effect.signal_protocol || "None"}</em><br>Persistence: ${frame.world_effect.persistence_ticks} ticks`;
+      document.getElementById("insp-choreo").textContent = `${frame.choreography.flow_style}: ${frame.choreography.somatic_posture} [${frame.choreography.rhythm}]`;
+
+      if (frame.failure_report) {
+        document.getElementById("insp-failure").innerHTML = `Breakdown: <strong style="color:var(--red-rupture);">${frame.failure_report.breakdown_visual}</strong><br>Recoil: ${frame.failure_report.somatic_recoil}`;
+      } else {
+        document.getElementById("insp-failure").textContent = "Stable execution; no breakdown events triggered.";
+      }
+
+      document.getElementById("insp-json").textContent = JSON.stringify(frame, null, 2);
+    }
+
+    // Canvas animation loop
+    function animate() {
+      time += 0.03;
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+
+      ctx.clearRect(0, 0, w, h);
+
+      const hasLamp = document.getElementById("chk-lamp").checked;
+      const skillId = document.getElementById("sel-skill").value;
+      const requiresLamp = ["H1", "T0", "T1", "H4"].includes(skillId);
+      const isInterrupted = requiresLamp && !hasLamp;
+      const skinSafe = document.getElementById("chk-skinsafe").checked;
+
+      // Animate dissolution progress
+      if (isInterrupted) {
+        dissolveProgress = Math.min(1.0, dissolveProgress + 0.05);
+      } else {
+        dissolveProgress = Math.max(0.0, dissolveProgress - 0.08);
+      }
+
+      const centerY = h / 2;
+      const startX = 60;
+      const endX = w - 60;
+
+      // 1. Draw central silhouette anchor representing Afro-Gorgon performer
+      drawPerformerSilhouette(ctx, startX - 20, centerY, skinSafe);
+
+      // 2. Draw Geometry based on skill grammar
+      if (skillId === "H1" || skillId === "H4") {
+        // Dual-Braid / Triune Lattice
+        drawWaveCarrier(ctx, startX, endX, centerY, time, dissolveProgress, skinSafe);
+        drawZigzagSignal(ctx, startX, endX, centerY, time, dissolveProgress, skinSafe);
+        if (dissolveProgress < 0.8) {
+          drawCoherenceNodes(ctx, startX, endX, centerY, time, dissolveProgress);
+        }
+      } else if (skillId === "A1" || skillId === "M0") {
+        drawWaveCarrier(ctx, startX, endX, centerY, time, dissolveProgress, skinSafe);
+      } else if (skillId === "T1" || skillId === "T0") {
+        drawZigzagSignal(ctx, startX, endX, centerY, time, dissolveProgress, skinSafe);
+      } else if (skillId === "F0" || skillId === "F1") {
+        drawThresholdIris(ctx, w / 2, centerY, time, dissolveProgress);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    function drawPerformerSilhouette(ctx, x, y, skinSafe) {
+      ctx.save();
+      // Performer posture with melanin tone protection
+      ctx.fillStyle = skinSafe ? "#18141c" : "#66556e";
+      ctx.beginPath();
+      // Head
+      ctx.arc(x, y - 50, 18, 0, Math.PI * 2);
+      ctx.fill();
+      // Torso & arm extending
+      ctx.beginPath();
+      ctx.moveTo(x - 12, y - 28);
+      ctx.lineTo(x + 16, y - 28);
+      ctx.lineTo(x + 24, y + 50);
+      ctx.lineTo(x - 16, y + 50);
+      ctx.closePath();
+      ctx.fill();
+
+      // Arm conduit
+      ctx.strokeStyle = "#ff2bd6";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(x + 10, y - 20);
+      ctx.quadraticCurveTo(x + 35, y - 10, x + 50, y);
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    function drawWaveCarrier(ctx, startX, endX, centerY, t, dissolve, skinSafe) {
+      ctx.save();
+      const alpha = Math.max(0, 1.0 - dissolve * 0.9);
+      ctx.strokeStyle = `rgba(255, 43, 214, ${alpha})`;
+      ctx.lineWidth = skinSafe ? 3.5 : 8.0;
+      ctx.shadowColor = "#ff2bd6";
+      ctx.shadowBlur = skinSafe ? 12 : 36;
+
+      ctx.beginPath();
+      const length = endX - startX;
+      for (let x = 0; x <= length; x += 4) {
+        const waveY = centerY + Math.sin(x * 0.035 - t * 4) * (26 * (1.0 + dissolve * 2.5));
+        // If dissolving, oscillate wildly into turbulent ribbons
+        const turbulentY = waveY + (dissolve > 0 ? Math.sin(x * 0.1 + t * 8) * (dissolve * 45) : 0);
+        if (x === 0) ctx.moveTo(startX + x, turbulentY);
+        else ctx.lineTo(startX + x, turbulentY);
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawZigzagSignal(ctx, startX, endX, centerY, t, dissolve, skinSafe) {
+      if (dissolve >= 0.95) return;
+      ctx.save();
+      const alpha = Math.max(0, 1.0 - dissolve * 1.5);
+      ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
+      ctx.lineWidth = skinSafe ? 3 : 7;
+      ctx.shadowColor = "#00e5ff";
+      ctx.shadowBlur = skinSafe ? 10 : 30;
+
+      ctx.beginPath();
+      const step = 40;
+      const length = endX - startX;
+      let up = true;
+      for (let x = 0; x <= length; x += step) {
+        const baseY = centerY + (up ? -24 : 24);
+        const shiftX = (x - (t * 80) % step);
+        if (x === 0) ctx.moveTo(startX + shiftX, baseY);
+        else {
+          ctx.lineTo(startX + shiftX, baseY);
+          ctx.lineTo(startX + shiftX, centerY + (!up ? -24 : 24));
+        }
+        up = !up;
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawCoherenceNodes(ctx, startX, endX, centerY, t, dissolve) {
+      ctx.save();
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#ffc5f4";
+      ctx.shadowBlur = 16;
+      const length = endX - startX;
+      for (let x = 20; x < length; x += 90) {
+        const nodeX = startX + x;
+        const nodeY = centerY + Math.sin(x * 0.035 - t * 4) * 26;
+        ctx.beginPath();
+        ctx.arc(nodeX, nodeY, 4 * (1.0 - dissolve), 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function drawThresholdIris(ctx, cx, cy, t, dissolve) {
+      ctx.save();
+      const alpha = Math.max(0, 1.0 - dissolve);
+      ctx.strokeStyle = `rgba(123, 31, 162, ${alpha})`;
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = "#a6ff00";
+      ctx.shadowBlur = 12;
+
+      for (let r = 20; r <= 80; r += 20) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r + Math.sin(t * 3 + r) * 4, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      // Lemon-Lime particle flashes
+      ctx.fillStyle = "#a6ff00";
+      for (let i = 0; i < 8; i++) {
+        const angle = i * (Math.PI / 4) + t;
+        const dist = 60 + Math.sin(t * 5 + i) * 15;
+        ctx.beginPath();
+        ctx.arc(cx + Math.cos(angle) * dist, cy + Math.sin(angle) * dist, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // Web Audio Synthesizer implementation
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
+      }
+
+      // 440 Hz rich soprano wave carrier
+      waveOsc = audioCtx.createOscillator();
+      waveOsc.type = "sine";
+      waveOsc.frequency.setValueAtTime(440, audioCtx.currentTime);
+
+      const waveGain = audioCtx.createGain();
+      waveGain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      waveOsc.connect(waveGain);
+      waveGain.connect(audioCtx.destination);
+      waveOsc.start();
+
+      // 2.4 kHz syncopated clock raster clicks
+      clockOsc = audioCtx.createOscillator();
+      clockOsc.type = "square";
+      clockOsc.frequency.setValueAtTime(2400, audioCtx.currentTime);
+
+      clockGain = audioCtx.createGain();
+      clockGain.gain.setValueAtTime(0.0, audioCtx.currentTime);
+      clockOsc.connect(clockGain);
+      clockGain.connect(audioCtx.destination);
+      clockOsc.start();
+
+      // Clock pulse cadence
+      setInterval(() => {
+        if (!isAudioPlaying || !clockGain) return;
+        const now = audioCtx.currentTime;
+        clockGain.gain.cancelScheduledValues(now);
+        clockGain.gain.setValueAtTime(0.03, now);
+        clockGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+      }, 250);
+
+      isAudioPlaying = true;
+    }
+
+    function stopAudio() {
+      if (waveOsc) {
+        try { waveOsc.stop(); } catch(e){}
+        waveOsc = null;
+      }
+      if (clockOsc) {
+        try { clockOsc.stop(); } catch(e){}
+        clockOsc = null;
+      }
+      isAudioPlaying = false;
+    }
+
+    document.getElementById("btn-toggle-audio").addEventListener("click", () => {
+      const btn = document.getElementById("btn-toggle-audio");
+      if (!isAudioPlaying) {
+        initAudio();
+        btn.textContent = "Stop Harmonic Audio";
+        btn.classList.add("active");
+      } else {
+        stopAudio();
+        btn.textContent = "Start Harmonic Audio";
+        btn.classList.remove("active");
+      }
+    });
+
+    // Control event bindings
+    document.getElementById("sel-skill").addEventListener("change", updateCompilation);
+    document.getElementById("sel-tradition").addEventListener("change", updateCompilation);
+    document.getElementById("chk-lamp").addEventListener("change", updateCompilation);
+    document.getElementById("chk-aetherwear").addEventListener("change", updateCompilation);
+    document.getElementById("chk-skinsafe").addEventListener("change", updateCompilation);
+
+    // Boot
+    initCatalog();
+    animate();
+  </script>
+</body>
+</html>
