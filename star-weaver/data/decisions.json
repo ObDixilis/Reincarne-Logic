@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "id": "SW-SKILL-001",
+    "status": "APPROVED_FOR_IMPLEMENTATION",
+    "approved_on": "2026-10-22",
+    "authority": "Joshyua Gorgon — direct approval in the originating implementation chat",
+    "scope": "Five-node skill graph, independent access gates, explicit composition, progression, refund and persistence rules",
+    "source": "docs/approved-baseline.md"
+  },
+  "extension": {
+    "id": "SW-LINEAGE-001",
+    "status": "EXPERIMENTAL",
+    "scope": "Requested hereditary and cross-breed implementation using synthetic profiles and explicit versioned policies",
+    "boundary": "Inherited potential, teaching and fabricated succession do not grant learned ranks, installed equipment or active access. No universal genetics or canonical species/bloodlines are asserted."
+  },
+  "systems": [
+    {"id": "Affinity", "status": "CANON", "role": "Independent magical-expression system"},
+    {"id": "Techfinity", "status": "CANON", "role": "Independent technological-expression system"},
+    {"id": "Finity", "status": "CONTEXT_DOUBT", "role": "Review metadata only; no runtime rank, gate, axis or hierarchy"}
+  ],
+  "sources": [
+    {"label": "Affinity–Techfinity–Finity decision", "url": "https://app.notion.com/p/3cc05d32d1a5811e8e52e1306819539e"},
+    {"label": "Starweaver’s Matrix scope", "url": "https://app.notion.com/p/3cc05d32d1a58146a7fde0e9475841d3"},
+    {"label": "Reincarne Canon Atlas", "url": "https://app.notion.com/p/3cc05d32d1a581d3972ed1149825278f"}
+  ]
+}

@@ -1,0 +1,1767 @@
+{
+  "schema_version": 1,
+  "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+  "status": "EXPERIMENTAL",
+  "interpretation": "Reproducible synthetic provenance fixtures. Branches are suggestions; no learned ranks, active access, or equipment transfer.",
+  "cases": [
+    {
+      "case_id": "ordinary-methods",
+      "lineage": {
+        "id": "lineage-e407ed1ef02a42322179",
+        "parent_ids": [
+          "archive-keeper",
+          "ordinary-learner"
+        ],
+        "seed": "trial-1",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 1,
+        "ancestry": [
+          "archive-keeper",
+          "ordinary-learner"
+        ],
+        "traits": [
+          {
+            "id": "trait-lamp-blueprint",
+            "label": "Ordinary lamp drawing",
+            "channel": "fabricated_blueprint",
+            "axis": null,
+            "meaning": "blueprint_pathway",
+            "description": "A transferable ordinary-device drawing, not a lamp, fabricated object, learned operating skill, or Techfinity requirement.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-lamp-blueprint",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-lamp-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-spell-mentorship",
+            "label": "Spell-practice mentorship invitation",
+            "channel": "cultural_mentorship",
+            "axis": null,
+            "meaning": "teaching_pathway",
+            "description": "A cultural route to seek instruction in an ordinary spell procedure. The learner must still purchase and practice M0.",
+            "provenance": {
+              "policy_id": "policy-cultural-mentorship",
+              "parent_references": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-spell-mentorship",
+                  "generation": 0,
+                  "source_lineage_id": null
+                },
+                {
+                  "profile_id": "ordinary-learner",
+                  "trait_id": "trait-spell-mentorship",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-spell-mentorship",
+                  "channel": "cultural_mentorship"
+                },
+                {
+                  "profile_id": "ordinary-learner",
+                  "trait_id": "trait-spell-mentorship",
+                  "channel": "cultural_mentorship"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": false,
+          "Techfinity": false
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-ordinary",
+            "label": "Ordinary practice route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "potential:Affinity"
+            ]
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "potential:Techfinity"
+            ]
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "potential:Affinity",
+              "potential:Techfinity"
+            ]
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [
+              "ordinary-learner"
+            ],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 1,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "archive-keeper"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [
+              "archive-keeper",
+              "ordinary-learner"
+            ],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 1,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "affinity-only",
+      "lineage": {
+        "id": "lineage-c33e4ab14f071ecff8db",
+        "parent_ids": [
+          "affinity-potential",
+          "fabricated-successor"
+        ],
+        "seed": "trial-0",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 1,
+        "ancestry": [
+          "affinity-potential",
+          "fabricated-successor"
+        ],
+        "traits": [
+          {
+            "id": "trait-affinity-biological",
+            "label": "Affinity compatibility candidate",
+            "channel": "biological",
+            "axis": "Affinity",
+            "meaning": "potential",
+            "description": "Experimental biological potential marker. It asserts neither a real gene nor a canonical source of Affinity access.",
+            "provenance": {
+              "policy_id": "policy-biological-potential",
+              "parent_references": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "channel": "biological"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-lamp-blueprint",
+            "label": "Ordinary lamp drawing",
+            "channel": "fabricated_blueprint",
+            "axis": null,
+            "meaning": "blueprint_pathway",
+            "description": "A transferable ordinary-device drawing, not a lamp, fabricated object, learned operating skill, or Techfinity requirement.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "fabricated-successor",
+                  "trait_id": "trait-lamp-blueprint",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "fabricated-successor",
+                  "trait_id": "trait-lamp-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": true,
+          "Techfinity": false
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-affinity-potential",
+            "label": "One-axis potential route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship"
+            ]
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship",
+              "potential:Techfinity"
+            ]
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "potential:Techfinity"
+            ]
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 2,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 1,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "fabricated-successor"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 3,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "fabricated-successor"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "techfinity-only",
+      "lineage": {
+        "id": "lineage-d053865d847d61b92b4c",
+        "parent_ids": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "seed": "trial-0",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 1,
+        "ancestry": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "traits": [
+          {
+            "id": "trait-interface-blueprint",
+            "label": "Interface compatibility specification",
+            "channel": "fabricated_blueprint",
+            "axis": "Techfinity",
+            "meaning": "potential",
+            "description": "A transferable experimental design specifying a possible compatibility route. Fabrication, installation, and access remain separate decisions.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-techfinity-biological",
+            "label": "Techfinity compatibility candidate",
+            "channel": "biological",
+            "axis": "Techfinity",
+            "meaning": "potential",
+            "description": "Experimental biological compatibility marker, separate from Affinity. It grants no installed interface or active access.",
+            "provenance": {
+              "policy_id": "policy-biological-potential",
+              "parent_references": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-techfinity-biological",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-techfinity-biological",
+                  "channel": "biological"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": false,
+          "Techfinity": true
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-techfinity-potential",
+            "label": "One-axis potential route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship",
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-lamp-blueprint",
+              "potential:Affinity"
+            ]
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship"
+            ]
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "potential:Affinity"
+            ]
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 3,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 1,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 2,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "independent-two-axis",
+      "lineage": {
+        "id": "lineage-a2be071d5c4f750d7c0d",
+        "parent_ids": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "seed": "trial-1",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 1,
+        "ancestry": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "traits": [
+          {
+            "id": "trait-affinity-biological",
+            "label": "Affinity compatibility candidate",
+            "channel": "biological",
+            "axis": "Affinity",
+            "meaning": "potential",
+            "description": "Experimental biological potential marker. It asserts neither a real gene nor a canonical source of Affinity access.",
+            "provenance": {
+              "policy_id": "policy-biological-potential",
+              "parent_references": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "channel": "biological"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-interface-blueprint",
+            "label": "Interface compatibility specification",
+            "channel": "fabricated_blueprint",
+            "axis": "Techfinity",
+            "meaning": "potential",
+            "description": "A transferable experimental design specifying a possible compatibility route. Fabrication, installation, and access remain separate decisions.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": true,
+          "Techfinity": true
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-dual-potential",
+            "label": "Two-axis potential route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship",
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship"
+            ]
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 1,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 3,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      }
+    }
+  ],
+  "multigeneration": {
+    "registration_order": [
+      {
+        "id": "lineage-a2be071d5c4f750d7c0d",
+        "parent_ids": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "seed": "trial-1",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 1,
+        "ancestry": [
+          "affinity-potential",
+          "techfinity-potential"
+        ],
+        "traits": [
+          {
+            "id": "trait-affinity-biological",
+            "label": "Affinity compatibility candidate",
+            "channel": "biological",
+            "axis": "Affinity",
+            "meaning": "potential",
+            "description": "Experimental biological potential marker. It asserts neither a real gene nor a canonical source of Affinity access.",
+            "provenance": {
+              "policy_id": "policy-biological-potential",
+              "parent_references": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "channel": "biological"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-interface-blueprint",
+            "label": "Interface compatibility specification",
+            "channel": "fabricated_blueprint",
+            "axis": "Techfinity",
+            "meaning": "potential",
+            "description": "A transferable experimental design specifying a possible compatibility route. Fabrication, installation, and access remain separate decisions.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": true,
+          "Techfinity": true
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-dual-potential",
+            "label": "Two-axis potential route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship",
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-spell-mentorship"
+            ]
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [
+              "affinity-potential"
+            ],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 1,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "techfinity-potential"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 3,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      },
+      {
+        "id": "lineage-2d666f674325211e742e",
+        "parent_ids": [
+          "lineage-a2be071d5c4f750d7c0d",
+          "archive-keeper"
+        ],
+        "seed": "generation-two",
+        "ruleset_id": "SW-HEREDITY-EXPERIMENT-001",
+        "ruleset_digest": "18bcb55a2ba634cbddf0dc42c8a2931798216f77e02f40b3c4f978246bfb685a",
+        "status": "EXPERIMENTAL",
+        "generation": 2,
+        "ancestry": [
+          "affinity-potential",
+          "archive-keeper",
+          "lineage-a2be071d5c4f750d7c0d",
+          "techfinity-potential"
+        ],
+        "traits": [
+          {
+            "id": "trait-affinity-biological",
+            "label": "Affinity compatibility candidate",
+            "channel": "biological",
+            "axis": "Affinity",
+            "meaning": "potential",
+            "description": "Experimental biological potential marker. It asserts neither a real gene nor a canonical source of Affinity access.",
+            "provenance": {
+              "policy_id": "policy-biological-potential",
+              "parent_references": [
+                {
+                  "profile_id": "lineage-a2be071d5c4f750d7c0d",
+                  "trait_id": "trait-affinity-biological",
+                  "generation": 1,
+                  "source_lineage_id": "lineage-a2be071d5c4f750d7c0d"
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "affinity-potential",
+                  "trait_id": "trait-affinity-biological",
+                  "channel": "biological"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-interface-blueprint",
+            "label": "Interface compatibility specification",
+            "channel": "fabricated_blueprint",
+            "axis": "Techfinity",
+            "meaning": "potential",
+            "description": "A transferable experimental design specifying a possible compatibility route. Fabrication, installation, and access remain separate decisions.",
+            "provenance": {
+              "policy_id": "policy-fabricated-blueprint",
+              "parent_references": [
+                {
+                  "profile_id": "lineage-a2be071d5c4f750d7c0d",
+                  "trait_id": "trait-interface-blueprint",
+                  "generation": 1,
+                  "source_lineage_id": "lineage-a2be071d5c4f750d7c0d"
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "techfinity-potential",
+                  "trait_id": "trait-interface-blueprint",
+                  "channel": "fabricated_blueprint"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trait-spell-mentorship",
+            "label": "Spell-practice mentorship invitation",
+            "channel": "cultural_mentorship",
+            "axis": null,
+            "meaning": "teaching_pathway",
+            "description": "A cultural route to seek instruction in an ordinary spell procedure. The learner must still purchase and practice M0.",
+            "provenance": {
+              "policy_id": "policy-cultural-mentorship",
+              "parent_references": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-spell-mentorship",
+                  "generation": 0,
+                  "source_lineage_id": null
+                }
+              ],
+              "founder_origins": [
+                {
+                  "profile_id": "archive-keeper",
+                  "trait_id": "trait-spell-mentorship",
+                  "channel": "cultural_mentorship"
+                }
+              ]
+            }
+          }
+        ],
+        "axis_potential": {
+          "Affinity": true,
+          "Techfinity": true
+        },
+        "learned_skills": [],
+        "active_axis_access": {
+          "Affinity": "unavailable",
+          "Techfinity": "unavailable"
+        },
+        "branches": [
+          {
+            "id": "branch-dual-potential",
+            "label": "Two-axis potential route",
+            "kind": "progression_route",
+            "status": "CANDIDATE",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "missing": [],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "Independent practice and expression progression",
+            "description": "Suggestions only. Growth, training, equipment, and independently supplied axis access are still required."
+          },
+          {
+            "id": "interaction-ordinary-methods",
+            "label": "Taught spell and ordinary drawing",
+            "requires_traits": [
+              "trait-spell-mentorship",
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [],
+            "skill_candidates": [
+              "M0",
+              "T0"
+            ],
+            "recipe_pattern": "M0 + T0: zero-axis composition variant",
+            "description": "A candidate route for later ordinary magic plus ordinary technology experimentation. The composition variant is a boundary test, not an extra installed skill.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-affinity-device",
+            "label": "Affinity potential and ordinary drawing",
+            "requires_traits": [
+              "trait-lamp-blueprint"
+            ],
+            "requires_potential": [
+              "Affinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1"
+            ],
+            "recipe_pattern": "A1 + T0: Affinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment after instruction, resources, equipment, and independently supplied Affinity access. It grants none of those requirements.",
+            "kind": "cross_channel_interaction",
+            "status": "BLOCKED",
+            "missing": [
+              "trait:trait-lamp-blueprint"
+            ]
+          },
+          {
+            "id": "interaction-spell-techfinity",
+            "label": "Taught spell and interface potential",
+            "requires_traits": [
+              "trait-spell-mentorship"
+            ],
+            "requires_potential": [
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "T1"
+            ],
+            "recipe_pattern": "M0 + T1: Techfinity-only composition variant",
+            "description": "Suggests a one-axis hybrid experiment using ordinary magic and a Techfinity expression. Teaching provenance does not satisfy learned prerequisites.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          },
+          {
+            "id": "interaction-independent-expressions",
+            "label": "Independent expression pairing",
+            "requires_traits": [],
+            "requires_potential": [
+              "Affinity",
+              "Techfinity"
+            ],
+            "skill_candidates": [
+              "M0",
+              "T0",
+              "A1",
+              "T1",
+              "H1"
+            ],
+            "recipe_pattern": "A1 + T1: Woven Beacon",
+            "description": "A candidate to test the approved two-axis recipe. Both axis access facts and every learned prerequisite must still be supplied independently during play.",
+            "kind": "cross_channel_interaction",
+            "status": "CANDIDATE",
+            "missing": []
+          }
+        ],
+        "trace": [
+          {
+            "trait_id": "trait-affinity-biological",
+            "channel": "biological",
+            "parent_ids": [
+              "lineage-a2be071d5c4f750d7c0d"
+            ],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-affinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-device-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-interface-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "lineage-a2be071d5c4f750d7c0d"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 1,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-lamp-blueprint",
+            "channel": "fabricated_blueprint",
+            "parent_ids": [
+              "archive-keeper"
+            ],
+            "policy_id": "policy-fabricated-blueprint",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": 3,
+            "inherited": false,
+            "reason": "Did not pass the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-spell-mentorship",
+            "channel": "cultural_mentorship",
+            "parent_ids": [
+              "archive-keeper"
+            ],
+            "policy_id": "policy-cultural-mentorship",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": 0,
+            "inherited": true,
+            "reason": "Passed the deterministic fixture gate."
+          },
+          {
+            "trait_id": "trait-techfinity-biological",
+            "channel": "biological",
+            "parent_ids": [],
+            "policy_id": "policy-biological-potential",
+            "numerator": 3,
+            "denominator": 4,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          },
+          {
+            "trait_id": "trait-techfinity-resonant",
+            "channel": "resonant",
+            "parent_ids": [],
+            "policy_id": "policy-resonant-succession",
+            "numerator": 1,
+            "denominator": 2,
+            "draw": null,
+            "inherited": false,
+            "reason": "No contributing parent; no spontaneous trait."
+          }
+        ]
+      }
+    ],
+    "description": "Register the two-axis generation, then cross it with archive-keeper. Immediate parents and original founder provenance remain inspectable."
+  }
+}

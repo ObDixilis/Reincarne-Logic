@@ -1,0 +1,256 @@
+{
+  "schema_version": "0.1.0",
+  "proposal_id": "SW-SKILL-001",
+  "adoption": "PROPOSED",
+  "canonical_systems": {
+    "Affinity": {
+      "status": "CANON",
+      "url": "https://app.notion.com/p/3cc05d32d1a581878329d3cde704ba3d"
+    },
+    "Techfinity": {
+      "status": "CANON",
+      "url": "https://app.notion.com/p/3cc05d32d1a581d39899c923f1002bad"
+    }
+  },
+  "context_doubt": {
+    "Finity": {
+      "status": "UNRESOLVED",
+      "runtime_role": "none",
+      "source_url": "https://app.notion.com/p/3cc05d32d1a58156ab92e4fc9d9d5190",
+      "questions": [
+        "Umbrella, third axis, suffix grammar, or family label?",
+        "Do the historical counts describe the same thing? No count is selected."
+      ]
+    }
+  },
+  "family_labels": [],
+  "nodes": [
+    {
+      "id": "M0",
+      "label": "Learned Light",
+      "kind": "practice",
+      "adoption": "PROPOSED",
+      "methods": [
+        "magic"
+      ],
+      "mapping": {
+        "status": "PROPOSED",
+        "axis_requires": [],
+        "question": null
+      },
+      "ranks": [
+        {
+          "rank": 1,
+          "growth_cost": 1,
+          "requires": [],
+          "activation": {
+            "cost": {
+              "focus": 1,
+              "charge": 0
+            },
+            "equipment": [],
+            "duration_ticks": 1,
+            "recovery_ticks": 1,
+            "output": "steady_spell_light"
+          }
+        }
+      ],
+      "recipe": null
+    },
+    {
+      "id": "T0",
+      "label": "Lamp Handling",
+      "kind": "practice",
+      "adoption": "PROPOSED",
+      "methods": [
+        "technology"
+      ],
+      "mapping": {
+        "status": "PROPOSED",
+        "axis_requires": [],
+        "question": null
+      },
+      "ranks": [
+        {
+          "rank": 1,
+          "growth_cost": 1,
+          "requires": [],
+          "activation": {
+            "cost": {
+              "focus": 0,
+              "charge": 1
+            },
+            "equipment": [
+              "lamp"
+            ],
+            "duration_ticks": 1,
+            "recovery_ticks": 1,
+            "output": "steady_lamp_light"
+          }
+        }
+      ],
+      "recipe": null
+    },
+    {
+      "id": "A1",
+      "label": "Guided Light",
+      "kind": "expression",
+      "adoption": "PROPOSED",
+      "methods": [
+        "magic"
+      ],
+      "mapping": {
+        "status": "PROPOSED",
+        "axis_requires": [
+          "Affinity"
+        ],
+        "question": null
+      },
+      "ranks": [
+        {
+          "rank": 1,
+          "growth_cost": 1,
+          "requires": [
+            {
+              "node": "M0",
+              "rank": 1
+            }
+          ],
+          "activation": {
+            "cost": {
+              "focus": 1,
+              "charge": 0
+            },
+            "equipment": [],
+            "duration_ticks": 1,
+            "recovery_ticks": 1,
+            "output": "guided_light"
+          }
+        }
+      ],
+      "recipe": null
+    },
+    {
+      "id": "T1",
+      "label": "Signal Control",
+      "kind": "expression",
+      "adoption": "PROPOSED",
+      "methods": [
+        "technology"
+      ],
+      "mapping": {
+        "status": "PROPOSED",
+        "axis_requires": [
+          "Techfinity"
+        ],
+        "question": null
+      },
+      "ranks": [
+        {
+          "rank": 1,
+          "growth_cost": 1,
+          "requires": [
+            {
+              "node": "T0",
+              "rank": 1
+            }
+          ],
+          "activation": {
+            "cost": {
+              "focus": 0,
+              "charge": 1
+            },
+            "equipment": [
+              "lamp"
+            ],
+            "duration_ticks": 1,
+            "recovery_ticks": 1,
+            "output": "addressed_signal"
+          }
+        }
+      ],
+      "recipe": null
+    },
+    {
+      "id": "H1",
+      "label": "Woven Beacon",
+      "kind": "composition",
+      "adoption": "PROPOSED",
+      "methods": [
+        "magic",
+        "technology"
+      ],
+      "mapping": {
+        "status": "PROPOSED",
+        "axis_requires": [
+          "Affinity",
+          "Techfinity"
+        ],
+        "question": null
+      },
+      "ranks": [
+        {
+          "rank": 1,
+          "growth_cost": 2,
+          "requires": [
+            {
+              "node": "A1",
+              "rank": 1
+            },
+            {
+              "node": "T1",
+              "rank": 1
+            }
+          ],
+          "activation": {
+            "cost": {
+              "focus": 1,
+              "charge": 1
+            },
+            "equipment": [
+              "lamp"
+            ],
+            "duration_ticks": 2,
+            "recovery_ticks": 2,
+            "output": "encoded_light_beacon"
+          }
+        }
+      ],
+      "recipe": {
+        "mode": "coupled",
+        "inputs": [
+          {
+            "role": "light_source",
+            "node": "A1",
+            "rank": 1,
+            "capability": "guided_light"
+          },
+          {
+            "role": "signal_pattern",
+            "node": "T1",
+            "rank": 1,
+            "capability": "addressed_signal"
+          }
+        ],
+        "on_input_loss": "abort_no_refund",
+        "fallback": null
+      }
+    }
+  ],
+  "scenario": {
+    "mode": "proposal_playtest",
+    "allowed_proposal": "SW-SKILL-001",
+    "growth_points": 6,
+    "resources": {
+      "focus": 3,
+      "charge": 3
+    },
+    "axis_access": {
+      "Affinity": "available",
+      "Techfinity": "available"
+    },
+    "equipment": [
+      "lamp"
+    ]
+  }
+}

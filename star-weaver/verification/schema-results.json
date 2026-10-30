@@ -1,0 +1,32 @@
+{
+  "validator": "PowerShell Test-Json",
+  "powershell": "7.6.6",
+  "skill_fixture": "PASS",
+  "lineage_catalog": "PASS",
+  "lineage_examples": [
+    {
+      "check": "ordinary-methods",
+      "status": "PASS"
+    },
+    {
+      "check": "affinity-only",
+      "status": "PASS"
+    },
+    {
+      "check": "techfinity-only",
+      "status": "PASS"
+    },
+    {
+      "check": "independent-two-axis",
+      "status": "PASS"
+    },
+    {
+      "check": "lineage-a2be071d5c4f750d7c0d",
+      "status": "PASS"
+    },
+    {
+      "check": "lineage-2d666f674325211e742e",
+      "status": "PASS"
+    }
+  ]
+}
