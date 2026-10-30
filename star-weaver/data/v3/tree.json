@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.3.0",
+  "proposal_id": "SW-TRI-001",
+  "status": "EXPERIMENTAL",
+  "canon_change": "Finity is promoted from 'no runtime role' to a full third axis with skills and the resonance resource. Requires explicit approval before it supersedes SW-SKILL-001.",
+  "axes": ["Affinity", "Techfinity", "Finity"],
+  "resources": ["focus", "charge", "resonance"],
+  "potential_modifiers": {
+    "discount_at": 70,
+    "surcharge_below": 15,
+    "note": "Inherited potential on a node's axis adjusts learning cost by -1 / +1 (minimum 1). It never grants ranks, equipment or axis access."
+  },
+  "scenario": {
+    "growth_points": 15,
+    "resources": {"focus": 4, "charge": 4, "resonance": 4},
+    "caps": {"focus": 6, "charge": 6, "resonance": 6},
+    "regen": {"focus": 1, "charge": 1, "resonance": 1},
+    "regen_interval": 3,
+    "axis_access": {"Affinity": "available", "Techfinity": "available", "Finity": "available"},
+    "equipment": ["lamp"]
+  },
+  "nodes": [
+    {"id": "M0", "label": "Learned Light", "kind": "practice", "axes": [], "tier": 0, "growth_cost": 1, "requires": [], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 1, "charge": 0, "resonance": 0}, "equipment": [], "duration": 1, "recovery": 1, "output": "steady_spell_light", "power": 1}, "passive": null, "inputs": []},
+    {"id": "T0", "label": "Lamp Handling", "kind": "practice", "axes": [], "tier": 0, "growth_cost": 1, "requires": [], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 1, "resonance": 0}, "equipment": ["lamp"], "duration": 1, "recovery": 1, "output": "steady_lamp_light", "power": 1}, "passive": null, "inputs": []},
+    {"id": "F0", "label": "Still Attunement", "kind": "practice", "axes": [], "tier": 0, "growth_cost": 1, "requires": [], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 0, "resonance": 1}, "equipment": [], "duration": 1, "recovery": 1, "output": "still_tone", "power": 1}, "passive": null, "inputs": []},
+
+    {"id": "A1", "label": "Guided Light", "kind": "expression", "axes": ["Affinity"], "tier": 1, "growth_cost": 1, "requires": ["M0"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 1, "charge": 0, "resonance": 0}, "equipment": [], "duration": 1, "recovery": 1, "output": "guided_light", "power": 2}, "passive": null, "inputs": []},
+    {"id": "T1", "label": "Signal Control", "kind": "expression", "axes": ["Techfinity"], "tier": 1, "growth_cost": 1, "requires": ["T0"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 1, "resonance": 0}, "equipment": ["lamp"], "duration": 1, "recovery": 1, "output": "addressed_signal", "power": 2}, "passive": null, "inputs": []},
+    {"id": "F1", "label": "Threshold Sense", "kind": "expression", "axes": ["Finity"], "tier": 1, "growth_cost": 1, "requires": ["F0"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 0, "resonance": 1}, "equipment": [], "duration": 1, "recovery": 1, "output": "threshold_reading", "power": 2}, "passive": null, "inputs": []},
+
+    {"id": "A2", "label": "Lumen Shaping", "kind": "expression", "axes": ["Affinity"], "tier": 2, "growth_cost": 2, "requires": ["A1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 2, "charge": 0, "resonance": 0}, "equipment": [], "duration": 2, "recovery": 2, "output": "shaped_lumen", "power": 5}, "passive": null, "inputs": []},
+    {"id": "T2", "label": "Relay Lattice", "kind": "expression", "axes": ["Techfinity"], "tier": 2, "growth_cost": 2, "requires": ["T1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 2, "resonance": 0}, "equipment": ["lamp"], "duration": 2, "recovery": 2, "output": "relay_lattice", "power": 5}, "passive": null, "inputs": []},
+    {"id": "F2", "label": "Bridge Cadence", "kind": "expression", "axes": ["Finity"], "tier": 2, "growth_cost": 2, "requires": ["F1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 0, "resonance": 2}, "equipment": [], "duration": 2, "recovery": 2, "output": "bridge_cadence", "power": 5}, "passive": null, "inputs": []},
+
+    {"id": "A3a", "label": "Radiant Lance", "kind": "expression", "axes": ["Affinity"], "tier": 3, "growth_cost": 3, "requires": ["A2"], "requires_any": [], "excludes": ["A3b"],
+     "activation": {"cost": {"focus": 3, "charge": 0, "resonance": 0}, "equipment": [], "duration": 1, "recovery": 4, "output": "radiant_lance", "power": 9}, "passive": null, "inputs": []},
+    {"id": "A3b", "label": "Sanctum Glow", "kind": "passive", "axes": ["Affinity"], "tier": 3, "growth_cost": 3, "requires": ["A2"], "requires_any": [], "excludes": ["A3a"],
+     "activation": null, "passive": {"regen": {"focus": 1}, "cap": {"focus": 2}}, "inputs": []},
+    {"id": "T3a", "label": "Arc Projector", "kind": "expression", "axes": ["Techfinity"], "tier": 3, "growth_cost": 3, "requires": ["T2"], "requires_any": [], "excludes": ["T3b"],
+     "activation": {"cost": {"focus": 0, "charge": 3, "resonance": 0}, "equipment": ["lamp"], "duration": 1, "recovery": 4, "output": "arc_projection", "power": 9}, "passive": null, "inputs": []},
+    {"id": "T3b", "label": "Capacitor Bank", "kind": "passive", "axes": ["Techfinity"], "tier": 3, "growth_cost": 3, "requires": ["T2"], "requires_any": [], "excludes": ["T3a"],
+     "activation": null, "passive": {"regen": {"charge": 1}, "cap": {"charge": 2}}, "inputs": []},
+    {"id": "F3a", "label": "Equilibrium Ward", "kind": "passive", "axes": ["Finity"], "tier": 3, "growth_cost": 3, "requires": ["F2"], "requires_any": [], "excludes": ["F3b"],
+     "activation": null, "passive": {"regen": {"resonance": 1}, "cap": {"focus": 1, "charge": 1, "resonance": 1}}, "inputs": []},
+    {"id": "F3b", "label": "Convergence Spike", "kind": "expression", "axes": ["Finity"], "tier": 3, "growth_cost": 3, "requires": ["F2"], "requires_any": [], "excludes": ["F3a"],
+     "activation": {"cost": {"focus": 1, "charge": 1, "resonance": 2}, "equipment": [], "duration": 1, "recovery": 4, "output": "convergence_spike", "power": 11}, "passive": null, "inputs": []},
+
+    {"id": "A4", "label": "Starfall Litany", "kind": "expression", "axes": ["Affinity"], "tier": 4, "growth_cost": 4, "requires": [], "requires_any": ["A3a", "A3b"], "excludes": [],
+     "activation": {"cost": {"focus": 4, "charge": 0, "resonance": 0}, "equipment": [], "duration": 3, "recovery": 5, "output": "starfall", "power": 16}, "passive": null, "inputs": []},
+    {"id": "T4", "label": "Orbital Array", "kind": "expression", "axes": ["Techfinity"], "tier": 4, "growth_cost": 4, "requires": [], "requires_any": ["T3a", "T3b"], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 4, "resonance": 0}, "equipment": ["lamp"], "duration": 3, "recovery": 5, "output": "orbital_array", "power": 16}, "passive": null, "inputs": []},
+    {"id": "F4", "label": "Liminal Gate", "kind": "expression", "axes": ["Finity"], "tier": 4, "growth_cost": 4, "requires": [], "requires_any": ["F3a", "F3b"], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 0, "resonance": 4}, "equipment": [], "duration": 3, "recovery": 5, "output": "liminal_gate", "power": 16}, "passive": null, "inputs": []},
+
+    {"id": "H1", "label": "Woven Beacon", "kind": "composition", "axes": ["Affinity", "Techfinity"], "tier": 2, "growth_cost": 2, "requires": ["A1", "T1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 1, "charge": 1, "resonance": 0}, "equipment": ["lamp"], "duration": 2, "recovery": 2, "output": "encoded_light_beacon", "power": 5}, "passive": null, "inputs": ["A1", "T1"]},
+    {"id": "H2", "label": "Resonant Choir", "kind": "composition", "axes": ["Affinity", "Finity"], "tier": 2, "growth_cost": 2, "requires": ["A1", "F1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 1, "charge": 0, "resonance": 1}, "equipment": [], "duration": 2, "recovery": 2, "output": "resonant_choir", "power": 5}, "passive": null, "inputs": ["A1", "F1"]},
+    {"id": "H3", "label": "Tuned Engine", "kind": "composition", "axes": ["Techfinity", "Finity"], "tier": 2, "growth_cost": 2, "requires": ["T1", "F1"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 0, "charge": 1, "resonance": 1}, "equipment": ["lamp"], "duration": 2, "recovery": 2, "output": "tuned_engine", "power": 5}, "passive": null, "inputs": ["T1", "F1"]},
+    {"id": "H4", "label": "Triune Weave", "kind": "capstone", "axes": ["Affinity", "Techfinity", "Finity"], "tier": 5, "growth_cost": 3, "requires": ["H1", "H2", "H3"], "requires_any": [], "excludes": [],
+     "activation": {"cost": {"focus": 2, "charge": 2, "resonance": 2}, "equipment": ["lamp"], "duration": 3, "recovery": 6, "output": "triune_weave", "power": 24}, "passive": null, "inputs": ["H1", "H2", "H3"]}
+  ]
+}

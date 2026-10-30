@@ -259,7 +259,7 @@ def print_lineage(rep: dict) -> None:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("mode", nargs="?", choices=("all", "skills", "lineage"), default="all")
+    ap.add_argument("mode", nargs="?", choices=("all", "skills", "lineage", "v3"), default="all")
     ap.add_argument("--horizon", type=int, default=20)
     ap.add_argument("--runs", type=int, default=200)
     ap.add_argument("--generations", type=int, default=6)
@@ -267,6 +267,29 @@ def main(argv=None) -> int:
     ap.add_argument("--seed", default="balance-1")
     ap.add_argument("--json", type=Path)
     args = ap.parse_args(argv)
+
+    if args.mode == "v3":
+        from starweaver.tri.simulate_tri import full_v3_report
+        sym_runs = 500 if args.runs == 200 else args.runs
+        report = full_v3_report(runs_symmetry=sym_runs, eco_generations=args.generations)
+        print("\n=== Star Weaver v0.3 Balance & Ecosystem Report [EXPERIMENTAL] ===")
+        print(f"Evaluated builds: {report['skills']['distinct_builds_evaluated']} (Budget: {report['skills']['scenario_budget']} GP / 42 GP)")
+        print(f"Top power output: {report['skills']['top_power_score']}")
+        print("\n--- Archetypes ---")
+        for name, data in report['skills']['top_archetypes'].items():
+            if data:
+                print(f"  {name:22} Power: {data['base']['total_power']:<3} Outputs: {data['base']['total_outputs']:<2} Build: {'+'.join(data['build'])}")
+        sym = report['symmetry_audit']
+        print("\n--- Founder Symmetry Audit ---")
+        print(f"  Mean Affinity: {sym['mean_affinity']} | Mean Techfinity: {sym['mean_techfinity']} | Parity verified: {sym['symmetry_verified']}")
+        eco = report['ecosystem']
+        print(f"\n--- Ecosystem Emergence ({eco['total_unique_discoveries']} discoveries) ---")
+        print(f"  Discovered: {', '.join(eco['discovered_traits'])}")
+        if args.json:
+            args.json.write_text(json.dumps(report, indent=2), encoding="utf-8")
+            print(f"\nWrote {args.json}")
+        return 0
+
     out = {}
     if args.mode in ("all", "skills"):
         out["skills"] = skill_report(args.horizon)

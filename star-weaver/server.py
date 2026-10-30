@@ -324,6 +324,9 @@ class Handler(BaseHTTPRequestHandler):
             self.json(200, self.server.store.bootstrap())
         elif path == '/api/export':
             self.json(200, self.server.store.export(), 'star-weaver-save.json')
+        elif path == '/api/manifestation':
+            from starweaver.tri.manifestation import load_manifestation_catalog
+            self.json(200, load_manifestation_catalog())
         elif path.startswith('/api/'):
             self.json(404, {'error': 'Unknown endpoint'})
         else:
@@ -362,6 +365,25 @@ class Handler(BaseHTTPRequestHandler):
                 result = store.install_lineage(payload)
             elif path == '/api/import':
                 result = store.import_save(payload)
+            elif path == '/api/compile-manifestation':
+                from starweaver.tri.manifestation import ManifestationCompiler
+                compiler = ManifestationCompiler()
+                skill_id = payload.get('skill_id', 'H1')
+                trad = payload.get('mentorship_tradition')
+                equip = payload.get('equipment')
+                interrupted = bool(payload.get('interrupted', False))
+                reason = payload.get('interruption_reason')
+                performer = {'mentorship_tradition': trad} if trad else None
+                frame = compiler.compile(
+                    skill_id=skill_id,
+                    tick=payload.get('tick', 0),
+                    status=payload.get('status', 'ACTIVE'),
+                    performer_profile=performer,
+                    equipment_present=equip,
+                    interrupted=interrupted,
+                    interruption_reason=reason,
+                )
+                result = frame.to_dict()
             else:
                 self.json(404, {'error': 'Unknown endpoint'})
                 return

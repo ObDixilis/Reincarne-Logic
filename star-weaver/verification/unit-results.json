@@ -1,10 +1,10 @@
 {
   "version": "0.2.0",
-  "executed_at_utc": "2026-10-22T04:53:45.968875+00:00",
+  "executed_at_utc": "2026-10-25T03:38:46.503700+00:00",
   "scope": "Actual skill engine, lineage engine, persistence and HTTP boundary checks using isolated synthetic state",
   "python": "3.12.14",
   "platform": "Windows",
-  "test_count": 75,
+  "test_count": 100,
   "status": "PASS",
   "checks": [
     {
@@ -236,11 +236,51 @@
       "status": "PASS"
     },
     {
+      "check": "test_manifestation.TestManifestationCompiler.test_7_anchor_color_gamut_and_skin_safe_luminance",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_catalog_validation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_choreography_cultural_mentorship_influence",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_engine_integration_get_manifestation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_line_grammar_three_modes",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_material_channel_taxonomy",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_triune_woven_heredity_vs_triune_weave_skill_distinction",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_woven_beacon_vertical_slice_interrupted",
+      "status": "PASS"
+    },
+    {
+      "check": "test_manifestation.TestManifestationCompiler.test_woven_beacon_vertical_slice_normal",
+      "status": "PASS"
+    },
+    {
       "check": "test_server.HttpTests.test_bootstrap_and_real_action_stale_revision_flow",
       "status": "PASS"
     },
     {
       "check": "test_server.HttpTests.test_invalid_body_returns_actionable_error_and_keeps_state",
+      "status": "PASS"
+    },
+    {
+      "check": "test_server.HttpTests.test_manifestation_endpoints",
       "status": "PASS"
     },
     {
@@ -305,6 +345,66 @@
     },
     {
       "check": "test_server.StoreTests.test_valid_save_roundtrip_resumes_active_action_once",
+      "status": "PASS"
+    },
+    {
+      "check": "test_simulate.SimulatorTests.test_lineage_report_deterministic_and_grants_nothing",
+      "status": "PASS"
+    },
+    {
+      "check": "test_simulate.SimulatorTests.test_simulator_does_not_write_data",
+      "status": "PASS"
+    },
+    {
+      "check": "test_simulate.SimulatorTests.test_skill_report_baseline",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEcosystem.test_ecosystem_drift",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_coupling_abort",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_learn_progression_and_budget",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_mutual_exclusion",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_passives_and_regen",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_save_and_restore",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_tree_validation",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriEngine.test_v02_migration",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriHeredity.test_child_reproducibility",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriHeredity.test_emergence_and_hybrids",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriHeredity.test_founder_symmetry_audit",
+      "status": "PASS"
+    },
+    {
+      "check": "test_tri.TestTriHeredity.test_rules_mirror_symmetry",
       "status": "PASS"
     }
   ]

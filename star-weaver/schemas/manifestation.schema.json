@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Star Weaver Manifestation Contract 0.3.1",
+  "description": "Reality compiler contract connecting deterministic engine skills with Afro-Gorgon physical manifestation, Neoluminescent color doctrine, Aetherwear/Assorcery interfaces, and geometric line grammar.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "status",
+    "color_gamut",
+    "line_grammar_rules",
+    "material_channels",
+    "manifestations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.3.1"
+    },
+    "proposal_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "status": {
+      "const": "EXPERIMENTAL"
+    },
+    "doctrine_reference": {
+      "type": "string"
+    },
+    "color_gamut": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "hex", "semantic_role", "skin_safe_max_luminance_nits"],
+          "properties": {
+            "name": { "type": "string" },
+            "hex": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+            "semantic_role": { "type": "string" },
+            "skin_safe_max_luminance_nits": { "type": "number", "minimum": 1.0 }
+          }
+        }
+      }
+    },
+    "line_grammar_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wave", "particle", "zigzag"],
+      "properties": {
+        "wave": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "physics_behavior", "carrier_role"],
+          "properties": {
+            "mode": { "const": "continuous" },
+            "physics_behavior": { "type": "string" },
+            "carrier_role": { "type": "string" }
+          }
+        },
+        "particle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "physics_behavior", "carrier_role"],
+          "properties": {
+            "mode": { "const": "discrete" },
+            "physics_behavior": { "type": "string" },
+            "carrier_role": { "type": "string" }
+          }
+        },
+        "zigzag": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "physics_behavior", "carrier_role"],
+          "properties": {
+            "mode": { "const": "routed" },
+            "physics_behavior": { "type": "string" },
+            "carrier_role": { "type": "string" }
+          }
+        }
+      }
+    },
+    "material_channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Aetherwear", "Assorcery", "Ordinary", "Inherent"],
+      "properties": {
+        "Aetherwear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["definition", "conduit_type"],
+          "properties": {
+            "definition": { "type": "string" },
+            "conduit_type": { "type": "string" }
+          }
+        },
+        "Assorcery": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["definition", "hardware_class"],
+          "properties": {
+            "definition": { "type": "string" },
+            "hardware_class": { "type": "string" }
+          }
+        },
+        "Ordinary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["definition"],
+          "properties": {
+            "definition": { "type": "string" }
+          }
+        },
+        "Inherent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["definition"],
+          "properties": {
+            "definition": { "type": "string" }
+          }
+        }
+      }
+    },
+    "manifestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[A-Za-z0-9_-]+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "skill_id",
+            "label",
+            "material_channel",
+            "line_grammar",
+            "color_signature",
+            "choreography",
+            "world_effect",
+            "sensory_expression",
+            "failure"
+          ],
+          "properties": {
+            "skill_id": { "type": "string" },
+            "label": { "type": "string" },
+            "material_channel": { "enum": ["Aetherwear", "Assorcery", "Ordinary", "Inherent"] },
+            "apparatus_required": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "line_grammar": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "enum": ["wave", "particle", "zigzag"] }
+            },
+            "color_signature": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            },
+            "choreography": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["flow_style", "somatic_posture", "rhythm"],
+              "properties": {
+                "flow_style": { "type": "string" },
+                "somatic_posture": { "type": "string" },
+                "rhythm": { "type": "string" }
+              }
+            },
+            "world_effect": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "range_meters", "collision_profile", "signal_protocol", "persistence_ticks"],
+              "properties": {
+                "kind": { "type": "string" },
+                "range_meters": { "type": ["number", "null"] },
+                "collision_profile": { "type": ["string", "null"] },
+                "signal_protocol": { "type": ["string", "null"] },
+                "persistence_ticks": { "type": "integer", "minimum": 0 }
+              }
+            },
+            "sensory_expression": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["visual_form", "auditory_frequency", "tactile_feedback", "skin_tone_protection_rule"],
+              "properties": {
+                "visual_form": { "type": "string" },
+                "auditory_frequency": { "type": "string" },
+                "tactile_feedback": { "type": "string" },
+                "skin_tone_protection_rule": { "type": "string" }
+              }
+            },
+            "failure": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["on_hardware_loss", "on_axis_loss", "breakdown_visual", "somatic_recoil"],
+              "properties": {
+                "on_hardware_loss": { "type": "string" },
+                "on_axis_loss": { "type": "string" },
+                "breakdown_visual": { "type": "string" },
+                "somatic_recoil": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

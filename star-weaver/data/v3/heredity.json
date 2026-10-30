@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.3.0",
+  "ruleset_id": "SW-TRI-HEREDITY-001",
+  "status": "EXPERIMENTAL",
+  "note": "All names are placeholders for the worldbuilder to rename. Every Affinity entry has a Techfinity mirror (field 'mirror'); Finity and axis-free entries mirror themselves.",
+  "blend": {
+    "regression_mean": 30,
+    "potential_sigma": 8,
+    "polarity_sigma": 0.08,
+    "polarity_pull": 6,
+    "polarity_feedback": 0.15,
+    "convergence": {"threshold": 40, "window": 0.35, "bonus": 8},
+    "dormant_below": 20
+  },
+  "mutation": {"rate": 0.02, "slots": 3},
+  "routes": {
+    "biological": {"label": "Biological", "potential_weight": {"Affinity": 1.0, "Techfinity": 1.0, "Finity": 1.0}, "trait_rate": {"one": 0.5, "both": 0.85}},
+    "resonant":   {"label": "Resonant", "potential_weight": {"Affinity": 0.9, "Techfinity": 0.5, "Finity": 1.0}, "trait_rate": {"one": 0.45, "both": 0.8}},
+    "blueprint":  {"label": "Fabricated / blueprint", "potential_weight": {"Affinity": 0.5, "Techfinity": 0.9, "Finity": 1.0}, "trait_rate": {"one": 0.45, "both": 0.8}},
+    "mentorship": {"label": "Cultural / mentorship", "potential_weight": {"Affinity": 0.7, "Techfinity": 0.7, "Finity": 0.7}, "trait_rate": {"one": 0.6, "both": 0.9}}
+  },
+  "route_mirror": {"biological": "biological", "resonant": "blueprint", "blueprint": "resonant", "mentorship": "mentorship"},
+  "route_taxonomy": {
+    "biological": "physiological_inheritance",
+    "mentorship": "cultural_tradition_and_flow_arts",
+    "blueprint": "technological_schematic_fabrication",
+    "resonant": "harmonic_field_compatibility"
+  },
+  "traditions": {
+    "archive-keeper": "Archive Custodian Order",
+    "mentorship-conductor": "Gorgon Flow Arts Lineage",
+    "fabricated-successor": "Foundry Artisan Guild",
+    "forge-mentor": "Foundry Forge Guild",
+    "threshold-walker": "Threshold Marches Wayfarers",
+    "ordinary-learner": "Crossroads Open Guild",
+    "affinity-potential": "Starlit Weavers Circle",
+    "techfinity-potential": "Lattice Engineers Guild",
+    "dual-potential": "Dual Resonance Consortium"
+  },
+  "tradition_mirror": {
+    "Archive Custodian Order": "Foundry Artisan Guild",
+    "Foundry Artisan Guild": "Archive Custodian Order",
+    "Gorgon Flow Arts Lineage": "Foundry Forge Guild",
+    "Foundry Forge Guild": "Gorgon Flow Arts Lineage",
+    "Starlit Weavers Circle": "Lattice Engineers Guild",
+    "Lattice Engineers Guild": "Starlit Weavers Circle",
+    "Threshold Marches Wayfarers": "Threshold Marches Wayfarers",
+    "Crossroads Open Guild": "Crossroads Open Guild",
+    "Dual Resonance Consortium": "Dual Resonance Consortium"
+  },
+  "tag_mirror": {"light": "circuit", "circuit": "light", "voice": "forge", "forge": "voice"},
+  "traits": [
+    {"id": "starlit-blood", "label": "Starlit Blood", "axis": "Affinity", "tags": ["bloodline", "light"], "carried_by": ["biological", "resonant"], "mirror": "circuit-blood"},
+    {"id": "circuit-blood", "label": "Circuit Blood", "axis": "Techfinity", "tags": ["bloodline", "circuit"], "carried_by": ["biological", "blueprint"], "mirror": "starlit-blood"},
+    {"id": "archive-memory", "label": "Archive Memory", "axis": "Affinity", "tags": ["memory", "light"], "carried_by": ["mentorship", "resonant", "biological"], "mirror": "blueprint-memory"},
+    {"id": "blueprint-memory", "label": "Blueprint Memory", "axis": "Techfinity", "tags": ["memory", "circuit"], "carried_by": ["mentorship", "blueprint", "biological"], "mirror": "archive-memory"},
+    {"id": "resonant-voice", "label": "Resonant Voice", "axis": "Affinity", "tags": ["voice", "craft"], "carried_by": ["mentorship", "resonant", "biological"], "mirror": "forge-hand"},
+    {"id": "forge-hand", "label": "Forge Hand", "axis": "Techfinity", "tags": ["forge", "craft"], "carried_by": ["mentorship", "blueprint", "biological"], "mirror": "resonant-voice"},
+    {"id": "steady-hands", "label": "Steady Hands", "axis": null, "tags": ["practice"], "carried_by": ["biological", "resonant", "blueprint", "mentorship"], "mirror": "steady-hands"},
+    {"id": "threshold-sight", "label": "Threshold Sight", "axis": "Finity", "tags": ["threshold", "liminal"], "carried_by": ["biological", "resonant", "blueprint", "mentorship"], "mirror": "threshold-sight"},
+    {"id": "quiet-core", "label": "Quiet Core", "axis": "Finity", "tags": ["balance"], "carried_by": ["biological", "resonant", "blueprint"], "mirror": "quiet-core"}
+  ],
+  "mutations": [
+    {"id": "veilglass-eyes", "label": "Veilglass Eyes", "axis": "Affinity", "tags": ["mutant", "sight", "light"], "weight": 3, "mirror": "lensgrain-eyes"},
+    {"id": "lensgrain-eyes", "label": "Lensgrain Eyes", "axis": "Techfinity", "tags": ["mutant", "sight", "circuit"], "weight": 3, "mirror": "veilglass-eyes"},
+    {"id": "ember-pulse", "label": "Ember Pulse", "axis": "Affinity", "tags": ["mutant", "pulse"], "weight": 3, "mirror": "dynamo-pulse"},
+    {"id": "dynamo-pulse", "label": "Dynamo Pulse", "axis": "Techfinity", "tags": ["mutant", "pulse"], "weight": 3, "mirror": "ember-pulse"},
+    {"id": "gilded-nerve", "label": "Gilded Nerve", "axis": "Affinity", "tags": ["mutant", "nerve"], "weight": 2, "mirror": "wired-nerve"},
+    {"id": "wired-nerve", "label": "Wired Nerve", "axis": "Techfinity", "tags": ["mutant", "nerve"], "weight": 2, "mirror": "gilded-nerve"},
+    {"id": "hollow-echo", "label": "Hollow Echo", "axis": "Finity", "tags": ["mutant", "liminal"], "weight": 2, "mirror": "hollow-echo"},
+    {"id": "tidebound", "label": "Tidebound", "axis": "Finity", "tags": ["mutant", "balance"], "weight": 2, "mirror": "tidebound"},
+    {"id": "null-flicker", "label": "Null Flicker", "axis": null, "tags": ["mutant", "null"], "weight": 1, "mirror": "null-flicker"},
+    {"id": "starless-mark", "label": "Starless Mark", "axis": null, "tags": ["mutant", "void"], "weight": 1, "mirror": "starless-mark"}
+  ],
+  "emergence": [
+    {"id": "echo-forged", "label": "Echo-Forged", "axis": "Finity", "tags": ["emergent", "bridge"], "requires_tags": {"voice": 1, "forge": 1}, "requires_potential": {"Finity": 30}, "chance": 0.5, "mirror": "echo-forged"},
+    {"id": "dawn-lattice", "label": "Dawn Lattice", "axis": "Finity", "tags": ["emergent", "bridge"], "requires_tags": {"light": 1, "circuit": 1}, "requires_potential": {"Finity": 40}, "chance": 0.35, "mirror": "dawn-lattice"},
+    {"id": "living-archive", "label": "Living Archive", "axis": "Affinity", "tags": ["emergent", "memory", "light"], "requires_tags": {"memory": 1, "bloodline": 1, "light": 2}, "requires_potential": {"Affinity": 45}, "chance": 0.4, "mirror": "machine-archive"},
+    {"id": "machine-archive", "label": "Machine Archive", "axis": "Techfinity", "tags": ["emergent", "memory", "circuit"], "requires_tags": {"memory": 1, "bloodline": 1, "circuit": 2}, "requires_potential": {"Techfinity": 45}, "chance": 0.4, "mirror": "living-archive"},
+    {"id": "voice-of-wires", "label": "Voice of Wires", "axis": "Techfinity", "tags": ["emergent", "voice", "circuit"], "requires_tags": {"voice": 1, "circuit": 1}, "requires_potential": {"Techfinity": 40}, "chance": 0.3, "mirror": "hammer-hymn"},
+    {"id": "hammer-hymn", "label": "Hammer Hymn", "axis": "Affinity", "tags": ["emergent", "forge", "light"], "requires_tags": {"forge": 1, "light": 1}, "requires_potential": {"Affinity": 40}, "chance": 0.3, "mirror": "voice-of-wires"},
+    {"id": "liminal-heir", "label": "Liminal Heir", "axis": "Finity", "tags": ["emergent", "liminal", "bloodline"], "requires_tags": {"threshold": 1, "bloodline": 1}, "requires_potential": {"Finity": 50}, "chance": 0.35, "mirror": "liminal-heir"},
+    {"id": "paradox-seed", "label": "Paradox Seed", "axis": "Finity", "tags": ["emergent", "balance", "bridge"], "requires_tags": {"balance": 1, "threshold": 1}, "requires_potential": {"Affinity": 40, "Techfinity": 40}, "chance": 0.3, "mirror": "paradox-seed"},
+    {"id": "chimeric-bloom", "label": "Chimeric Bloom", "axis": null, "tags": ["emergent", "mutant"], "requires_tags": {"mutant": 2}, "requires_potential": {}, "chance": 0.5, "mirror": "chimeric-bloom"},
+    {"id": "eclipse-sight", "label": "Eclipse Sight", "axis": "Finity", "tags": ["emergent", "sight", "liminal"], "requires_tags": {"sight": 2}, "requires_potential": {"Finity": 35}, "chance": 0.45, "mirror": "eclipse-sight"},
+    {"id": "world-weaver", "label": "World-Weaver", "axis": "Finity", "tags": ["emergent", "bridge", "apex"], "requires_tags": {"bridge": 2}, "requires_potential": {"Finity": 60}, "chance": 0.25, "mirror": "world-weaver"}
+  ],
+  "hybrids": [
+    {"id": "twinlit", "label": "Twinlit", "axis": null, "tags": ["hybrid", "light", "circuit"], "min": {"Affinity": 60, "Techfinity": 60}, "max": {}, "mirror": "twinlit"},
+    {"id": "starbound-sage", "label": "Starbound Sage", "axis": "Affinity", "tags": ["hybrid", "light", "liminal"], "min": {"Affinity": 60, "Finity": 60}, "max": {}, "mirror": "gridbound-sage"},
+    {"id": "gridbound-sage", "label": "Gridbound Sage", "axis": "Techfinity", "tags": ["hybrid", "circuit", "liminal"], "min": {"Techfinity": 60, "Finity": 60}, "max": {}, "mirror": "starbound-sage"},
+    {"id": "triune-weave", "label": "Triune-Woven", "axis": "Finity", "tags": ["hybrid", "bridge", "apex"], "min": {"Affinity": 60, "Techfinity": 60, "Finity": 60}, "max": {}, "mirror": "triune-weave"},
+    {"id": "aether-apex", "label": "Aether Apex", "axis": "Affinity", "tags": ["hybrid", "apex", "light"], "min": {"Affinity": 85}, "max": {"Techfinity": 20}, "mirror": "machine-apex"},
+    {"id": "machine-apex", "label": "Machine Apex", "axis": "Techfinity", "tags": ["hybrid", "apex", "circuit"], "min": {"Techfinity": 85}, "max": {"Affinity": 20}, "mirror": "aether-apex"},
+    {"id": "pure-threshold", "label": "Pure Threshold", "axis": "Finity", "tags": ["hybrid", "apex", "liminal"], "min": {"Finity": 85}, "max": {"Affinity": 30, "Techfinity": 30}, "mirror": "pure-threshold"}
+  ],
+  "founders": [
+    {"id": "ordinary-learner", "label": "Ordinary Learner", "potential": {"Affinity": 30, "Techfinity": 30, "Finity": 20}, "polarity": 0.0, "traits": ["steady-hands"], "mirror": "ordinary-learner"},
+    {"id": "dual-potential", "label": "Dual Potential", "potential": {"Affinity": 60, "Techfinity": 60, "Finity": 35}, "polarity": 0.0, "traits": ["quiet-core"], "mirror": "dual-potential"},
+    {"id": "affinity-potential", "label": "Affinity Potential", "potential": {"Affinity": 75, "Techfinity": 20, "Finity": 25}, "polarity": -0.6, "traits": ["starlit-blood"], "mirror": "techfinity-potential"},
+    {"id": "techfinity-potential", "label": "Techfinity Potential", "potential": {"Affinity": 20, "Techfinity": 75, "Finity": 25}, "polarity": 0.6, "traits": ["circuit-blood"], "mirror": "affinity-potential"},
+    {"id": "archive-keeper", "label": "Archive Keeper", "potential": {"Affinity": 55, "Techfinity": 35, "Finity": 30}, "polarity": -0.3, "traits": ["archive-memory", "steady-hands"], "mirror": "fabricated-successor"},
+    {"id": "fabricated-successor", "label": "Fabricated Successor", "potential": {"Affinity": 35, "Techfinity": 55, "Finity": 30}, "polarity": 0.3, "traits": ["blueprint-memory", "steady-hands"], "mirror": "archive-keeper"},
+    {"id": "mentorship-conductor", "label": "Mentorship Conductor", "potential": {"Affinity": 50, "Techfinity": 25, "Finity": 40}, "polarity": -0.4, "traits": ["resonant-voice"], "mirror": "forge-mentor"},
+    {"id": "forge-mentor", "label": "Forge Mentor", "potential": {"Affinity": 25, "Techfinity": 50, "Finity": 40}, "polarity": 0.4, "traits": ["forge-hand"], "mirror": "mentorship-conductor"},
+    {"id": "threshold-walker", "label": "Threshold Walker", "potential": {"Affinity": 35, "Techfinity": 35, "Finity": 75}, "polarity": 0.0, "traits": ["threshold-sight"], "mirror": "threshold-walker"}
+  ],
+  "niches": [
+    {"id": "wildwood", "label": "Wildwood", "weights": {"Affinity": 1.0, "Techfinity": 0.2, "Finity": 0.4}, "polarity_pref": -0.5, "tag_bonus": {"light": 0.1}, "mirror": "foundry"},
+    {"id": "foundry", "label": "Foundry City", "weights": {"Affinity": 0.2, "Techfinity": 1.0, "Finity": 0.4}, "polarity_pref": 0.5, "tag_bonus": {"circuit": 0.1}, "mirror": "wildwood"},
+    {"id": "threshold-marches", "label": "Threshold Marches", "weights": {"Affinity": 0.4, "Techfinity": 0.4, "Finity": 1.0}, "polarity_pref": 0.0, "tag_bonus": {"liminal": 0.1, "bridge": 0.1}, "mirror": "threshold-marches"},
+    {"id": "crossroads", "label": "Crossroads", "weights": {"Affinity": 0.6, "Techfinity": 0.6, "Finity": 0.6}, "polarity_pref": 0.0, "tag_bonus": {}, "mirror": "crossroads"}
+  ]
+}

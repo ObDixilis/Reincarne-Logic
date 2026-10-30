@@ -1,0 +1,47 @@
+name: Star Weaver Verification & CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'codex/**'
+  pull_request:
+    branches:
+      - main
+      - 'codex/**'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run verification script (SW-SKILL-001 Baseline)
+        working-directory: star-weaver
+        run: |
+          python verify.py
+
+      - name: Run complete test suite (v0.2 Baseline + v0.3 Three-Axis)
+        working-directory: star-weaver
+        run: |
+          python -m unittest discover -s tests -v
+
+      - name: Run v0.2 headless balance simulation
+        working-directory: star-weaver
+        run: |
+          python simulate.py --json verification/ci-v2-report.json
+
+      - name: Run v0.3 three-axis balance & ecosystem simulation
+        working-directory: star-weaver
+        run: |
+          python simulate.py v3 --json verification/ci-v3-report.json
